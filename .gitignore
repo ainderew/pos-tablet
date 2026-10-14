@@ -1,0 +1,23 @@
+node_modules/
+.turbo/
+dist/
+.next/
+out/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+
+# local data and secrets
+*.db
+*.db-*
+.env*
+!.env.example
+
+# Android (Capacitor) build output and signing material - never commit keystores
+apps/tablet/android/app/build/
+apps/tablet/android/.gradle/
+*.keystore
+*.jks
+keystore.properties
+
+.DS_Store

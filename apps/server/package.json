@@ -1,0 +1,27 @@
+{
+  "name": "@pos/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VPS server: back office, REST API and the sync endpoints for tablets and the PC app.",
+  "scripts": {
+    "dev": "next dev --port 3100",
+    "build": "next build",
+    "start": "next start --port 3100",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@pos/core": "workspace:^",
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "19.2.10",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5",
+    "vitest": "^5.0.4"
+  }
+}

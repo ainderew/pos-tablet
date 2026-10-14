@@ -1,0 +1,18 @@
+{
+  "name": "@pos/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure business rules shared by the tablet, the server and (later) the PC app: PH tax, pricing, money rounding.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "vitest": "^5.0.4"
+  }
+}
