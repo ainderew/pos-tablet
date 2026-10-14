@@ -8,10 +8,10 @@ on its own and later becomes another terminal on the same server.
 | # | Question | Decision |
 |---|---|---|
 | 1 | Terminals | 1 tablet per store today; the data model supports any number of stores and terminals per store |
-| 2 | Store credit offline | **Open** (see [Store credit offline](#store-credit-offline)) |
+| 2 | Store credit offline | **(A)**: allowed offline, up to the last-synced available credit (see [Store credit offline](#store-credit-offline)) |
 | 3 | Printers | Bluetooth and USB; paper width unknown, so 58 mm and 80 mm are both supported |
 | 4 | Tablet distribution | Manual APK install (sideload), with an in-app update check |
-| 5 | Hosting | Existing VPS (`ssh_bb`); staging at `pos-staging.techpal.store` |
+| 5 | Hosting | Existing VPS (`ssh_bb`). Production `pos.techpal.store`, staging `pos-staging.techpal.store` (DNS at HostGator) |
 | 6 | PC app | Will sync to the same server as a `desktop` terminal |
 
 ## Overview
@@ -128,12 +128,17 @@ terminal only knows the customer's balance as of its last sync.
 Options:
 
 - **(A) Allow offline, up to the last-synced available credit minus this terminal's own unsynced
-  charges** (recommended). Exact for one terminal per store; with more terminals, any over-limit
+  charges.** Chosen. Exact for one terminal per store; with more terminals, any over-limit
   balance is flagged in the back office after sync.
 - **(B) Block store credit while offline.** Strict, but customers can't buy on credit during an outage.
+- **(C) Allow at most ₱X of offline credit per customer.** A middle ground for stores with several
+  terminals.
 
-This is a per-store setting (`offline_credit_mode`), so a store can switch to (B) when it adds a
-second terminal.
+With (A), a block or limit change made in the back office during an outage also only reaches the
+terminal at its next sync. This applies even with one terminal.
+
+This is a per-store setting (`offline_credit_mode`, default `A`), so a store can switch to (B) or (C)
+when it adds a second terminal.
 
 ## Hardware
 
@@ -179,8 +184,10 @@ second terminal.
 - **Our deployment:**
   - A Compose project `pos` with the server bound to `127.0.0.1:3100`.
   - Its own Postgres container on an internal Docker network only.
-  - An nginx site for `pos-staging.techpal.store` (staging) with a certbot
-    certificate. Production gets its own hostname later.
+  - Hostnames: `pos.techpal.store` (production, port 3101) and `pos-staging.techpal.store` (staging, port
+    3100). Each has its own nginx site and certbot certificate (webroot challenge, the same as the
+    existing sites) and its own Compose project and database.
+  - Every tablet stores the production hostname when it's paired, so it must not change after rollout.
 - **Backups:**
   - Continuous Postgres backups with point-in-time recovery (WAL-G or pgBackRest) to off-site
     S3-compatible storage.
@@ -216,7 +223,8 @@ Total: about 7–9 weeks for one developer.
 - [ ] Staging deploy on the VPS (`pos-staging.techpal.store`)
 - [ ] BIR: PTU per tablet terminal, and the effect on software accreditation
 - [ ] Choose the tablet and printer (Bluetooth/USB; paper width)
-- [ ] Decide store credit offline: (A) or (B)
+- [x] Store credit offline: (A)
+- [x] Domain: `techpal.store` subdomains
 
 ## Risks
 

@@ -1,0 +1,38 @@
+# One file for both environments; run with a project name and env file, e.g.
+#   docker compose -p pos-staging --env-file .env -f deploy/compose.yml up -d --build
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: deploy/server.Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-dev}
+    restart: unless-stopped
+    environment:
+      APP_VERSION: ${APP_VERSION:-dev}
+      DATABASE_URL: postgres://pos:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@db:5432/pos
+    ports:
+      # Localhost only: nginx on the host terminates TLS and proxies to this port
+      - "127.0.0.1:${HOST_PORT:?set HOST_PORT in .env}:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pos
+      POSTGRES_USER: pos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    # No ports: reachable only from the server container on the compose network
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pos -d pos"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  db-data:
