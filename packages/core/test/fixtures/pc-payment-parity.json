@@ -1,0 +1,299 @@
+{
+  "generatedFrom": "POS-bir@24f0a32",
+  "scenarios": [
+    {
+      "name": "cash_during_shift",
+      "customerBefore": {
+        "balance": 1500,
+        "limit": 2000,
+        "status": "ACTIVE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": 500,
+        "paymentMethod": "CASH",
+        "shiftId": "shift-1"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 1000,
+        "status": "ACTIVE"
+      },
+      "customerAfter": {
+        "current_debt_balance": 1000,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": "shift-1",
+          "entry_type": "PAYMENT",
+          "amount": 500,
+          "running_balance": 1000,
+          "notes": "Payment via CASH . "
+        }
+      ],
+      "cashMovements": [
+        {
+          "shift_id": "shift-1",
+          "type": "CASH_IN",
+          "amount": 500,
+          "reason": "Debt Payment - Aling Rosa"
+        }
+      ]
+    },
+    {
+      "name": "gcash_with_reference_and_notes",
+      "customerBefore": {
+        "balance": 800,
+        "limit": 2000,
+        "status": "ACTIVE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": "250.50",
+        "paymentMethod": "GCASH",
+        "reference": "GC-555",
+        "notes": "Partial"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 549.5,
+        "status": "ACTIVE"
+      },
+      "customerAfter": {
+        "current_debt_balance": 549.5,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": null,
+          "entry_type": "PAYMENT",
+          "amount": 250.5,
+          "running_balance": 549.5,
+          "notes": "Payment via GCASH (GC-555). Partial"
+        }
+      ],
+      "cashMovements": []
+    },
+    {
+      "name": "cash_without_shift",
+      "customerBefore": {
+        "balance": 300,
+        "limit": 1000,
+        "status": "OVERDUE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": 300,
+        "paymentMethod": "CASH"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 0,
+        "status": "OVERDUE"
+      },
+      "customerAfter": {
+        "current_debt_balance": 0,
+        "credit_status": "OVERDUE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": null,
+          "entry_type": "PAYMENT",
+          "amount": 300,
+          "running_balance": 0,
+          "notes": "Payment via CASH . "
+        }
+      ],
+      "cashMovements": []
+    },
+    {
+      "name": "overpayment",
+      "customerBefore": {
+        "balance": 100,
+        "limit": 1000,
+        "status": "ACTIVE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": 150,
+        "paymentMethod": "MAYA"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": -50,
+        "status": "ACTIVE"
+      },
+      "customerAfter": {
+        "current_debt_balance": -50,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": null,
+          "entry_type": "PAYMENT",
+          "amount": 150,
+          "running_balance": -50,
+          "notes": "Payment via MAYA . "
+        }
+      ],
+      "cashMovements": []
+    },
+    {
+      "name": "blocked_customer_back_within_limit",
+      "customerBefore": {
+        "balance": 2500,
+        "limit": 2000,
+        "status": "BLOCKED"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": 600,
+        "paymentMethod": "CASH",
+        "shiftId": "shift-1"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 1900,
+        "status": "ACTIVE"
+      },
+      "customerAfter": {
+        "current_debt_balance": 1900,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": "shift-1",
+          "entry_type": "PAYMENT",
+          "amount": 600,
+          "running_balance": 1900,
+          "notes": "Payment via CASH . "
+        }
+      ],
+      "cashMovements": [
+        {
+          "shift_id": "shift-1",
+          "type": "CASH_IN",
+          "amount": 600,
+          "reason": "Debt Payment - Aling Rosa"
+        }
+      ]
+    },
+    {
+      "name": "rounding_residue",
+      "customerBefore": {
+        "balance": 30.3,
+        "limit": 1000,
+        "status": "ACTIVE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": 10.1,
+        "paymentMethod": "CASH"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 20.200000000000003,
+        "status": "ACTIVE"
+      },
+      "customerAfter": {
+        "current_debt_balance": 20.200000000000003,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": null,
+          "entry_type": "PAYMENT",
+          "amount": 10.1,
+          "running_balance": 20.200000000000003,
+          "notes": "Payment via CASH . "
+        }
+      ],
+      "cashMovements": []
+    },
+    {
+      "name": "negative_amount",
+      "customerBefore": {
+        "balance": 100,
+        "limit": 1000,
+        "status": "ACTIVE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "amount": -50,
+        "paymentMethod": "CASH"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 150,
+        "status": "ACTIVE"
+      },
+      "customerAfter": {
+        "current_debt_balance": 150,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "shift_id": null,
+          "entry_type": "PAYMENT",
+          "amount": -50,
+          "running_balance": 150,
+          "notes": "Payment via CASH . "
+        }
+      ],
+      "cashMovements": []
+    },
+    {
+      "name": "missing_amount",
+      "customerBefore": {
+        "balance": 100,
+        "limit": 1000,
+        "status": "ACTIVE"
+      },
+      "request": {
+        "customerId": "rosa",
+        "paymentMethod": "CASH"
+      },
+      "status": 400,
+      "response": {
+        "error": "Missing required fields"
+      },
+      "customerAfter": {
+        "current_debt_balance": 100,
+        "credit_status": "ACTIVE"
+      },
+      "ledger": [],
+      "cashMovements": []
+    },
+    {
+      "name": "unknown_customer",
+      "customerBefore": null,
+      "request": {
+        "customerId": "rosa",
+        "amount": 10,
+        "paymentMethod": "CASH"
+      },
+      "status": 500,
+      "response": {
+        "error": "Customer not found"
+      },
+      "customerAfter": null,
+      "ledger": [],
+      "cashMovements": []
+    }
+  ]
+}

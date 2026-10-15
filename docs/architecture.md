@@ -220,13 +220,28 @@ Total: about 7–9 weeks for one developer.
 - [x] Repo with pnpm workspaces and Turborepo, TypeScript strict, CI
 - [x] `@pos/core`: PH tax, pricing and money rounding ported, with POS-bir's tests
 - [x] `@pos/core`: append-only record model (zod) and `buildSale`, matching POS-bir on 24 golden scenarios
-- [ ] `@pos/core`: void/credit-note, shift-close and Z-reading builders; receipt model with HTML and ESC/POS (58/80 mm)
+- [x] `@pos/core`: void/credit-note, store-credit payment, shift open/close, cash movement and Z-reading builders, each matching POS-bir on recorded scenarios (with POS-bir's bugs fixed and listed in the tests)
+- [x] `@pos/core`: receipt model, HTML renderer (same output as POS-bir) and ESC/POS renderer (58/80 mm, CP437/WPC1252)
+- [ ] Printer spike on real hardware (code page, Chinese-mode cancel, cut command)
 - [x] `apps/server` (Next.js 16, `/api/health`) and `apps/tablet` (Vite + React 19 + Capacitor 8) scaffolds
 - [x] Staging deploy on the VPS: https://pos-staging.techpal.store (HTTPS, private Postgres)
 - [ ] BIR: PTU per tablet terminal, and the effect on software accreditation
 - [ ] Choose the tablet and printer (Bluetooth/USB; paper width)
 - [x] Store credit offline: (A)
 - [x] Domain: `techpal.store` subdomains
+
+## Receipt content to confirm with BIR
+
+The renderers print exactly what POS-bir prints today, plus optional fields:
+- **Printed as POS-bir does:** "SALES INVOICE"; a bare-number TIN is labelled "VAT REG TIN" (a
+  non-VAT store must enter its TIN pre-labelled); MIN, S/N and PTU No; "*** VOID ***" / "VOID SLIP"
+  with the original invoice; SC/PWD name and ID; "THIS DOCUMENT IS NOT VALID FOR CLAIM OF INPUT TAX"
+  on payment receipts and statements only.
+- **Optional, off by default:** an "Accreditation No" header line; any other required wording can be
+  added verbatim as header or footer lines.
+- **Not printed; confirm whether required:** software supplier name, address, TIN and accreditation;
+  PTU issue date or validity; buyer name, address and TIN for business buyers; an SC/PWD signature
+  line; "REPRINT" on reprints; credit-note wording; serial numbers for payment receipts.
 
 ## Risks
 

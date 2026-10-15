@@ -1,0 +1,1861 @@
+{
+  "generatedFrom": "POS-bir@24f0a32",
+  "manager": "mgr-1",
+  "scenarios": [
+    {
+      "name": "void_cash_mixed_categories",
+      "sales": [
+        {
+          "id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 300,
+          "vatable_sales": 66.96,
+          "vat_amount": 8.04,
+          "vat_exempt_sales": 105,
+          "zero_rated_sales": 120,
+          "total_discount": 0,
+          "net_sales": 300,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "CASH",
+          "amount_tendered": 500,
+          "change_amount": 200,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "9af6a2dd-deaa-41e8-94a3-f2568953f0c5",
+              "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "product_id": "soap",
+              "quantity_sold": 3,
+              "price_at_sale": 25,
+              "cost_at_sale": 18,
+              "profit": 21,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Laundry Soap Bar"
+            },
+            {
+              "id": "ddb6c7a6-40ea-4874-a9c7-754471540542",
+              "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "product_id": "eggs",
+              "quantity_sold": 12,
+              "price_at_sale": 8.75,
+              "cost_at_sale": 7,
+              "profit": 21,
+              "tax_category": "VAT_EXEMPT",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Fresh Eggs"
+            },
+            {
+              "id": "80a1d324-0422-49a3-9606-018ac7a77347",
+              "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "product_id": "export",
+              "quantity_sold": 1,
+              "price_at_sale": 120,
+              "cost_at_sale": 90,
+              "profit": 30,
+              "tax_category": "ZERO_RATED",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Export Item"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "9af6a2dd-deaa-41e8-94a3-f2568953f0c5",
+          "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "product_id": "soap",
+          "quantity_sold": 3,
+          "price_at_sale": 25,
+          "cost_at_sale": 18,
+          "profit": 21,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Laundry Soap Bar"
+        },
+        {
+          "id": "ddb6c7a6-40ea-4874-a9c7-754471540542",
+          "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "product_id": "eggs",
+          "quantity_sold": 12,
+          "price_at_sale": 8.75,
+          "cost_at_sale": 7,
+          "profit": 21,
+          "tax_category": "VAT_EXEMPT",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Fresh Eggs"
+        },
+        {
+          "id": "80a1d324-0422-49a3-9606-018ac7a77347",
+          "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "product_id": "export",
+          "quantity_sold": 1,
+          "price_at_sale": 120,
+          "cost_at_sale": 90,
+          "profit": 30,
+          "tax_category": "ZERO_RATED",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Export Item"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "Wrong items",
+          "before": {
+            "stock": {
+              "soap": 197,
+              "eggs": 288,
+              "rice": 120,
+              "export": 49,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 300,
+              "vatable_sales": 66.96,
+              "vat_amount": 8.04,
+              "vat_exempt_sales": 105,
+              "zero_rated_sales": 120,
+              "total_discount": 0,
+              "net_sales": 300,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 500,
+              "change_amount": 200,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "641785ad-cb05-40d7-96c2-fccf328cfdac",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "Wrong items",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -300,
+              "vatable_sales": -66.96,
+              "vat_amount": -8.04,
+              "vat_exempt_sales": -105,
+              "zero_rated_sales": -120,
+              "total_discount": 0,
+              "net_sales": -300,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "Wrong items",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_sc_pwd_sale",
+      "sales": [
+        {
+          "id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 135,
+          "vatable_sales": 59.53,
+          "vat_amount": 7.14,
+          "vat_exempt_sales": 64.76,
+          "zero_rated_sales": 0,
+          "total_discount": 8.29,
+          "net_sales": 123.14,
+          "pax_count": 3,
+          "senior_count": 1,
+          "sc_pwd_id": "SC-9",
+          "sc_pwd_name": "Lolo",
+          "payment_method": "CASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "e92bbad7-717a-40ec-a1b4-7314102e64d4",
+              "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+              "product_id": "fifty",
+              "quantity_sold": 2,
+              "price_at_sale": 50,
+              "cost_at_sale": 30,
+              "profit": 40,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Fifty Item"
+            },
+            {
+              "id": "26d66aca-0779-4364-8f16-d4187ce2e27a",
+              "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+              "product_id": "eggs",
+              "quantity_sold": 4,
+              "price_at_sale": 8.75,
+              "cost_at_sale": 7,
+              "profit": 7,
+              "tax_category": "VAT_EXEMPT",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Fresh Eggs"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "e92bbad7-717a-40ec-a1b4-7314102e64d4",
+          "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+          "product_id": "fifty",
+          "quantity_sold": 2,
+          "price_at_sale": 50,
+          "cost_at_sale": 30,
+          "profit": 40,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Fifty Item"
+        },
+        {
+          "id": "26d66aca-0779-4364-8f16-d4187ce2e27a",
+          "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+          "product_id": "eggs",
+          "quantity_sold": 4,
+          "price_at_sale": 8.75,
+          "cost_at_sale": 7,
+          "profit": 7,
+          "tax_category": "VAT_EXEMPT",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Fresh Eggs"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "Customer changed mind",
+          "before": {
+            "stock": {
+              "soap": 200,
+              "eggs": 296,
+              "rice": 120,
+              "export": 50,
+              "fifty": 98
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 135,
+              "vatable_sales": 59.53,
+              "vat_amount": 7.14,
+              "vat_exempt_sales": 64.76,
+              "zero_rated_sales": 0,
+              "total_discount": 8.29,
+              "net_sales": 123.14,
+              "pax_count": 3,
+              "senior_count": 1,
+              "sc_pwd_id": "SC-9",
+              "sc_pwd_name": "Lolo",
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "e3633e52-5e08-46f8-9c97-eedc2a656485",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "Customer changed mind",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -135,
+              "vatable_sales": -59.53,
+              "vat_amount": -7.14,
+              "vat_exempt_sales": -64.76,
+              "zero_rated_sales": 0,
+              "total_discount": -8.29,
+              "net_sales": -123.14,
+              "pax_count": 3,
+              "senior_count": 1,
+              "sc_pwd_id": "SC-9",
+              "sc_pwd_name": "Lolo",
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "Customer changed mind",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_weight_and_wholesale",
+      "sales": [
+        {
+          "id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 376.69,
+          "vatable_sales": 336.33,
+          "vat_amount": 40.36,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 376.69,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "CASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "4ebf36ea-0bfa-48c8-b7cb-ac2e182aacfb",
+              "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+              "product_id": "rice",
+              "quantity_sold": 2.375,
+              "price_at_sale": 52.5,
+              "cost_at_sale": 45,
+              "profit": 17.8125,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Rice (per kg)"
+            },
+            {
+              "id": "160ef7a6-fbca-4bab-86a6-c79df5dbb87a",
+              "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+              "product_id": "soap",
+              "quantity_sold": 12,
+              "price_at_sale": 21,
+              "cost_at_sale": 18,
+              "profit": 36,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Laundry Soap Bar"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "4ebf36ea-0bfa-48c8-b7cb-ac2e182aacfb",
+          "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+          "product_id": "rice",
+          "quantity_sold": 2.375,
+          "price_at_sale": 52.5,
+          "cost_at_sale": 45,
+          "profit": 17.8125,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Rice (per kg)"
+        },
+        {
+          "id": "160ef7a6-fbca-4bab-86a6-c79df5dbb87a",
+          "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+          "product_id": "soap",
+          "quantity_sold": 12,
+          "price_at_sale": 21,
+          "cost_at_sale": 18,
+          "profit": 36,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Laundry Soap Bar"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": null,
+          "before": {
+            "stock": {
+              "soap": 188,
+              "eggs": 300,
+              "rice": 117.625,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 376.69,
+              "vatable_sales": 336.33,
+              "vat_amount": 40.36,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 376.69,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "0ed7747e-27d8-4a2e-9a91-ccf7eb60ad63",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -376.69,
+              "vatable_sales": -336.33,
+              "vat_amount": -40.36,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -376.69,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": null,
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_gcash_with_reference",
+      "sales": [
+        {
+          "id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 240,
+          "vatable_sales": 0,
+          "vat_amount": 0,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 240,
+          "total_discount": 0,
+          "net_sales": 240,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "GCASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": "GC-777",
+          "items": [
+            {
+              "id": "16d409bf-f83c-42c9-8cb5-defc268e3dd5",
+              "transaction_id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+              "product_id": "export",
+              "quantity_sold": 2,
+              "price_at_sale": 120,
+              "cost_at_sale": 90,
+              "profit": 60,
+              "tax_category": "ZERO_RATED",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Export Item"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "16d409bf-f83c-42c9-8cb5-defc268e3dd5",
+          "transaction_id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+          "product_id": "export",
+          "quantity_sold": 2,
+          "price_at_sale": 120,
+          "cost_at_sale": 90,
+          "profit": 60,
+          "tax_category": "ZERO_RATED",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Export Item"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "Duplicate",
+          "before": {
+            "stock": {
+              "soap": 200,
+              "eggs": 300,
+              "rice": 120,
+              "export": 48,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 240,
+              "vatable_sales": 0,
+              "vat_amount": 0,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 240,
+              "total_discount": 0,
+              "net_sales": 240,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "GCASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": "GC-777"
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "2b345c34-7fe2-4e26-b1cc-7e4b88b829d5",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "Duplicate",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -240,
+              "vatable_sales": 0,
+              "vat_amount": 0,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": -240,
+              "total_discount": 0,
+              "net_sales": -240,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "GCASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "Duplicate",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_store_credit",
+      "sales": [
+        {
+          "id": "3934f873-a144-46de-aec6-c94db183942c",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 336,
+          "vatable_sales": 300,
+          "vat_amount": 36,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 336,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "STORE_CREDIT",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": "rosa",
+          "items": [
+            {
+              "id": "e3587f7d-e184-4fa8-808b-4eb7eecfc5d2",
+              "transaction_id": "3934f873-a144-46de-aec6-c94db183942c",
+              "product_id": "soap",
+              "quantity_sold": 16,
+              "price_at_sale": 21,
+              "cost_at_sale": 18,
+              "profit": 48,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Laundry Soap Bar"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "e3587f7d-e184-4fa8-808b-4eb7eecfc5d2",
+          "transaction_id": "3934f873-a144-46de-aec6-c94db183942c",
+          "product_id": "soap",
+          "quantity_sold": 16,
+          "price_at_sale": 21,
+          "cost_at_sale": 18,
+          "profit": 48,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Laundry Soap Bar"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "Returned goods",
+          "before": {
+            "stock": {
+              "soap": 184,
+              "eggs": 300,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1836
+            },
+            "original": {
+              "id": "3934f873-a144-46de-aec6-c94db183942c",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 336,
+              "vatable_sales": 300,
+              "vat_amount": 36,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 336,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "STORE_CREDIT",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": "rosa"
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "6aacd959-c07f-4b27-a9bc-6e88c26bcdc4",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "Returned goods",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -336,
+              "vatable_sales": -300,
+              "vat_amount": -36,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -336,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "STORE_CREDIT",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [
+            {
+              "customer_id": "rosa",
+              "transaction_id": "3934f873-a144-46de-aec6-c94db183942c",
+              "entry_type": "CHARGE",
+              "amount": 336,
+              "running_balance": 1836,
+              "notes": null
+            },
+            {
+              "customer_id": "rosa",
+              "transaction_id": "6aacd959-c07f-4b27-a9bc-6e88c26bcdc4",
+              "entry_type": "ADJUSTMENT",
+              "amount": 336,
+              "running_balance": 1500,
+              "notes": "Void of SI-000001 (CN-000001): Returned goods"
+            }
+          ],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "Returned goods",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_store_credit_after_payment",
+      "sales": [
+        {
+          "id": "019b9440-abf6-407f-838b-d371f004e36f",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 500,
+          "vatable_sales": 446.43,
+          "vat_amount": 53.57,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 500,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "STORE_CREDIT",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": "rosa",
+          "items": [
+            {
+              "id": "2b9136de-f29e-439c-aa8e-3dd543f8e28f",
+              "transaction_id": "019b9440-abf6-407f-838b-d371f004e36f",
+              "product_id": "fifty",
+              "quantity_sold": 10,
+              "price_at_sale": 50,
+              "cost_at_sale": 30,
+              "profit": 200,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Fifty Item"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "2b9136de-f29e-439c-aa8e-3dd543f8e28f",
+          "transaction_id": "019b9440-abf6-407f-838b-d371f004e36f",
+          "product_id": "fifty",
+          "quantity_sold": 10,
+          "price_at_sale": 50,
+          "cost_at_sale": 30,
+          "profit": 200,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Fifty Item"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "Paid then returned",
+          "before": {
+            "stock": {
+              "soap": 200,
+              "eggs": 300,
+              "rice": 120,
+              "export": 50,
+              "fifty": 90
+            },
+            "customers": {
+              "rosa": 0
+            },
+            "original": {
+              "id": "019b9440-abf6-407f-838b-d371f004e36f",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 500,
+              "vatable_sales": 446.43,
+              "vat_amount": 53.57,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 500,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "STORE_CREDIT",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": "rosa"
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "89a2a0d3-ce45-483d-9fd4-9749a0b51c86",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "Paid then returned",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -500,
+              "vatable_sales": -446.43,
+              "vat_amount": -53.57,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -500,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "STORE_CREDIT",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": -500
+          },
+          "ledger": [
+            {
+              "customer_id": "rosa",
+              "transaction_id": "019b9440-abf6-407f-838b-d371f004e36f",
+              "entry_type": "CHARGE",
+              "amount": 500,
+              "running_balance": 2000,
+              "notes": null
+            },
+            {
+              "customer_id": "rosa",
+              "transaction_id": "89a2a0d3-ce45-483d-9fd4-9749a0b51c86",
+              "entry_type": "ADJUSTMENT",
+              "amount": 500,
+              "running_balance": -500,
+              "notes": "Void of SI-000001 (CN-000001): Paid then returned"
+            }
+          ],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "Paid then returned",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "two_voids_number_sequentially",
+      "sales": [
+        {
+          "id": "7029f2d0-df8d-4f72-8843-359604d39466",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 25,
+          "vatable_sales": 22.32,
+          "vat_amount": 2.68,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 25,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "CASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "887f3950-66d1-4f34-8038-8e898c4321d5",
+              "transaction_id": "7029f2d0-df8d-4f72-8843-359604d39466",
+              "product_id": "soap",
+              "quantity_sold": 1,
+              "price_at_sale": 25,
+              "cost_at_sale": 18,
+              "profit": 7,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Laundry Soap Bar"
+            }
+          ]
+        },
+        {
+          "id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+          "invoice_number": "SI-000002",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 17.5,
+          "vatable_sales": 0,
+          "vat_amount": 0,
+          "vat_exempt_sales": 17.5,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 17.5,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "CASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "19638ef0-7820-481a-b9de-ff2b12002e87",
+              "transaction_id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+              "product_id": "eggs",
+              "quantity_sold": 2,
+              "price_at_sale": 8.75,
+              "cost_at_sale": 7,
+              "profit": 3.5,
+              "tax_category": "VAT_EXEMPT",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Fresh Eggs"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "887f3950-66d1-4f34-8038-8e898c4321d5",
+          "transaction_id": "7029f2d0-df8d-4f72-8843-359604d39466",
+          "product_id": "soap",
+          "quantity_sold": 1,
+          "price_at_sale": 25,
+          "cost_at_sale": 18,
+          "profit": 7,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Laundry Soap Bar"
+        },
+        {
+          "id": "19638ef0-7820-481a-b9de-ff2b12002e87",
+          "transaction_id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+          "product_id": "eggs",
+          "quantity_sold": 2,
+          "price_at_sale": 8.75,
+          "cost_at_sale": 7,
+          "profit": 3.5,
+          "tax_category": "VAT_EXEMPT",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Fresh Eggs"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "a",
+          "before": {
+            "stock": {
+              "soap": 199,
+              "eggs": 298,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "7029f2d0-df8d-4f72-8843-359604d39466",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 25,
+              "vatable_sales": 22.32,
+              "vat_amount": 2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "c1466bf5-289b-4247-9f7f-7b0e5d84b7aa",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "a",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -25,
+              "vatable_sales": -22.32,
+              "vat_amount": -2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 298,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "a",
+            "void_authorized_by": "mgr-1"
+          }
+        },
+        {
+          "voidTarget": 1,
+          "reason": "b",
+          "before": {
+            "stock": {
+              "soap": 200,
+              "eggs": 298,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+              "invoice_number": "SI-000002",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 17.5,
+              "vatable_sales": 0,
+              "vat_amount": 0,
+              "vat_exempt_sales": 17.5,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 17.5,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "f33fabf1-2499-4d36-bb06-b529297f6a3b",
+              "invoice_number": "CN-000002",
+              "status": "REFUND",
+              "void_reason": "b",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -17.5,
+              "vatable_sales": 0,
+              "vat_amount": 0,
+              "vat_exempt_sales": -17.5,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -17.5,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000002"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "b",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_already_voided",
+      "sales": [
+        {
+          "id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 25,
+          "vatable_sales": 22.32,
+          "vat_amount": 2.68,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 25,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "CASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "2b80a217-af66-4a5f-9e80-c65384da551c",
+              "transaction_id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+              "product_id": "soap",
+              "quantity_sold": 1,
+              "price_at_sale": 25,
+              "cost_at_sale": 18,
+              "profit": 7,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Laundry Soap Bar"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "2b80a217-af66-4a5f-9e80-c65384da551c",
+          "transaction_id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+          "product_id": "soap",
+          "quantity_sold": 1,
+          "price_at_sale": 25,
+          "cost_at_sale": 18,
+          "profit": 7,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Laundry Soap Bar"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "first",
+          "before": {
+            "stock": {
+              "soap": 199,
+              "eggs": 300,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 25,
+              "vatable_sales": 22.32,
+              "vat_amount": 2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "cf11d236-90ab-4613-b0a1-ed66d5507eec",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "first",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -25,
+              "vatable_sales": -22.32,
+              "vat_amount": -2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "first",
+            "void_authorized_by": "mgr-1"
+          }
+        },
+        {
+          "voidTarget": 0,
+          "reason": "again",
+          "before": {
+            "stock": {
+              "soap": 200,
+              "eggs": 300,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+              "invoice_number": "SI-000001",
+              "status": "VOIDED",
+              "void_reason": "first",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 25,
+              "vatable_sales": 22.32,
+              "vat_amount": 2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 400,
+          "response": {
+            "error": "Transaction is already voided"
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "first",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "void_a_credit_note",
+      "sales": [
+        {
+          "id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+          "invoice_number": "SI-000001",
+          "status": "PAID",
+          "void_reason": null,
+          "authorized_by": null,
+          "void_authorized_by": null,
+          "voided_at": null,
+          "transaction_type": "SALE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "gross_sales": 25,
+          "vatable_sales": 22.32,
+          "vat_amount": 2.68,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 25,
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "CASH",
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": null,
+          "items": [
+            {
+              "id": "e351c432-e81f-4c4b-8c2d-8c5aab946b66",
+              "transaction_id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+              "product_id": "soap",
+              "quantity_sold": 1,
+              "price_at_sale": 25,
+              "cost_at_sale": 18,
+              "profit": 7,
+              "tax_category": "VATABLE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "name": "Laundry Soap Bar"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "e351c432-e81f-4c4b-8c2d-8c5aab946b66",
+          "transaction_id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+          "product_id": "soap",
+          "quantity_sold": 1,
+          "price_at_sale": 25,
+          "cost_at_sale": 18,
+          "profit": 7,
+          "tax_category": "VATABLE",
+          "pos_id": "00000000-0000-0000-0000-000000000000",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:17:10",
+          "product_name": "Laundry Soap Bar"
+        }
+      ],
+      "steps": [
+        {
+          "voidTarget": 0,
+          "reason": "first",
+          "before": {
+            "stock": {
+              "soap": 199,
+              "eggs": 300,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+              "invoice_number": "SI-000001",
+              "status": "PAID",
+              "void_reason": null,
+              "authorized_by": null,
+              "void_authorized_by": null,
+              "voided_at": null,
+              "transaction_type": "SALE",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": 25,
+              "vatable_sales": 22.32,
+              "vat_amount": 2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": 25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": null,
+              "change_amount": 0,
+              "reference_number": null
+            }
+          },
+          "status": 200,
+          "response": {
+            "success": true,
+            "transaction": {
+              "id": "1c9076bc-810c-4c96-8c01-b5f9896ea1c9",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "first",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -25,
+              "vatable_sales": -22.32,
+              "vat_amount": -2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "VOIDED",
+            "void_reason": "first",
+            "void_authorized_by": "mgr-1"
+          }
+        },
+        {
+          "voidTarget": -1,
+          "reason": "void the CN",
+          "before": {
+            "stock": {
+              "soap": 200,
+              "eggs": 300,
+              "rice": 120,
+              "export": 50,
+              "fifty": 100
+            },
+            "customers": {
+              "rosa": 1500
+            },
+            "original": {
+              "id": "1c9076bc-810c-4c96-8c01-b5f9896ea1c9",
+              "invoice_number": "CN-000001",
+              "status": "REFUND",
+              "void_reason": "first",
+              "authorized_by": null,
+              "void_authorized_by": "mgr-1",
+              "voided_at": "2026-10-15 08:17:10",
+              "transaction_type": "VOID_REFUND",
+              "pos_id": "00000000-0000-0000-0000-000000000000",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:17:10",
+              "gross_sales": -25,
+              "vatable_sales": -22.32,
+              "vat_amount": -2.68,
+              "vat_exempt_sales": 0,
+              "zero_rated_sales": 0,
+              "total_discount": 0,
+              "net_sales": -25,
+              "pax_count": 1,
+              "senior_count": 0,
+              "sc_pwd_id": null,
+              "sc_pwd_name": null,
+              "payment_method": "CASH",
+              "amount_tendered": 0,
+              "change_amount": 0,
+              "reference_number": "SI-000001"
+            }
+          },
+          "status": 400,
+          "response": {
+            "error": "Only completed sales can be voided"
+          },
+          "stockAfter": {
+            "soap": 200,
+            "eggs": 300,
+            "rice": 120,
+            "export": 50,
+            "fifty": 100
+          },
+          "customersAfter": {
+            "rosa": 1500
+          },
+          "ledger": [],
+          "originalAfter": {
+            "status": "REFUND",
+            "void_reason": "first",
+            "void_authorized_by": "mgr-1"
+          }
+        }
+      ]
+    }
+  ]
+}

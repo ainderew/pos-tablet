@@ -2,6 +2,7 @@
 // as a pure function. The caller (tablet, server or PC data layer) supplies the current product
 // rows and customer, saves the returned records in one local transaction, and queues them for sync.
 import { calculateTransactionTotals, getActivePrice, roundMoney, toCents } from "./ph-tax"
+import { PAYMENT_METHODS } from "./model"
 import type {
   CreditLedgerEntryRecord,
   PaymentMethod,
@@ -57,6 +58,8 @@ export interface SaleData {
 
 export type SaleErrorCode =
   | "EMPTY_CART"
+  | "INVALID_PAX"
+  | "INVALID_PAYMENT_METHOD"
   | "PRODUCT_UNAVAILABLE"
   | "INVALID_QUANTITY"
   | "PRICES_CHANGED"
@@ -98,6 +101,18 @@ export function buildSale(request: SaleRequest, data: SaleData, ctx: SaleContext
   const lines = request.lines ?? []
   if (lines.length === 0) return fail("EMPTY_CART", "Cart is empty")
 
+  // Stricter than POS-bir, which accepted these: more seniors than customers produces negative
+  // VATable sales and an inflated exemption, and 0 customers produces NaN totals
+  const paxCount = request.paxCount || 1 // 0 or missing means "not entered", as in POS-bir
+  const seniorCount = request.seniorCount || 0
+  if (!Number.isInteger(paxCount) || paxCount < 1 || !Number.isInteger(seniorCount) || seniorCount < 0 || seniorCount > paxCount) {
+    return fail("INVALID_PAX", "Senior/PWD count must be between 0 and the number of customers")
+  }
+  const paymentMethod: PaymentMethod = request.paymentMethod || "CASH"
+  if (!(PAYMENT_METHODS as readonly string[]).includes(paymentMethod)) {
+    return fail("INVALID_PAYMENT_METHOD", `Unknown payment method: ${paymentMethod}`)
+  }
+
   // 1. Price every line from current product data
   const pricedCart: CartItem[] = []
   for (const line of lines) {
@@ -112,15 +127,12 @@ export function buildSale(request: SaleRequest, data: SaleData, ctx: SaleContext
     pricedCart.push({ product, quantity, active_price: getActivePrice(product, quantity) })
   }
 
-  const paxCount = request.paxCount || 1
-  const seniorCount = request.seniorCount || 0
   const totals = calculateTransactionTotals(pricedCart, paxCount, seniorCount)
   if (request.expectedNetSales !== undefined && toCents(totals.netSales) !== toCents(request.expectedNetSales)) {
     return fail("PRICES_CHANGED", "Prices changed — please refresh the cart")
   }
 
   // 2. Tender
-  const paymentMethod: PaymentMethod = request.paymentMethod || "CASH"
   const tendered = parseFloat(String(request.amountTendered ?? ""))
   const amountTendered = Number.isFinite(tendered) && tendered !== 0 ? roundMoney(tendered) : null
   const change = amountTendered !== null ? roundMoney(amountTendered - totals.netSales) : 0
@@ -223,6 +235,8 @@ export function buildSale(request: SaleRequest, data: SaleData, ctx: SaleContext
           amount: totals.netSales,
           running_balance: customerBalanceAfter,
           notes: null,
+          payment_method: null,
+          reference_number: null,
         }
 
   return {
