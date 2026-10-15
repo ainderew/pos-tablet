@@ -219,6 +219,8 @@ Total: about 7–9 weeks for one developer.
 
 - [x] Repo with pnpm workspaces and Turborepo, TypeScript strict, CI
 - [x] `@pos/core`: PH tax, pricing and money rounding ported, with POS-bir's tests
+- [x] `@pos/core`: append-only record model (zod) and `buildSale`, matching POS-bir on 24 golden scenarios
+- [ ] `@pos/core`: void/credit-note, shift-close and Z-reading builders; receipt model with HTML and ESC/POS (58/80 mm)
 - [x] `apps/server` (Next.js 16, `/api/health`) and `apps/tablet` (Vite + React 19 + Capacitor 8) scaffolds
 - [x] Staging deploy on the VPS: https://pos-staging.techpal.store (HTTPS, private Postgres)
 - [ ] BIR: PTU per tablet terminal, and the effect on software accreditation
