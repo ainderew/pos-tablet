@@ -47,13 +47,19 @@ export function storeForDevice(store: typeof stores.$inferSelect) {
  * Where a terminal's numbering left off on the server: a device paired to an existing terminal must
  * continue after these, or its records would collide with ones already synced
  */
-export async function terminalResumePoint(db: Db, terminalId: string) {
+/** Highest device_seq the server holds from this terminal, across every record table */
+export async function terminalHighestSeq(db: Db, terminalId: string): Promise<number> {
   const seqTables = [shiftOpens, shiftCloses, transactions, transactionItems, stockMovements, creditLedger, cashMovements, zReadings, auditLogs]
-  let lastDeviceSeq = 0
+  let highest = 0
   for (const table of seqTables) {
     const [row] = await db.select({ seq: max(table.device_seq) }).from(table).where(eq(table.terminal_id, terminalId))
-    lastDeviceSeq = Math.max(lastDeviceSeq, Number(row?.seq ?? 0))
+    highest = Math.max(highest, Number(row?.seq ?? 0))
   }
+  return highest
+}
+
+export async function terminalResumePoint(db: Db, terminalId: string) {
+  const lastDeviceSeq = await terminalHighestSeq(db, terminalId)
   const lastNumber = async (prefix: "SI" | "CN") => {
     const [row] = await db
       .select({ n: sql<number>`coalesce(max(substring(${transactions.invoice_number} from 4)::int), 0)` })
