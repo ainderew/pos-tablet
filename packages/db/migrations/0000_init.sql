@@ -4,6 +4,7 @@ CREATE TABLE "device_tokens" (
 	"terminal_id" uuid NOT NULL,
 	"token_hash" text NOT NULL,
 	"device_info" jsonb DEFAULT '{}'::jsonb NOT NULL,
+	"app_version" text,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
 	"last_used_at" timestamp with time zone,
 	"revoked_at" timestamp with time zone
@@ -56,8 +57,6 @@ CREATE TABLE "terminals" (
 	"ptu_number" text,
 	"serial_number" text,
 	"min" text,
-	"last_seen_at" timestamp with time zone,
-	"app_version" text,
 	"revoked_at" timestamp with time zone,
 	"version" bigint DEFAULT nextval('change_version_seq') NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL,

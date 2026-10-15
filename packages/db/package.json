@@ -6,6 +6,7 @@
   "description": "Server database: Postgres schema (Drizzle), migrations and clients. Tests run on PGlite.",
   "exports": {
     ".": "./src/index.ts",
+    "./migrate": "./src/migrate.ts",
     "./testing": "./src/testing.ts"
   },
   "scripts": {

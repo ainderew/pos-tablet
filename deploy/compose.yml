@@ -11,6 +11,9 @@ services:
     environment:
       APP_VERSION: ${APP_VERSION:-dev}
       DATABASE_URL: postgres://pos:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@db:5432/pos
+      PUBLIC_URL: ${PUBLIC_URL:?set PUBLIC_URL in .env}
+      # One-time /api/setup secret (creates the owner account; refuses once any user exists)
+      SETUP_TOKEN: ${SETUP_TOKEN:-}
     ports:
       # Localhost only: nginx on the host terminates TLS and proxies to this port
       - "127.0.0.1:${HOST_PORT:?set HOST_PORT in .env}:3000"

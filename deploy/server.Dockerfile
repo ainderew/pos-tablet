@@ -13,6 +13,9 @@ ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 HOSTNAME=0.0.0.0 PORT=3000
 WORKDIR /app
 COPY --from=build --chown=node:node /repo/apps/server/.next/standalone ./
 COPY --from=build --chown=node:node /repo/apps/server/.next/static ./apps/server/.next/static
+# The server applies these at startup (instrumentation.ts)
+COPY --from=build --chown=node:node /repo/packages/db/migrations ./migrations
+ENV MIGRATIONS_DIR=/app/migrations
 USER node
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD wget -qO- http://127.0.0.1:3000/api/health || exit 1

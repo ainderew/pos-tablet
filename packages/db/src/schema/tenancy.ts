@@ -50,8 +50,8 @@ export const terminals = pgTable(
     ptu_number: text(),
     serial_number: text(),
     min: text(),
-    last_seen_at: timestamptz(),
-    app_version: text(),
+    // Decommissioned: its devices can no longer sync (last-seen lives on device_tokens, which isn't
+    // synced, so heartbeats don't bump the terminal's version)
     revoked_at: timestamptz(),
     ...versioned,
   },
@@ -68,6 +68,7 @@ export const deviceTokens = pgTable(
       .references(() => terminals.id),
     token_hash: text().notNull(),
     device_info: jsonb().$type<Record<string, unknown>>().notNull().default({}),
+    app_version: text(),
     created_at: timestamptz().notNull().defaultNow(),
     last_used_at: timestamptz(),
     revoked_at: timestamptz(),

@@ -13,11 +13,16 @@
   },
   "dependencies": {
     "@pos/core": "workspace:^",
+    "@pos/db": "workspace:^",
+    "bcryptjs": "^3.0.3",
+    "drizzle-orm": "^0.45.4",
     "next": "16.1.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
     "@types/node": "^22",
     "@types/react": "19.2.10",
     "@types/react-dom": "^19.3.0",

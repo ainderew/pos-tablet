@@ -1,6 +1,6 @@
 {
-  "id": "7fdb807b-4cac-4a26-ab0b-c809265c4512",
-  "prevId": "7bfd5049-3e3a-4767-b051-1f057ab2f47a",
+  "id": "b11cec8f-0b48-43b1-83f5-89a8a56aed3b",
+  "prevId": "6c758503-01b1-4241-a5dc-d11be0247b0d",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -33,6 +33,12 @@
           "primaryKey": false,
           "notNull": true,
           "default": "'{}'::jsonb"
+        },
+        "app_version": {
+          "name": "app_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",
@@ -441,18 +447,6 @@
         },
         "min": {
           "name": "min",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "last_seen_at": {
-          "name": "last_seen_at",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "app_version": {
-          "name": "app_version",
           "type": "text",
           "primaryKey": false,
           "notNull": false
