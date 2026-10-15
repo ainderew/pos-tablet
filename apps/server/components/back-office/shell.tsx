@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react"
 import type { ReactNode } from "react"
 import Link from "next/link"
 import { useParams, usePathname, useRouter } from "next/navigation"
@@ -204,8 +204,15 @@ interface SidebarContentProps {
   onSignOut: () => void
 }
 
+// False during server rendering and hydration, true afterwards
+const noSubscribe = () => () => {}
+const useMounted = () => useSyncExternalStore(noSubscribe, () => true, () => false)
+
 function SidebarContent({ user, stores, storesError, currentStoreId, pathname, onSwitchStore, onAddStore, onNavigate, onSignOut }: SidebarContentProps) {
   const storeKnown = !!currentStoreId && (!stores || stores.some((s) => s.id === currentStoreId))
+  // Stores load in the browser anyway; rendering Radix's Select only after mount avoids its
+  // generated ids differing between the server and client renders (a hydration mismatch)
+  const mounted = useMounted()
 
   return (
     <div className="flex h-full flex-col">
@@ -222,18 +229,24 @@ function SidebarContent({ user, stores, storesError, currentStoreId, pathname, o
       <div className="grid gap-1.5 border-b p-3">
         <span className="text-muted-foreground px-1 text-xs font-medium">Store</span>
         <div className="flex items-center gap-2">
-          <Select value={storeKnown ? (currentStoreId ?? undefined) : undefined} onValueChange={onSwitchStore} disabled={!stores?.length}>
-            <SelectTrigger className="bg-background w-full min-w-0" aria-label="Store">
-              <SelectValue placeholder={storesError ? "Couldn't load stores" : stores ? "No stores yet" : "Loading stores…"} />
-            </SelectTrigger>
-            <SelectContent>
-              {stores?.map((store) => (
-                <SelectItem key={store.id} value={store.id}>
-                  {store.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          {mounted ? (
+            <Select value={storeKnown ? (currentStoreId ?? undefined) : undefined} onValueChange={onSwitchStore} disabled={!stores?.length}>
+              <SelectTrigger className="bg-background w-full min-w-0" aria-label="Store">
+                <SelectValue placeholder={storesError ? "Couldn't load stores" : stores ? "No stores yet" : "Loading stores…"} />
+              </SelectTrigger>
+              <SelectContent>
+                {stores?.map((store) => (
+                  <SelectItem key={store.id} value={store.id}>
+                    {store.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          ) : (
+            <div className="border-input bg-background text-muted-foreground flex h-9 w-full min-w-0 items-center rounded-md border px-3 text-sm">
+              Loading stores…
+            </div>
+          )}
           {canEditStores(user) && (
             <Button variant="outline" size="icon" className="bg-background shrink-0" aria-label="Add a store" title="Add a store" onClick={onAddStore}>
               <Plus />
