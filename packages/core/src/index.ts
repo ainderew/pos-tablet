@@ -1,6 +1,7 @@
 export * from "./types"
 export * from "./ph-tax"
 export * from "./model"
+export * from "./record"
 export * from "./sale"
 export * from "./void"
 export * from "./receipt"

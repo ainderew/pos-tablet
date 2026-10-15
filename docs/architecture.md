@@ -110,6 +110,17 @@ dashboards and reports (across terminals and stores), and viewing audit logs.
 - **PIN login works offline** using the synced PIN hashes. A user created in the back office has to
   sync to a terminal before they can sign in on it.
 - **The catalog is edited online only**, in the back office. Quick restock works offline.
+- **Stock:** a sale beyond the terminal's local stock is refused by default, as in POS-bir. A store
+  can switch `stock_policy` to `warn`, which allows the sale and records a NEGATIVE_STOCK warning
+  for the back office. That suits stores whose restocks are entered in the back office and may not
+  have reached the tablet yet.
+- **Everything happens inside a shift.** Sales, voids and store-credit payments need this terminal's
+  open shift, so every peso lands in a drawer count.
+- **Voids happen on the issuing terminal.** Only it holds the sale in its Z-reading and grand total,
+  and only it knows offline whether the sale was already voided.
+- **The Z-reading covers records by creation order, not by clock.** It includes every record created
+  since the previous Z (by `device_seq`). A tablet whose clock resets can't drop sales from the
+  grand total.
 - **A sale keeps the price actually charged** (`price_at_sale`), even if the price changed while
   offline.
 
@@ -249,8 +260,8 @@ The renderers print exactly what POS-bir prints today, plus optional fields:
 |---|---|
 | Unsynced sales lost with a device | Push after every write, unsynced banner, encrypted local database |
 | Duplicate invoice numbers after reinstalling or replacing a device | Counters restored from the server; a restore is blocked while the old outbox still has records; new PTU for replacement hardware |
-| Wrong device clock | Record the server receive time and flag drift over 5 minutes |
-| Several terminals overselling low stock | Live stock while online; stock may go negative locally, with an alert |
+| Wrong device clock | Z-readings select records by `device_seq`, not time; the server records its receive time and flags drift over 5 minutes |
+| Several terminals overselling low stock | Live stock while online; with `stock_policy: warn`, stock may go negative locally and the back office sees a NEGATIVE_STOCK warning |
 | Tablets running mixed app versions (manual install) | Versioned sync API; the server supports one version back |
 | Printer plugin can't drive the chosen printer | Printer spike in Phase 1; fall back to a native plugin |
 | BIR accreditation | Settle it in Phase 0, before Phase 4 |

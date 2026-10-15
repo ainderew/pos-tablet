@@ -14,8 +14,9 @@ export type ShiftOpenRecord = z.infer<typeof ShiftOpenRecordSchema>
 
 /**
  * Closing a shift: expected (theoretical) vs counted (actual) amounts per payment method.
- * Theoretical amounts are the net of the shift's sales and credit notes for that method; cash also
- * adds the opening fund and cash movements. STORE_CREDIT never reaches the drawer.
+ * Theoretical amounts are the net of the shift's sales and credit notes for that method, plus
+ * store-credit payments taken by GCash/Maya/card in the shift; cash also adds the opening fund and
+ * cash movements (a cash debt payment arrives as a CASH_IN). STORE_CREDIT never reaches the drawer.
  */
 export const ShiftCloseRecordSchema = TerminalRecordSchema.extend({
   shift_id: id,
@@ -54,8 +55,9 @@ export type CashMovementRecord = z.infer<typeof CashMovementRecordSchema>
 
 /**
  * End-of-day Z-reading for one terminal. It covers this terminal's records created after its
- * previous Z-reading, up to its own created_at. The grand total only ever changes here; it goes
- * down when credit notes for sales in an earlier Z outweigh the period's sales.
+ * previous Z-reading and before itself, by device_seq (never by the clock). The grand total only
+ * ever changes here; it goes down when credit notes for sales in an earlier Z outweigh the period's
+ * sales.
  */
 export const ZReadingRecordSchema = TerminalRecordSchema.extend({
   user_id: id.nullable(),

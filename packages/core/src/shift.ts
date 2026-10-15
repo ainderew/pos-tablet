@@ -23,26 +23,29 @@
 //   already been computed. A reason of only spaces counts as missing.
 // - Totals are summed in integer centavos, so they carry no float noise (POS-bir's SUM can give
 //   1221.8000000000002).
+// - Store-credit payments taken by GCash, Maya or card in the shift are expected in those methods.
+//   POS-bir never expected them, so the next close showed them as an unexplained surplus. A cash
+//   payment already arrives as a CASH_IN movement (buildCreditPayment), so it isn't counted again.
 // - Counted GCash/Maya/card amounts left out are 0, as the PC's closing dialog sends them; the
 //   per-method variances are on the record (POS-bir keeps them only in the audit log).
+// - "Latest" means latest created (device_seq), never the device clock.
 import { roundMoney, toCents } from "./ph-tax"
+import { recordBase } from "./record"
+import type { RecordContext } from "./record"
 import { CASH_MOVEMENT_TYPES } from "./model"
 import type {
   CashMovementRecord,
   CashMovementType,
+  CreditLedgerEntryRecord,
   ShiftCloseRecord,
   ShiftOpenRecord,
   TransactionRecord,
 } from "./model"
 import type { TerminalCounters } from "./z-reading"
 
-export interface ShiftContext {
-  storeId: string
-  terminalId: string
+export interface ShiftContext extends RecordContext {
   /** The signed-in user doing this (required to open a shift) */
   userId: string | null
-  now: Date
-  newId: () => string
 }
 
 export type ShiftErrorCode =
@@ -85,7 +88,7 @@ export function findOpenShift(
   let open: ShiftOpenRecord | null = null
   for (const s of opens) {
     if (s.terminal_id !== terminalId || closed.has(s.id)) continue
-    if (!open || Date.parse(s.created_at) > Date.parse(open.created_at)) open = s
+    if (!open || s.device_seq > open.device_seq) open = s
   }
   return open
 }
@@ -136,10 +139,7 @@ export function buildShiftOpen(request: ShiftOpenRequest, data: ShiftOpenData, c
   return {
     ok: true,
     shift: {
-      id: ctx.newId(),
-      store_id: ctx.storeId,
-      terminal_id: ctx.terminalId,
-      created_at: ctx.now.toISOString(),
+      ...recordBase(ctx),
       user_id: ctx.userId,
       opening_fund: roundMoney(openingFund),
       snapshot_z_counter: data.counters.zCounter,
@@ -192,10 +192,7 @@ export function buildCashMovement(
   return {
     ok: true,
     movement: {
-      id: ctx.newId(),
-      store_id: ctx.storeId,
-      terminal_id: ctx.terminalId,
-      created_at: ctx.now.toISOString(),
+      ...recordBase(ctx),
       shift_id: shift.id,
       user_id: ctx.userId,
       type: request.type as CashMovementType,
@@ -224,6 +221,8 @@ export interface ShiftCloseData {
   transactions: readonly TransactionRecord[]
   /** This terminal's cash movements; only this shift's count */
   cashMovements: readonly CashMovementRecord[]
+  /** This terminal's store-credit ledger; this shift's GCash/Maya/card PAYMENT entries are expected */
+  creditLedgerEntries: readonly CreditLedgerEntryRecord[]
   /** The terminal's counters now (terminalCounters), snapshotted on the close */
   counters: TerminalCounters
 }
@@ -237,10 +236,18 @@ export interface ShiftCashBreakdown {
   safeDrops: number
 }
 
+/** Store-credit payments taken in the shift, included in the theoretical amounts */
+export interface ShiftCreditPayments {
+  gcash: number
+  maya: number
+  card: number
+}
+
 export interface ShiftCloseResult {
   ok: true
   close: ShiftCloseRecord
   cash: ShiftCashBreakdown
+  creditPayments: ShiftCreditPayments
 }
 
 export function computeShiftClose(
@@ -267,22 +274,31 @@ export function computeShiftClose(
     }
   }
 
-  // 2. Expected per payment method: this shift's sales and credit notes (every status counts)
+  // 2. Per payment method: this shift's sales and credit notes (every status counts)
   const ofShift = (r: { shift_id: string; terminal_id: string }) => r.shift_id === shift.id && r.terminal_id === shift.terminal_id
   const sales = { CASH: 0, GCASH: 0, MAYA: 0, CARD: 0, STORE_CREDIT: 0 }
   for (const t of data.transactions) if (ofShift(t)) sales[t.payment_method] += toCents(t.net_sales)
 
-  // 3. Cash movements
+  // 3. Cash movements (including the CASH_IN of a cash debt payment)
   const moved = { CASH_IN: 0, CASH_OUT: 0, SAFE_DROP: 0 }
   for (const m of data.cashMovements) if (ofShift(m)) moved[m.type] += toCents(m.amount)
 
-  // 4. Theoretical vs actual
+  // 4. Store-credit payments taken by GCash, Maya or card (not cash: that is a CASH_IN above)
+  const paid = { GCASH: 0, MAYA: 0, CARD: 0 }
+  for (const e of data.creditLedgerEntries) {
+    if (e.entry_type !== "PAYMENT" || e.shift_id !== shift.id || e.terminal_id !== shift.terminal_id) continue
+    if (e.payment_method === "GCASH" || e.payment_method === "MAYA" || e.payment_method === "CARD") {
+      paid[e.payment_method] += toCents(e.amount)
+    }
+  }
+
+  // 5. Theoretical vs actual
   const openingFund = toCents(shift.opening_fund)
   const theoretical = {
     cash: openingFund + sales.CASH + moved.CASH_IN - moved.CASH_OUT - moved.SAFE_DROP,
-    gcash: sales.GCASH,
-    maya: sales.MAYA,
-    card: sales.CARD,
+    gcash: sales.GCASH + paid.GCASH,
+    maya: sales.MAYA + paid.MAYA,
+    card: sales.CARD + paid.CARD,
   }
   const actual = {
     cash: toCents(counted.cash),
@@ -300,10 +316,7 @@ export function computeShiftClose(
   return {
     ok: true,
     close: {
-      id: ctx.newId(),
-      store_id: ctx.storeId,
-      terminal_id: ctx.terminalId,
-      created_at: ctx.now.toISOString(),
+      ...recordBase(ctx),
       shift_id: shift.id,
       user_id: ctx.userId,
       theoretical_cash: fromCents(theoretical.cash),
@@ -329,5 +342,6 @@ export function computeShiftClose(
       cashOut: fromCents(moved.CASH_OUT),
       safeDrops: fromCents(moved.SAFE_DROP),
     },
+    creditPayments: { gcash: fromCents(paid.GCASH), maya: fromCents(paid.MAYA), card: fromCents(paid.CARD) },
   }
 }

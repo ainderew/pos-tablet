@@ -151,7 +151,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000003",
-      "invoiceNumber": "SI-000001"
+      "invoiceNumber": "SI-000001",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -174,7 +175,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000007",
-      "invoiceNumber": "SI-000002"
+      "invoiceNumber": "SI-000002",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -193,7 +195,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000010",
-      "invoiceNumber": "SI-000003"
+      "invoiceNumber": "SI-000003",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -212,7 +215,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000012",
-      "invoiceNumber": "SI-000004"
+      "invoiceNumber": "SI-000004",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -231,7 +235,10 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000014",
-      "invoiceNumber": "SI-000005"
+      "invoiceNumber": "SI-000005",
+      "ledgerIds": [
+        "00000000-0000-4000-8000-000000000016"
+      ]
     },
     {
       "kind": "sale",
@@ -268,7 +275,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000017",
-      "invoiceNumber": "SI-000006"
+      "invoiceNumber": "SI-000006",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -287,7 +295,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000022",
-      "invoiceNumber": "SI-000007"
+      "invoiceNumber": "SI-000007",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -306,7 +315,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000024",
-      "invoiceNumber": "SI-000008"
+      "invoiceNumber": "SI-000008",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -324,7 +334,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000026",
-      "invoiceNumber": "SI-000009"
+      "invoiceNumber": "SI-000009",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -353,7 +364,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000028",
-      "invoiceNumber": "SI-000010"
+      "invoiceNumber": "SI-000010",
+      "ledgerIds": []
     },
     {
       "kind": "void",
@@ -363,7 +375,8 @@
       "originalTransactionId": "00000000-0000-4000-8000-000000000022",
       "status": 200,
       "creditNoteId": "00000000-0000-4000-8000-000000000031",
-      "invoiceNumber": "CN-000001"
+      "invoiceNumber": "CN-000001",
+      "ledgerIds": []
     },
     {
       "kind": "cash_movement",
@@ -658,7 +671,8 @@
       "originalTransactionId": "00000000-0000-4000-8000-000000000024",
       "status": 200,
       "creditNoteId": "00000000-0000-4000-8000-000000000041",
-      "invoiceNumber": "CN-000002"
+      "invoiceNumber": "CN-000002",
+      "ledgerIds": []
     },
     {
       "kind": "void",
@@ -668,7 +682,8 @@
       "originalTransactionId": "00000000-0000-4000-8000-000000000026",
       "status": 200,
       "creditNoteId": "00000000-0000-4000-8000-000000000043",
-      "invoiceNumber": "CN-000003"
+      "invoiceNumber": "CN-000003",
+      "ledgerIds": []
     },
     {
       "kind": "void",
@@ -678,7 +693,10 @@
       "originalTransactionId": "00000000-0000-4000-8000-000000000014",
       "status": 200,
       "creditNoteId": "00000000-0000-4000-8000-000000000045",
-      "invoiceNumber": "CN-000004"
+      "invoiceNumber": "CN-000004",
+      "ledgerIds": [
+        "00000000-0000-4000-8000-000000000046"
+      ]
     },
     {
       "kind": "sale",
@@ -701,7 +719,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000048",
-      "invoiceNumber": "SI-000011"
+      "invoiceNumber": "SI-000011",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -720,7 +739,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000051",
-      "invoiceNumber": "SI-000012"
+      "invoiceNumber": "SI-000012",
+      "ledgerIds": []
     },
     {
       "kind": "cash_movement",
@@ -906,7 +926,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000058",
-      "invoiceNumber": "SI-000013"
+      "invoiceNumber": "SI-000013",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -925,7 +946,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000061",
-      "invoiceNumber": "SI-000014"
+      "invoiceNumber": "SI-000014",
+      "ledgerIds": []
     },
     {
       "kind": "sale",
@@ -944,7 +966,8 @@
       },
       "status": 201,
       "transactionId": "00000000-0000-4000-8000-000000000063",
-      "invoiceNumber": "SI-000015"
+      "invoiceNumber": "SI-000015",
+      "ledgerIds": []
     },
     {
       "kind": "void",
@@ -954,7 +977,8 @@
       "originalTransactionId": "00000000-0000-4000-8000-000000000017",
       "status": 200,
       "creditNoteId": "00000000-0000-4000-8000-000000000065",
-      "invoiceNumber": "CN-000005"
+      "invoiceNumber": "CN-000005",
+      "ledgerIds": []
     },
     {
       "kind": "void",
@@ -964,12 +988,83 @@
       "originalTransactionId": "00000000-0000-4000-8000-000000000063",
       "status": 200,
       "creditNoteId": "00000000-0000-4000-8000-000000000067",
-      "invoiceNumber": "CN-000006"
+      "invoiceNumber": "CN-000006",
+      "ledgerIds": []
+    },
+    {
+      "kind": "sale",
+      "name": "s16_store_credit",
+      "at": "2026-01-06 00:07:00",
+      "shiftId": "00000000-0000-4000-8000-000000000056",
+      "lines": [
+        [
+          "soap",
+          10
+        ]
+      ],
+      "request": {
+        "payment_method": "STORE_CREDIT",
+        "reference_number": "rosa"
+      },
+      "status": 201,
+      "transactionId": "00000000-0000-4000-8000-000000000069",
+      "invoiceNumber": "SI-000016",
+      "ledgerIds": [
+        "00000000-0000-4000-8000-000000000071"
+      ]
+    },
+    {
+      "kind": "credit_payment",
+      "name": "debt_payment_cash",
+      "at": "2026-01-06 00:08:00",
+      "shiftId": "00000000-0000-4000-8000-000000000056",
+      "request": {
+        "customerId": "rosa",
+        "amount": 100,
+        "paymentMethod": "CASH",
+        "shiftId": "00000000-0000-4000-8000-000000000056"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 150,
+        "status": "ACTIVE"
+      },
+      "ledgerIds": [
+        "00000000-0000-4000-8000-000000000072"
+      ],
+      "cashMovementIds": [
+        "00000000-0000-4000-8000-000000000073"
+      ]
+    },
+    {
+      "kind": "credit_payment",
+      "name": "debt_payment_gcash",
+      "at": "2026-01-06 00:09:00",
+      "shiftId": "00000000-0000-4000-8000-000000000056",
+      "request": {
+        "customerId": "rosa",
+        "amount": 120.5,
+        "paymentMethod": "GCASH",
+        "reference": "GC-7001",
+        "shiftId": "00000000-0000-4000-8000-000000000056",
+        "notes": "Partial"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "newBalance": 29.5,
+        "status": "ACTIVE"
+      },
+      "ledgerIds": [
+        "00000000-0000-4000-8000-000000000074"
+      ],
+      "cashMovementIds": []
     },
     {
       "kind": "cash_movement",
       "name": "safe_drop_day_2",
-      "at": "2026-01-06 00:07:00",
+      "at": "2026-01-06 00:10:00",
       "shiftId": "00000000-0000-4000-8000-000000000056",
       "request": {
         "shiftId": "00000000-0000-4000-8000-000000000056",
@@ -979,23 +1074,23 @@
       },
       "status": 201,
       "response": {
-        "id": "00000000-0000-4000-8000-000000000069",
+        "id": "00000000-0000-4000-8000-000000000075",
         "shift_id": "00000000-0000-4000-8000-000000000056",
         "type": "SAFE_DROP",
         "amount": 500,
         "reason": "Evening drop",
-        "created_at": "2026-01-06 00:07:00",
+        "created_at": "2026-01-06 00:10:00",
         "is_synced": 0
       }
     },
     {
       "kind": "close_shift",
       "name": "close_shift_3",
-      "at": "2026-01-06 00:08:00",
+      "at": "2026-01-06 00:11:00",
       "request": {
         "shiftId": "00000000-0000-4000-8000-000000000056",
         "actualCash": 0,
-        "actualGcash": 0,
+        "actualGcash": 120.5,
         "actualMaya": 87.5,
         "actualCard": 0
       },
@@ -1005,13 +1100,13 @@
         "pos_id": "pc-golden",
         "status": "CLOSED",
         "start_time": "2026-01-06 00:01:00",
-        "end_time": "2026-01-06 00:08:00",
+        "end_time": "2026-01-06 00:11:00",
         "opening_fund": 1000,
-        "theoretical_cash": 374.86,
+        "theoretical_cash": 474.86,
         "actual_cash": 0,
-        "variance": -374.86,
+        "variance": -354.36,
         "theoretical_gcash": 0,
-        "actual_gcash": 0,
+        "actual_gcash": 120.5,
         "theoretical_maya": 87.5,
         "actual_maya": 87.5,
         "theoretical_card": 0,
@@ -1026,29 +1121,29 @@
         "closing_z_counter": 1,
         "closing_accumulated_total": 2516.03,
         "variance": {
-          "cash": -374.86,
-          "gcash": 0,
+          "cash": -474.86,
+          "gcash": 120.5,
           "maya": 0,
           "card": 0,
-          "total": -374.86
+          "total": -354.36
         }
       }
     },
     {
       "kind": "z_preview",
       "name": "z2_preview",
-      "at": "2026-01-06 00:09:00",
+      "at": "2026-01-06 00:12:00",
       "status": 200,
       "response": {
-        "count": 3,
+        "count": 4,
         "void_count": 2,
-        "sales_total": 429.58000000000004,
+        "sales_total": 679.58,
         "void_total": 467.22,
-        "total_net": -37.640000000000015,
-        "total_vat": 11.570000000000002,
+        "total_net": 212.35999999999999,
+        "total_vat": 38.36,
         "total_cash_sales": -125.14000000000001,
         "start_invoice": "SI-000013",
-        "end_invoice": "SI-000015",
+        "end_invoice": "SI-000016",
         "start_credit_note": "CN-000005",
         "end_credit_note": "CN-000006"
       }
@@ -1056,26 +1151,26 @@
     {
       "kind": "z_reading",
       "name": "z2",
-      "at": "2026-01-06 00:10:00",
+      "at": "2026-01-06 00:13:00",
       "request": {
         "terminalId": "terminal-pc-1"
       },
       "status": 200,
       "response": {
-        "id": "00000000-0000-4000-8000-000000000071",
+        "id": "00000000-0000-4000-8000-000000000077",
         "type": "Z",
-        "reading_date": "2026-01-06 00:10:00",
-        "total_sales": -37.640000000000015,
-        "total_vat": 11.570000000000002,
+        "reading_date": "2026-01-06 00:13:00",
+        "total_sales": 212.35999999999999,
+        "total_vat": 38.36,
         "beginning_invoice": "SI-000013",
-        "ending_invoice": "SI-000015",
-        "accumulated_grand_total": 2478.39,
+        "ending_invoice": "SI-000016",
+        "accumulated_grand_total": 2728.39,
         "pos_id": "pc-golden",
         "is_synced": 0,
         "terminal_id": "terminal-pc-1",
         "z_counter": 2,
         "beginning_grand_total": 2516.03,
-        "sales_total": 429.58000000000004,
+        "sales_total": 679.58,
         "void_total": 467.22,
         "void_count": 2,
         "start_credit_note": "CN-000005",
@@ -1083,23 +1178,23 @@
         "cash_breakdown": {
           "beginning_funds": 1000,
           "cash_sales": -125.14000000000001,
-          "cash_in": 0,
+          "cash_in": 100,
           "cash_out": 0,
           "safe_drops": 500,
-          "theoretical_cash": 374.86
+          "theoretical_cash": 474.86
         }
       },
       "terminalAfter": {
         "id": "terminal-pc-1",
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "last_z_counter": 2
       },
-      "settingsGrandTotal": "2478.39"
+      "settingsGrandTotal": "2728.39"
     },
     {
       "kind": "z_preview",
       "name": "z3_preview",
-      "at": "2026-01-06 00:11:00",
+      "at": "2026-01-06 00:14:00",
       "status": 200,
       "response": {
         "count": 0,
@@ -1118,25 +1213,25 @@
     {
       "kind": "z_reading",
       "name": "z3",
-      "at": "2026-01-06 00:12:00",
+      "at": "2026-01-06 00:15:00",
       "request": {
         "terminalId": "terminal-pc-1"
       },
       "status": 200,
       "response": {
-        "id": "00000000-0000-4000-8000-000000000072",
+        "id": "00000000-0000-4000-8000-000000000078",
         "type": "Z",
-        "reading_date": "2026-01-06 00:12:00",
+        "reading_date": "2026-01-06 00:15:00",
         "total_sales": 0,
         "total_vat": 0,
         "beginning_invoice": null,
         "ending_invoice": null,
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "pos_id": "pc-golden",
         "is_synced": 0,
         "terminal_id": "terminal-pc-1",
         "z_counter": 3,
-        "beginning_grand_total": 2478.39,
+        "beginning_grand_total": 2728.39,
         "sales_total": 0,
         "void_total": 0,
         "void_count": 0,
@@ -1153,10 +1248,10 @@
       },
       "terminalAfter": {
         "id": "terminal-pc-1",
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "last_z_counter": 3
       },
-      "settingsGrandTotal": "2478.39"
+      "settingsGrandTotal": "2728.39"
     },
     {
       "kind": "add_terminal",
@@ -1197,19 +1292,19 @@
       },
       "status": 200,
       "response": {
-        "id": "00000000-0000-4000-8000-000000000073",
+        "id": "00000000-0000-4000-8000-000000000079",
         "type": "Z",
         "reading_date": "2026-01-07 00:03:00",
         "total_sales": 0,
         "total_vat": 0,
         "beginning_invoice": null,
         "ending_invoice": null,
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "pos_id": "pc-golden",
         "is_synced": 0,
         "terminal_id": "terminal-pc-legacy",
         "z_counter": 4,
-        "beginning_grand_total": 2478.39,
+        "beginning_grand_total": 2728.39,
         "sales_total": 0,
         "void_total": 0,
         "void_count": 0,
@@ -1226,10 +1321,10 @@
       },
       "terminalAfter": {
         "id": "terminal-pc-legacy",
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "last_z_counter": 4
       },
-      "settingsGrandTotal": "2478.39"
+      "settingsGrandTotal": "2728.39"
     }
   ],
   "tables": {
@@ -1821,6 +1916,34 @@
         "amount_tendered": 0,
         "change_amount": 0,
         "reference_number": "SI-000015"
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000069",
+        "invoice_number": "SI-000016",
+        "status": "PAID",
+        "void_reason": null,
+        "authorized_by": null,
+        "void_authorized_by": null,
+        "voided_at": null,
+        "transaction_type": "SALE",
+        "pos_id": "pc-golden",
+        "is_synced": 0,
+        "created_at": "2026-01-06 00:07:00",
+        "gross_sales": 250,
+        "vatable_sales": 223.21,
+        "vat_amount": 26.79,
+        "vat_exempt_sales": 0,
+        "zero_rated_sales": 0,
+        "total_discount": 0,
+        "net_sales": 250,
+        "pax_count": 1,
+        "senior_count": 0,
+        "sc_pwd_id": null,
+        "sc_pwd_name": null,
+        "payment_method": "STORE_CREDIT",
+        "amount_tendered": null,
+        "change_amount": 0,
+        "reference_number": "rosa"
       }
     ],
     "shifts": [
@@ -1873,13 +1996,13 @@
         "pos_id": "pc-golden",
         "status": "CLOSED",
         "start_time": "2026-01-06 00:01:00",
-        "end_time": "2026-01-06 00:08:00",
+        "end_time": "2026-01-06 00:11:00",
         "opening_fund": 1000,
-        "theoretical_cash": 374.86,
+        "theoretical_cash": 474.86,
         "actual_cash": 0,
-        "variance": -374.86,
+        "variance": -354.36,
         "theoretical_gcash": 0,
-        "actual_gcash": 0,
+        "actual_gcash": 120.5,
         "theoretical_maya": 87.5,
         "actual_maya": 87.5,
         "theoretical_card": 0,
@@ -1947,12 +2070,88 @@
         "is_synced": 0
       },
       {
-        "id": "00000000-0000-4000-8000-000000000069",
+        "id": "00000000-0000-4000-8000-000000000073",
+        "shift_id": "00000000-0000-4000-8000-000000000056",
+        "type": "CASH_IN",
+        "amount": 100,
+        "reason": "Debt Payment - Aling Rosa",
+        "created_at": "2026-01-06 00:08:00",
+        "is_synced": 0
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000075",
         "shift_id": "00000000-0000-4000-8000-000000000056",
         "type": "SAFE_DROP",
         "amount": 500,
         "reason": "Evening drop",
-        "created_at": "2026-01-06 00:07:00",
+        "created_at": "2026-01-06 00:10:00",
+        "is_synced": 0
+      }
+    ],
+    "credit_ledger": [
+      {
+        "id": "00000000-0000-4000-8000-000000000016",
+        "customer_id": "rosa",
+        "transaction_id": "00000000-0000-4000-8000-000000000014",
+        "shift_id": null,
+        "entry_type": "CHARGE",
+        "amount": 336,
+        "running_balance": 336,
+        "occurred_at": "2026-01-05 00:10:00",
+        "notes": null,
+        "pos_id": "pc-golden",
+        "is_synced": 0
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000046",
+        "customer_id": "rosa",
+        "transaction_id": "00000000-0000-4000-8000-000000000045",
+        "shift_id": null,
+        "entry_type": "ADJUSTMENT",
+        "amount": 336,
+        "running_balance": 0,
+        "occurred_at": "2026-01-05 00:32:00",
+        "notes": "Void of SI-000005 (CN-000004): Charged wrong customer",
+        "pos_id": "pc-golden",
+        "is_synced": 0
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000071",
+        "customer_id": "rosa",
+        "transaction_id": "00000000-0000-4000-8000-000000000069",
+        "shift_id": null,
+        "entry_type": "CHARGE",
+        "amount": 250,
+        "running_balance": 250,
+        "occurred_at": "2026-01-06 00:07:00",
+        "notes": null,
+        "pos_id": "pc-golden",
+        "is_synced": 0
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000072",
+        "customer_id": "rosa",
+        "transaction_id": null,
+        "shift_id": "00000000-0000-4000-8000-000000000056",
+        "entry_type": "PAYMENT",
+        "amount": 100,
+        "running_balance": 150,
+        "occurred_at": "2026-01-06 00:08:00",
+        "notes": "Payment via CASH . ",
+        "pos_id": "pc-golden",
+        "is_synced": 0
+      },
+      {
+        "id": "00000000-0000-4000-8000-000000000074",
+        "customer_id": "rosa",
+        "transaction_id": null,
+        "shift_id": "00000000-0000-4000-8000-000000000056",
+        "entry_type": "PAYMENT",
+        "amount": 120.5,
+        "running_balance": 29.5,
+        "occurred_at": "2026-01-06 00:09:00",
+        "notes": "Payment via GCASH (GC-7001). Partial",
+        "pos_id": "pc-golden",
         "is_synced": 0
       }
     ],
@@ -1970,38 +2169,38 @@
         "is_synced": 0
       },
       {
-        "id": "00000000-0000-4000-8000-000000000071",
+        "id": "00000000-0000-4000-8000-000000000077",
         "type": "Z",
-        "reading_date": "2026-01-06 00:10:00",
-        "total_sales": -37.640000000000015,
-        "total_vat": 11.570000000000002,
+        "reading_date": "2026-01-06 00:13:00",
+        "total_sales": 212.35999999999999,
+        "total_vat": 38.36,
         "beginning_invoice": "SI-000013",
-        "ending_invoice": "SI-000015",
-        "accumulated_grand_total": 2478.39,
+        "ending_invoice": "SI-000016",
+        "accumulated_grand_total": 2728.39,
         "pos_id": "pc-golden",
         "is_synced": 0
       },
       {
-        "id": "00000000-0000-4000-8000-000000000072",
+        "id": "00000000-0000-4000-8000-000000000078",
         "type": "Z",
-        "reading_date": "2026-01-06 00:12:00",
+        "reading_date": "2026-01-06 00:15:00",
         "total_sales": 0,
         "total_vat": 0,
         "beginning_invoice": null,
         "ending_invoice": null,
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "pos_id": "pc-golden",
         "is_synced": 0
       },
       {
-        "id": "00000000-0000-4000-8000-000000000073",
+        "id": "00000000-0000-4000-8000-000000000079",
         "type": "Z",
         "reading_date": "2026-01-07 00:03:00",
         "total_sales": 0,
         "total_vat": 0,
         "beginning_invoice": null,
         "ending_invoice": null,
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "pos_id": "pc-golden",
         "is_synced": 0
       }
@@ -2009,13 +2208,13 @@
     "terminals": [
       {
         "id": "terminal-pc-1",
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "last_z_counter": 3,
         "current_state": "CLOSED"
       },
       {
         "id": "terminal-pc-legacy",
-        "accumulated_grand_total": 2478.39,
+        "accumulated_grand_total": 2728.39,
         "last_z_counter": 4,
         "current_state": "CLOSED"
       }

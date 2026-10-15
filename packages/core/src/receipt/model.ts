@@ -27,7 +27,9 @@ export interface ReceiptItemLine {
   name: string
   /** Negative on void slips; weights may be fractional (printed up to 3 dp) */
   quantity: number
-  /** Printed as "qty x unit"; null prints the quantity alone */
+  /** Printed after the quantity ("1.375 kg"); null for counted items */
+  unit: string | null
+  /** Printed as "qty x unit price"; null prints the quantity alone */
   unitPrice: number | null
   lineTotal: number
 }
@@ -91,17 +93,18 @@ export interface VoidSlipOptions extends ReceiptOptions {
 }
 
 export interface StatementOptions extends ReceiptOptions {
-  /** Print time, shown as the statement date. Default: the current time. */
-  now?: Date
-  /** Default "SOA-" + the last 6 digits of `now` in ms, as POS-bir numbers statements */
-  statementNumber?: string
+  /** Print time, shown as the statement date (builders never read the clock) */
+  now: Date
+  /** E.g. "SOA-000123" from a terminal counter (POS-bir used the last 6 digits of the time in ms, which repeat) */
+  statementNumber: string
 }
 
 export interface PaymentReceiptOptions extends ReceiptOptions {
   receiptNumber?: string | null
   cashierName?: string | null
-  /** Ledger entries don't record how the customer paid, so the caller passes it */
+  /** Overrides the entry's payment_method (e.g. a display name) */
   paymentMethod?: string | null
+  /** Overrides the entry's reference_number */
   referenceNumber?: string | null
   amountTendered?: number | null
   change?: number | null
@@ -119,11 +122,14 @@ export type StatementLedgerEntry = Pick<CreditLedgerEntryRecord, "created_at" | 
   invoice_number?: string | null
 }
 
-export type PaymentLedgerEntry = Pick<CreditLedgerEntryRecord, "created_at" | "entry_type" | "amount" | "running_balance"> & {
-  customer_id?: string
-}
+export type PaymentLedgerEntry = Pick<CreditLedgerEntryRecord, "created_at" | "entry_type" | "amount" | "running_balance"> &
+  Partial<Pick<CreditLedgerEntryRecord, "payment_method" | "reference_number">> & {
+    customer_id?: string
+  }
 
 export const DEFAULT_RECEIPT_TIME_ZONE = "Asia/Manila"
+/** Printed after weighed quantities; POS-bir sells and stocks WEIGHT products in kilograms */
+export const WEIGHT_UNIT = "kg"
 export const NOT_VALID_FOR_INPUT_TAX = "THIS DOCUMENT IS NOT VALID FOR CLAIM OF INPUT TAX"
 
 // ---------------------------------------------------------------------------
@@ -145,6 +151,13 @@ export function formatReceiptQuantity(quantity: number): string {
   if (typeof quantity !== "number" || !Number.isFinite(quantity)) return ""
   if (Number.isInteger(quantity)) return String(quantity)
   return quantity.toFixed(3).replace(/0+$/, "").replace(/\.$/, "")
+}
+
+/** The quantity column of an item: "2 x 65.00", "1.375 kg x 50.00", or the quantity alone without a unit price. */
+export function formatReceiptItemDetail(item: Pick<ReceiptItemLine, "quantity" | "unit" | "unitPrice">): string {
+  const qty = formatReceiptQuantity(item.quantity) + (item.unit ? ` ${item.unit}` : "")
+  const unitPrice = item.unitPrice === null ? "" : formatReceiptMoney(item.unitPrice)
+  return unitPrice ? `${qty} x ${unitPrice}` : qty
 }
 
 const dateTimeFormats = new Map<string, Intl.DateTimeFormat>()
@@ -246,6 +259,8 @@ function linesOf(transaction: TransactionRecord, items: TransactionItemRecord[],
   return items
 }
 
+const unitOf = (item: TransactionItemRecord) => (item.unit_type === "WEIGHT" ? WEIGHT_UNIT : null)
+
 const emptyDocument = (kind: ReceiptKind, title: string): ReceiptDocument => ({
   kind,
   header: [],
@@ -289,6 +304,7 @@ export function buildSaleReceipt(
     items: linesOf(t, items, "buildSaleReceipt").map((i) => ({
       name: i.product_name,
       quantity: i.quantity_sold,
+      unit: unitOf(i),
       unitPrice: i.price_at_sale,
       lineTotal: roundMoney(i.price_at_sale * i.quantity_sold),
     })),
@@ -345,6 +361,7 @@ export function buildVoidSlip(
     items: linesOf(originalSale, items, "buildVoidSlip").map((i) => ({
       name: i.product_name || "Item",
       quantity: negate(i.quantity_sold),
+      unit: unitOf(i),
       unitPrice: i.price_at_sale,
       lineTotal: negate(roundMoney(i.price_at_sale * i.quantity_sold)),
     })),
@@ -373,11 +390,13 @@ const ENTRY_LABEL: Record<CreditLedgerEntryRecord["entry_type"], string> = {
 export function buildStatementOfAccount(
   customer: ReceiptCustomer,
   ledgerEntries: StatementLedgerEntry[],
-  business: ReceiptBusiness = {},
-  opts: StatementOptions = {}
+  business: ReceiptBusiness,
+  opts: StatementOptions
 ): ReceiptDocument {
   const tz = opts.timeZone ?? DEFAULT_RECEIPT_TIME_ZONE
-  const now = opts.now ?? new Date()
+  const now = opts.now
+  if (!(now instanceof Date) || Number.isNaN(now.getTime())) throw new Error("buildStatementOfAccount: opts.now must be a valid Date")
+  if (!hasText(opts.statementNumber)) throw new Error("buildStatementOfAccount: opts.statementNumber is required")
   const foreign = ledgerEntries.find((e) => customer.id && e.customer_id && e.customer_id !== customer.id)
   if (foreign) throw new Error("buildStatementOfAccount: a ledger entry belongs to another customer")
 
@@ -390,6 +409,7 @@ export function buildStatementOfAccount(
     return {
       name: `${formatReceiptShortDate(e.created_at, tz)} - ${ENTRY_LABEL[e.entry_type] ?? e.entry_type}${invoice}`,
       quantity: 1,
+      unit: null,
       unitPrice: Math.abs(lineTotal),
       lineTotal,
     }
@@ -400,7 +420,7 @@ export function buildStatementOfAccount(
     ...emptyDocument("statement", "STATEMENT OF ACCOUNT"),
     header: buildHeader(business),
     meta: [
-      ...textRow("SOA No", opts.statementNumber ?? "SOA-" + now.getTime().toString().slice(-6)),
+      ...textRow("SOA No", opts.statementNumber),
       ...textRow("Date", formatReceiptDate(now, tz)),
       ...textRow("Customer", customer.full_name),
     ],
@@ -410,7 +430,10 @@ export function buildStatementOfAccount(
   }
 }
 
-/** Receipt for a store-credit payment: balance before, amount paid, balance after. */
+/**
+ * Receipt for a store-credit payment: balance before, amount paid, balance after, and how it was
+ * paid (the entry's payment_method / reference_number unless the options override them).
+ */
 export function buildPaymentReceipt(
   customer: ReceiptCustomer,
   paymentEntry: PaymentLedgerEntry,
@@ -439,8 +462,8 @@ export function buildPaymentReceipt(
       ...moneyRow("Remaining Balance", newBalance),
     ],
     payment: [
-      ...textRow("Payment", opts.paymentMethod),
-      ...textRow("Reference No", opts.referenceNumber),
+      ...textRow("Payment", opts.paymentMethod ?? paymentEntry.payment_method),
+      ...textRow("Reference No", opts.referenceNumber ?? paymentEntry.reference_number),
       ...moneyRow("Amount Tendered", opts.amountTendered),
       ...moneyRow("Change", opts.change),
     ],

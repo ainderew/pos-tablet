@@ -4,7 +4,7 @@
 // Text is first reduced to characters the selected code page can print (one byte each), then laid
 // out, so every line is measured exactly as it prints. User text can never emit control bytes:
 // anything outside the code page becomes a fallback or "?".
-import { formatReceiptMoney, formatReceiptQuantity } from "./model"
+import { formatReceiptItemDetail, formatReceiptMoney } from "./model"
 import type { ReceiptDocument, ReceiptRow } from "./model"
 
 export type EscPosPaperWidth = 58 | 80
@@ -219,12 +219,12 @@ function layout(doc: ReceiptDocument, width: number, codePage: EscPosCodePage): 
     rule()
     for (const item of doc.items) {
       push(wrap(p(item.name), width), LEFT)
-      const qty = formatReceiptQuantity(item.quantity)
-      const unit = item.unitPrice === null ? "" : formatReceiptMoney(item.unitPrice)
-      const detail = "  " + (unit ? `${qty} x ${unit}` : qty)
+      // The unit is free text in the model, so it goes through the code page like everything else
+      const detail = "  " + p(formatReceiptItemDetail(item))
       const total = formatReceiptMoney(item.lineTotal)
       if (detail.length + 1 + total.length <= width) push([spread(detail, total, width)], LEFT)
-      else push([...wrap(detail.trim(), width), total.padStart(width)], LEFT)
+      // Too long together: the total goes on its own line, flush right
+      else push([...(detail.length <= width ? [detail] : wrap(detail.trim(), width)), total.padStart(width)], LEFT)
     }
   }
 

@@ -45,6 +45,7 @@ describe(`buildSale matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
   it.each(scenarios.map((s) => [s.name, s] as const))("%s", (_name, s) => {
     const req = s.request
     let n = 0
+    let seq = 100
     const result = buildSale(
       {
         lines: req.cart.map((c) => ({ productId: c.product.id, quantity: c.quantity })),
@@ -62,14 +63,15 @@ describe(`buildSale matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
       {
         products: new Map(s.products.map((p) => [p.id, p])),
         customer: s.customers.find((c) => c.id === req.reference_number) ?? null,
+        openShift: { id: "shift-1", store_id: "store-1", terminal_id: "terminal-1" },
       },
       {
         storeId: "store-1",
         terminalId: "terminal-1",
-        shiftId: "shift-1",
         cashierId: "user-1",
         now: new Date("2026-10-15T01:00:00.000Z"),
         newId: () => `id-${++n}`,
+        nextSeq: () => ++seq,
         nextInvoiceNumber: 1,
       }
     )
@@ -91,7 +93,28 @@ describe(`buildSale matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
     ] as const) {
       expect(tx[field], field).toEqual(pc[field])
     }
-    expect(tx).toMatchObject({ transaction_type: "SALE", status: "PAID", shift_id: "shift-1", cashier_id: "user-1" })
+    expect(tx).toMatchObject({
+      transaction_type: "SALE",
+      status: "PAID",
+      shift_id: "shift-1",
+      cashier_id: "user-1",
+      store_id: "store-1",
+      terminal_id: "terminal-1",
+    })
+
+    // Linkage: every record belongs to this sale, terminal and shift, in creation order
+    const products = new Map(s.products.map((p) => [p.id, p]))
+    for (const i of result.items) {
+      expect(i).toMatchObject({ transaction_id: tx.id, terminal_id: "terminal-1", unit_type: products.get(i.product_id)!.unit_type })
+    }
+    for (const m of result.stockMovements) expect(m).toMatchObject({ ref_id: tx.id, reason: "SALE", terminal_id: "terminal-1" })
+    if (result.ledgerEntry) {
+      expect(result.ledgerEntry).toMatchObject({ transaction_id: tx.id, shift_id: "shift-1", customer_id: req.reference_number })
+    }
+    const all = [tx, ...result.items, ...result.stockMovements, ...(result.ledgerEntry ? [result.ledgerEntry] : [])]
+    expect(all.map((r) => r.device_seq)).toEqual(all.map((_, k) => 101 + k))
+    expect(new Set(all.map((r) => r.id)).size).toBe(all.length)
+    expect(result.warnings).toEqual([])
 
     // Every record is valid for sync
     TransactionRecordSchema.parse(tx)

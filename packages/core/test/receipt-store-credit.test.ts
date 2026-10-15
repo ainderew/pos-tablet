@@ -15,9 +15,10 @@ describe("store-credit sale receipt", () => {
     { lines: [{ productId: "soap", quantity: 2 }], paymentMethod: "STORE_CREDIT", referenceNumber: "8f14e45f-ceea-467a-9575-7a1b2c3d4e5f" },
     {
       products: new Map([["soap", soap]]),
+      openShift: { id: "sh", store_id: "s", terminal_id: "t" },
       customer: { id: "8f14e45f-ceea-467a-9575-7a1b2c3d4e5f", credit_limit: 1000, current_debt_balance: 0, credit_status: "ACTIVE" },
     },
-    { storeId: "s", terminalId: "t", shiftId: "sh", cashierId: null, now: new Date("2026-10-15T01:00:00Z"), newId: () => `id-${++n}`, nextInvoiceNumber: 1 }
+    { storeId: "s", terminalId: "t", cashierId: null, now: new Date("2026-10-15T01:00:00Z"), newId: () => `id-${++n}`, nextSeq: () => n, nextInvoiceNumber: 1 }
   )
   if (!sale.ok) throw new Error(sale.code)
 

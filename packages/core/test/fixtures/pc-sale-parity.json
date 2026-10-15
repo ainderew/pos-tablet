@@ -23,8 +23,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -45,8 +45,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -67,8 +67,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -89,8 +89,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -111,8 +111,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -133,8 +133,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -155,8 +155,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -177,8 +177,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -219,8 +219,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 3,
             "active_price": 25
@@ -245,8 +245,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 12,
             "active_price": 8.75
@@ -271,8 +271,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 120
@@ -283,7 +283,7 @@
       },
       "status": 201,
       "response": {
-        "id": "29c75f14-8aa1-4657-ac81-9e887d399542",
+        "id": "799ba861-55b3-4259-aa68-54f287f90f2d",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -293,7 +293,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 300,
         "vatable_sales": 66.96,
         "vat_amount": 8.04,
@@ -311,8 +311,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "49242f2d-79eb-429e-898c-65b6be425540",
-            "transaction_id": "29c75f14-8aa1-4657-ac81-9e887d399542",
+            "id": "4a6c9f3c-a33c-4b0d-a9db-496361ecded3",
+            "transaction_id": "799ba861-55b3-4259-aa68-54f287f90f2d",
             "product_id": "soap",
             "quantity_sold": 3,
             "price_at_sale": 25,
@@ -321,12 +321,12 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           },
           {
-            "id": "7694fad3-d623-4bc3-9dbd-1b6fde4a33a9",
-            "transaction_id": "29c75f14-8aa1-4657-ac81-9e887d399542",
+            "id": "bd881ec8-c142-422e-a577-a9a69d33cfc5",
+            "transaction_id": "799ba861-55b3-4259-aa68-54f287f90f2d",
             "product_id": "eggs",
             "quantity_sold": 12,
             "price_at_sale": 8.75,
@@ -335,12 +335,12 @@
             "tax_category": "VAT_EXEMPT",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Fresh Eggs"
           },
           {
-            "id": "951e8cf4-d2fc-40a7-95cc-e511b91b2593",
-            "transaction_id": "29c75f14-8aa1-4657-ac81-9e887d399542",
+            "id": "db680e73-573c-49e4-99f0-1b4be7242ab4",
+            "transaction_id": "799ba861-55b3-4259-aa68-54f287f90f2d",
             "product_id": "export",
             "quantity_sold": 1,
             "price_at_sale": 120,
@@ -349,7 +349,7 @@
             "tax_category": "ZERO_RATED",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Export Item"
           }
         ]
@@ -392,8 +392,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -414,8 +414,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -436,8 +436,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -458,8 +458,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -480,8 +480,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -502,8 +502,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -524,8 +524,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -546,8 +546,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -588,8 +588,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 2,
             "active_price": 25
@@ -599,7 +599,7 @@
       },
       "status": 201,
       "response": {
-        "id": "605a769d-c6f8-4656-83d6-0bd3bad636d9",
+        "id": "d3520f33-365f-4afe-8128-1f6d4bd29614",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -609,7 +609,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 50,
         "vatable_sales": 44.64,
         "vat_amount": 5.36,
@@ -627,8 +627,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "8e67ece3-40f6-485b-bdb6-50c601cfa897",
-            "transaction_id": "605a769d-c6f8-4656-83d6-0bd3bad636d9",
+            "id": "7709435d-171c-4f8a-8b6b-a902e8547680",
+            "transaction_id": "d3520f33-365f-4afe-8128-1f6d4bd29614",
             "product_id": "soap",
             "quantity_sold": 2,
             "price_at_sale": 25,
@@ -637,7 +637,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -680,8 +680,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -702,8 +702,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -724,8 +724,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -746,8 +746,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -768,8 +768,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -790,8 +790,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -812,8 +812,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -834,8 +834,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -876,8 +876,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 3,
             "active_price": 33.33
@@ -888,7 +888,7 @@
       },
       "status": 201,
       "response": {
-        "id": "beba8817-7e2a-4c33-b470-27194c0511d1",
+        "id": "8af5c7b0-2f55-4870-ac0d-a9e03b3ae662",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -898,7 +898,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 99.99,
         "vatable_sales": 89.28,
         "vat_amount": 10.71,
@@ -916,8 +916,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "c808bf65-a1c3-4f39-87d4-742a1c779935",
-            "transaction_id": "beba8817-7e2a-4c33-b470-27194c0511d1",
+            "id": "0ca97d3c-b611-457b-9915-806d23b083c1",
+            "transaction_id": "8af5c7b0-2f55-4870-ac0d-a9e03b3ae662",
             "product_id": "odd",
             "quantity_sold": 3,
             "price_at_sale": 33.33,
@@ -926,7 +926,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Odd Price"
           }
         ]
@@ -969,8 +969,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -991,8 +991,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -1013,8 +1013,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -1035,8 +1035,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -1057,8 +1057,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -1079,8 +1079,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -1101,8 +1101,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -1123,8 +1123,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -1165,8 +1165,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 50
@@ -1177,7 +1177,7 @@
       },
       "status": 201,
       "response": {
-        "id": "60c38784-3f10-4157-bfc2-693412ada994",
+        "id": "87f89c1f-349b-44f2-8d2c-081eaffabed7",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -1187,7 +1187,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 50,
         "vatable_sales": 44.64,
         "vat_amount": 5.36,
@@ -1205,8 +1205,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "6af58c34-7a7d-4d38-adef-2bc23fb34c82",
-            "transaction_id": "60c38784-3f10-4157-bfc2-693412ada994",
+            "id": "d798bcc4-b5f9-4436-a626-975d8978a8d8",
+            "transaction_id": "87f89c1f-349b-44f2-8d2c-081eaffabed7",
             "product_id": "fifty",
             "quantity_sold": 1,
             "price_at_sale": 50,
@@ -1215,7 +1215,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Fifty Item"
           }
         ]
@@ -1258,8 +1258,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -1280,8 +1280,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -1302,8 +1302,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -1324,8 +1324,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -1346,8 +1346,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -1368,8 +1368,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -1390,8 +1390,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -1412,8 +1412,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -1454,8 +1454,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 11,
             "active_price": 25
@@ -1465,7 +1465,7 @@
       },
       "status": 201,
       "response": {
-        "id": "e2af25c7-0a60-4083-b180-abc95151f2c8",
+        "id": "eefe00d2-ec52-412b-91fb-1584d55cd504",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -1475,7 +1475,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 275,
         "vatable_sales": 245.54,
         "vat_amount": 29.46,
@@ -1493,8 +1493,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "18dda824-ecef-49bd-826e-e5665575d543",
-            "transaction_id": "e2af25c7-0a60-4083-b180-abc95151f2c8",
+            "id": "9fa499f5-0fda-46f2-a7af-a1ac60f3dc33",
+            "transaction_id": "eefe00d2-ec52-412b-91fb-1584d55cd504",
             "product_id": "soap",
             "quantity_sold": 11,
             "price_at_sale": 25,
@@ -1503,7 +1503,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -1546,8 +1546,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -1568,8 +1568,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -1590,8 +1590,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -1612,8 +1612,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -1634,8 +1634,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -1656,8 +1656,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -1678,8 +1678,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -1700,8 +1700,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -1742,8 +1742,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 12,
             "active_price": 21
@@ -1753,7 +1753,7 @@
       },
       "status": 201,
       "response": {
-        "id": "6e624cfa-fd80-4314-ad00-f3a212e8cd6c",
+        "id": "13647e0a-c975-4376-b012-562ad82c468f",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -1763,7 +1763,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 252,
         "vatable_sales": 225,
         "vat_amount": 27,
@@ -1781,8 +1781,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "7cf4f92c-1634-472b-b711-52a4c9bc5f59",
-            "transaction_id": "6e624cfa-fd80-4314-ad00-f3a212e8cd6c",
+            "id": "bfaff4d9-1ca2-46b6-a38f-5ba97babe743",
+            "transaction_id": "13647e0a-c975-4376-b012-562ad82c468f",
             "product_id": "soap",
             "quantity_sold": 12,
             "price_at_sale": 21,
@@ -1791,7 +1791,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -1834,8 +1834,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -1856,8 +1856,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -1878,8 +1878,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -1900,8 +1900,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -1922,8 +1922,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -1944,8 +1944,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -1966,8 +1966,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -1988,8 +1988,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -2030,8 +2030,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1.375,
             "active_price": 52.5
@@ -2041,7 +2041,7 @@
       },
       "status": 201,
       "response": {
-        "id": "f27db6f7-6d58-498d-aed8-0a41c2a7d22f",
+        "id": "015cb903-446d-4a7b-bce4-6f573778207e",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -2051,7 +2051,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 72.19,
         "vatable_sales": 64.46,
         "vat_amount": 7.73,
@@ -2069,8 +2069,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "58387a50-b29a-456d-955a-780ea35c750f",
-            "transaction_id": "f27db6f7-6d58-498d-aed8-0a41c2a7d22f",
+            "id": "0b12304c-e3d5-4bc5-b52e-341c46edd2d7",
+            "transaction_id": "015cb903-446d-4a7b-bce4-6f573778207e",
             "product_id": "rice",
             "quantity_sold": 1.375,
             "price_at_sale": 52.5,
@@ -2079,7 +2079,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Rice (per kg)"
           }
         ]
@@ -2122,8 +2122,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -2144,8 +2144,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -2166,8 +2166,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -2188,8 +2188,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -2210,8 +2210,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -2232,8 +2232,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -2254,8 +2254,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -2276,8 +2276,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -2318,8 +2318,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 50
@@ -2335,7 +2335,7 @@
       },
       "status": 201,
       "response": {
-        "id": "62cd4b82-2194-4d10-a3af-0f104b2de3cf",
+        "id": "11d6fb02-5314-40ba-9e25-ba9e06310c82",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -2345,7 +2345,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 50,
         "vatable_sales": 0,
         "vat_amount": 0,
@@ -2363,8 +2363,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "86e216a5-95dc-40a5-9a7d-d906a82f548f",
-            "transaction_id": "62cd4b82-2194-4d10-a3af-0f104b2de3cf",
+            "id": "b5c862da-68ac-46d0-90dc-19a2949e425b",
+            "transaction_id": "11d6fb02-5314-40ba-9e25-ba9e06310c82",
             "product_id": "fifty",
             "quantity_sold": 1,
             "price_at_sale": 50,
@@ -2373,7 +2373,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Fifty Item"
           }
         ]
@@ -2416,8 +2416,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -2438,8 +2438,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -2460,8 +2460,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -2482,8 +2482,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -2504,8 +2504,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -2526,8 +2526,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -2548,8 +2548,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -2570,8 +2570,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -2612,8 +2612,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 4,
             "active_price": 25
@@ -2638,8 +2638,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 6,
             "active_price": 8.75
@@ -2664,8 +2664,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 120
@@ -2690,8 +2690,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 2.25,
             "active_price": 52.5
@@ -2707,7 +2707,7 @@
       },
       "status": 201,
       "response": {
-        "id": "5eda6db2-2449-4b89-a5d2-45e3c4e81775",
+        "id": "26fcd613-2f0a-489d-813a-f6b73e8ceea8",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -2717,7 +2717,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 390.63,
         "vatable_sales": 97.38,
         "vat_amount": 11.69,
@@ -2735,8 +2735,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "31f1c590-b7e5-4349-a51d-4a1339736284",
-            "transaction_id": "5eda6db2-2449-4b89-a5d2-45e3c4e81775",
+            "id": "de9c025d-f096-4edf-b865-9f76078a530d",
+            "transaction_id": "26fcd613-2f0a-489d-813a-f6b73e8ceea8",
             "product_id": "soap",
             "quantity_sold": 4,
             "price_at_sale": 25,
@@ -2745,12 +2745,12 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           },
           {
-            "id": "38048569-271b-4574-8d3d-6ded58210c86",
-            "transaction_id": "5eda6db2-2449-4b89-a5d2-45e3c4e81775",
+            "id": "e8c6c70a-7d42-47dd-9005-b676b5e2eee0",
+            "transaction_id": "26fcd613-2f0a-489d-813a-f6b73e8ceea8",
             "product_id": "eggs",
             "quantity_sold": 6,
             "price_at_sale": 8.75,
@@ -2759,12 +2759,12 @@
             "tax_category": "VAT_EXEMPT",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Fresh Eggs"
           },
           {
-            "id": "484f72c5-45ab-455b-878c-b3041cab0ba3",
-            "transaction_id": "5eda6db2-2449-4b89-a5d2-45e3c4e81775",
+            "id": "44c9fa02-9487-4899-9a95-86abe87b3c7a",
+            "transaction_id": "26fcd613-2f0a-489d-813a-f6b73e8ceea8",
             "product_id": "export",
             "quantity_sold": 1,
             "price_at_sale": 120,
@@ -2773,12 +2773,12 @@
             "tax_category": "ZERO_RATED",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Export Item"
           },
           {
-            "id": "7ea04aeb-6d7c-473f-8209-07a468a0a582",
-            "transaction_id": "5eda6db2-2449-4b89-a5d2-45e3c4e81775",
+            "id": "62977445-0efa-4f19-a84d-3678423a1d91",
+            "transaction_id": "26fcd613-2f0a-489d-813a-f6b73e8ceea8",
             "product_id": "rice",
             "quantity_sold": 2.25,
             "price_at_sale": 52.5,
@@ -2787,7 +2787,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Rice (per kg)"
           }
         ]
@@ -2830,8 +2830,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -2852,8 +2852,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -2874,8 +2874,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -2896,8 +2896,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -2918,8 +2918,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -2940,8 +2940,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -2962,8 +2962,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -2984,8 +2984,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -3026,8 +3026,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 7,
             "active_price": 33.33
@@ -3052,8 +3052,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 12,
             "active_price": 21
@@ -3068,7 +3068,7 @@
       },
       "status": 201,
       "response": {
-        "id": "27816853-3127-4633-b1d9-fb27e194fe57",
+        "id": "26861a1e-f54a-4701-8311-66f4521cc228",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -3078,7 +3078,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 485.31,
         "vatable_sales": 247.61,
         "vat_amount": 29.71,
@@ -3096,8 +3096,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "64298d87-2071-4c79-8f42-ccfc6f9e280b",
-            "transaction_id": "27816853-3127-4633-b1d9-fb27e194fe57",
+            "id": "a1453e74-1e0f-4bb5-b4c8-56eb4ffe5d06",
+            "transaction_id": "26861a1e-f54a-4701-8311-66f4521cc228",
             "product_id": "odd",
             "quantity_sold": 7,
             "price_at_sale": 33.33,
@@ -3106,12 +3106,12 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Odd Price"
           },
           {
-            "id": "7c25ff7a-1982-4ebc-b4d8-69ab1e0f69f2",
-            "transaction_id": "27816853-3127-4633-b1d9-fb27e194fe57",
+            "id": "951403df-ee59-4f07-9dd6-c3c4b12b9453",
+            "transaction_id": "26861a1e-f54a-4701-8311-66f4521cc228",
             "product_id": "soap",
             "quantity_sold": 12,
             "price_at_sale": 21,
@@ -3120,7 +3120,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -3163,8 +3163,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -3185,8 +3185,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -3207,8 +3207,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -3229,8 +3229,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -3251,8 +3251,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -3273,8 +3273,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -3295,8 +3295,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -3317,8 +3317,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -3359,8 +3359,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 30,
             "active_price": 8.75
@@ -3385,8 +3385,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -3397,7 +3397,7 @@
       },
       "status": 201,
       "response": {
-        "id": "726e3241-8960-41eb-aeba-31c5398978f6",
+        "id": "925b82ff-d95d-467d-b953-88667ebc2358",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -3407,7 +3407,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 287.5,
         "vatable_sales": 22.32,
         "vat_amount": 2.68,
@@ -3425,8 +3425,8 @@
         "reference_number": "GC-123456",
         "items": [
           {
-            "id": "81389022-9858-4773-89c8-4574389a6768",
-            "transaction_id": "726e3241-8960-41eb-aeba-31c5398978f6",
+            "id": "942e2491-06c0-4dee-9ed4-93f5da5d110a",
+            "transaction_id": "925b82ff-d95d-467d-b953-88667ebc2358",
             "product_id": "eggs",
             "quantity_sold": 30,
             "price_at_sale": 8.75,
@@ -3435,12 +3435,12 @@
             "tax_category": "VAT_EXEMPT",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Fresh Eggs"
           },
           {
-            "id": "14833eff-aabd-4789-a55f-2bee376a5210",
-            "transaction_id": "726e3241-8960-41eb-aeba-31c5398978f6",
+            "id": "88cfccac-26c3-422b-afc1-62d9c91a718a",
+            "transaction_id": "925b82ff-d95d-467d-b953-88667ebc2358",
             "product_id": "soap",
             "quantity_sold": 1,
             "price_at_sale": 25,
@@ -3449,7 +3449,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -3492,8 +3492,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -3514,8 +3514,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -3536,8 +3536,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -3558,8 +3558,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -3580,8 +3580,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -3602,8 +3602,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -3624,8 +3624,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -3646,8 +3646,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -3688,8 +3688,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 2,
             "active_price": 120
@@ -3700,7 +3700,7 @@
       },
       "status": 201,
       "response": {
-        "id": "333f8509-b3e8-4290-abe6-70bc6abe55c0",
+        "id": "0c3ac0dc-720b-45fd-ad5e-b5c1cfcf3a59",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -3710,7 +3710,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 240,
         "vatable_sales": 0,
         "vat_amount": 0,
@@ -3728,8 +3728,8 @@
         "reference_number": "4242",
         "items": [
           {
-            "id": "8835c835-5c0e-475c-b4f3-8ac79bae2dbf",
-            "transaction_id": "333f8509-b3e8-4290-abe6-70bc6abe55c0",
+            "id": "12c67be8-d1ab-4ed2-9efc-af9f269fe6a7",
+            "transaction_id": "0c3ac0dc-720b-45fd-ad5e-b5c1cfcf3a59",
             "product_id": "export",
             "quantity_sold": 2,
             "price_at_sale": 120,
@@ -3738,7 +3738,7 @@
             "tax_category": "ZERO_RATED",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Export Item"
           }
         ]
@@ -3758,6 +3758,1307 @@
         "ben": 0
       },
       "ledger": []
+    },
+    {
+      "name": "maya_with_reference",
+      "products": [
+        {
+          "id": "soap",
+          "name": "Laundry Soap Bar",
+          "barcode": null,
+          "selling_price": 25,
+          "cost_price": 18,
+          "stock_level": 200,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 21,
+          "wholesale_threshold": 12,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "eggs",
+          "name": "Fresh Eggs",
+          "barcode": null,
+          "selling_price": 8.75,
+          "cost_price": 7,
+          "stock_level": 300,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VAT_EXEMPT",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "rice",
+          "name": "Rice (per kg)",
+          "barcode": null,
+          "selling_price": 52.5,
+          "cost_price": 45,
+          "stock_level": 120,
+          "unit_type": "WEIGHT",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "export",
+          "name": "Export Item",
+          "barcode": null,
+          "selling_price": 120,
+          "cost_price": 90,
+          "stock_level": 50,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "ZERO_RATED",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "oil",
+          "name": "Cooking Oil 1L",
+          "barcode": null,
+          "selling_price": 98,
+          "cost_price": 82,
+          "stock_level": 3,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 92,
+          "wholesale_threshold": 6,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "odd",
+          "name": "Odd Price",
+          "barcode": null,
+          "selling_price": 33.33,
+          "cost_price": 20,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "free",
+          "name": "Free Sample",
+          "barcode": null,
+          "selling_price": 0,
+          "cost_price": 0,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "fifty",
+          "name": "Fifty Item",
+          "barcode": null,
+          "selling_price": 50,
+          "cost_price": 30,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        }
+      ],
+      "customers": [
+        {
+          "id": "rosa",
+          "full_name": "Aling Rosa",
+          "credit_limit": 2000,
+          "current_debt_balance": 1500,
+          "credit_status": "ACTIVE"
+        },
+        {
+          "id": "ben",
+          "full_name": "Mang Ben",
+          "credit_limit": 1000,
+          "current_debt_balance": 0,
+          "credit_status": "BLOCKED"
+        }
+      ],
+      "request": {
+        "cart": [
+          {
+            "product": {
+              "id": "soap",
+              "name": "Laundry Soap Bar",
+              "barcode": null,
+              "selling_price": 25,
+              "cost_price": 18,
+              "stock_level": 200,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "VATABLE",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": 21,
+              "wholesale_threshold": 12,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 2,
+            "active_price": 25
+          },
+          {
+            "product": {
+              "id": "eggs",
+              "name": "Fresh Eggs",
+              "barcode": null,
+              "selling_price": 8.75,
+              "cost_price": 7,
+              "stock_level": 300,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "VAT_EXEMPT",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": null,
+              "wholesale_threshold": 0,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 3,
+            "active_price": 8.75
+          }
+        ],
+        "payment_method": "MAYA",
+        "reference_number": "MY-42"
+      },
+      "status": 201,
+      "response": {
+        "id": "2a18c888-f126-4d19-a3bd-bb841bd9ab1e",
+        "invoice_number": "SI-000001",
+        "status": "PAID",
+        "void_reason": null,
+        "authorized_by": null,
+        "void_authorized_by": null,
+        "voided_at": null,
+        "transaction_type": "SALE",
+        "pos_id": "00000000-0000-0000-0000-000000000000",
+        "is_synced": 0,
+        "created_at": "2026-10-15 08:54:01",
+        "gross_sales": 76.25,
+        "vatable_sales": 44.64,
+        "vat_amount": 5.36,
+        "vat_exempt_sales": 26.25,
+        "zero_rated_sales": 0,
+        "total_discount": 0,
+        "net_sales": 76.25,
+        "pax_count": 1,
+        "senior_count": 0,
+        "sc_pwd_id": null,
+        "sc_pwd_name": null,
+        "payment_method": "MAYA",
+        "amount_tendered": null,
+        "change_amount": 0,
+        "reference_number": "MY-42",
+        "items": [
+          {
+            "id": "cfa2a783-68fb-4450-8e59-1ec3e498c24b",
+            "transaction_id": "2a18c888-f126-4d19-a3bd-bb841bd9ab1e",
+            "product_id": "soap",
+            "quantity_sold": 2,
+            "price_at_sale": 25,
+            "cost_at_sale": 18,
+            "profit": 14,
+            "tax_category": "VATABLE",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Laundry Soap Bar"
+          },
+          {
+            "id": "07df69e5-4c5e-4bd7-a96f-076bb33b1b3f",
+            "transaction_id": "2a18c888-f126-4d19-a3bd-bb841bd9ab1e",
+            "product_id": "eggs",
+            "quantity_sold": 3,
+            "price_at_sale": 8.75,
+            "cost_at_sale": 7,
+            "profit": 5.25,
+            "tax_category": "VAT_EXEMPT",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Fresh Eggs"
+          }
+        ]
+      },
+      "stockAfter": {
+        "soap": 198,
+        "eggs": 297,
+        "rice": 120,
+        "export": 50,
+        "oil": 3,
+        "odd": 100,
+        "free": 100,
+        "fifty": 100
+      },
+      "customersAfter": {
+        "rosa": 1500,
+        "ben": 0
+      },
+      "ledger": []
+    },
+    {
+      "name": "sc_zero_rated_and_wholesale",
+      "products": [
+        {
+          "id": "soap",
+          "name": "Laundry Soap Bar",
+          "barcode": null,
+          "selling_price": 25,
+          "cost_price": 18,
+          "stock_level": 200,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 21,
+          "wholesale_threshold": 12,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "eggs",
+          "name": "Fresh Eggs",
+          "barcode": null,
+          "selling_price": 8.75,
+          "cost_price": 7,
+          "stock_level": 300,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VAT_EXEMPT",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "rice",
+          "name": "Rice (per kg)",
+          "barcode": null,
+          "selling_price": 52.5,
+          "cost_price": 45,
+          "stock_level": 120,
+          "unit_type": "WEIGHT",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "export",
+          "name": "Export Item",
+          "barcode": null,
+          "selling_price": 120,
+          "cost_price": 90,
+          "stock_level": 50,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "ZERO_RATED",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "oil",
+          "name": "Cooking Oil 1L",
+          "barcode": null,
+          "selling_price": 98,
+          "cost_price": 82,
+          "stock_level": 3,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 92,
+          "wholesale_threshold": 6,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "odd",
+          "name": "Odd Price",
+          "barcode": null,
+          "selling_price": 33.33,
+          "cost_price": 20,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "free",
+          "name": "Free Sample",
+          "barcode": null,
+          "selling_price": 0,
+          "cost_price": 0,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "fifty",
+          "name": "Fifty Item",
+          "barcode": null,
+          "selling_price": 50,
+          "cost_price": 30,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        }
+      ],
+      "customers": [
+        {
+          "id": "rosa",
+          "full_name": "Aling Rosa",
+          "credit_limit": 2000,
+          "current_debt_balance": 1500,
+          "credit_status": "ACTIVE"
+        },
+        {
+          "id": "ben",
+          "full_name": "Mang Ben",
+          "credit_limit": 1000,
+          "current_debt_balance": 0,
+          "credit_status": "BLOCKED"
+        }
+      ],
+      "request": {
+        "cart": [
+          {
+            "product": {
+              "id": "export",
+              "name": "Export Item",
+              "barcode": null,
+              "selling_price": 120,
+              "cost_price": 90,
+              "stock_level": 50,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "ZERO_RATED",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": null,
+              "wholesale_threshold": 0,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 2,
+            "active_price": 120
+          },
+          {
+            "product": {
+              "id": "soap",
+              "name": "Laundry Soap Bar",
+              "barcode": null,
+              "selling_price": 25,
+              "cost_price": 18,
+              "stock_level": 200,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "VATABLE",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": 21,
+              "wholesale_threshold": 12,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 12,
+            "active_price": 21
+          },
+          {
+            "product": {
+              "id": "eggs",
+              "name": "Fresh Eggs",
+              "barcode": null,
+              "selling_price": 8.75,
+              "cost_price": 7,
+              "stock_level": 300,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "VAT_EXEMPT",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": null,
+              "wholesale_threshold": 0,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 5,
+            "active_price": 8.75
+          }
+        ],
+        "paxCount": 2,
+        "seniorCount": 1,
+        "scPwdData": {
+          "idNumber": "SC-5",
+          "name": "Lola Nena"
+        },
+        "amount_tendered": 1000
+      },
+      "status": 201,
+      "response": {
+        "id": "21391bcd-30e1-4086-9437-1109e38302fb",
+        "invoice_number": "SI-000001",
+        "status": "PAID",
+        "void_reason": null,
+        "authorized_by": null,
+        "void_authorized_by": null,
+        "voided_at": null,
+        "transaction_type": "SALE",
+        "pos_id": "00000000-0000-0000-0000-000000000000",
+        "is_synced": 0,
+        "created_at": "2026-10-15 08:54:01",
+        "gross_sales": 535.75,
+        "vatable_sales": 112.5,
+        "vat_amount": 13.5,
+        "vat_exempt_sales": 156.25,
+        "zero_rated_sales": 240,
+        "total_discount": 50.88,
+        "net_sales": 471.37,
+        "pax_count": 2,
+        "senior_count": 1,
+        "sc_pwd_id": "SC-5",
+        "sc_pwd_name": "Lola Nena",
+        "payment_method": "CASH",
+        "amount_tendered": 1000,
+        "change_amount": 528.63,
+        "reference_number": null,
+        "items": [
+          {
+            "id": "afb9556e-a838-43ba-9b2d-0b6bb83746ea",
+            "transaction_id": "21391bcd-30e1-4086-9437-1109e38302fb",
+            "product_id": "export",
+            "quantity_sold": 2,
+            "price_at_sale": 120,
+            "cost_at_sale": 90,
+            "profit": 60,
+            "tax_category": "ZERO_RATED",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Export Item"
+          },
+          {
+            "id": "93e6bfcf-0964-4b24-89e2-16b05a5acd28",
+            "transaction_id": "21391bcd-30e1-4086-9437-1109e38302fb",
+            "product_id": "soap",
+            "quantity_sold": 12,
+            "price_at_sale": 21,
+            "cost_at_sale": 18,
+            "profit": 36,
+            "tax_category": "VATABLE",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Laundry Soap Bar"
+          },
+          {
+            "id": "1545f213-dea2-438e-bed0-58e73e8a9ac8",
+            "transaction_id": "21391bcd-30e1-4086-9437-1109e38302fb",
+            "product_id": "eggs",
+            "quantity_sold": 5,
+            "price_at_sale": 8.75,
+            "cost_at_sale": 7,
+            "profit": 8.75,
+            "tax_category": "VAT_EXEMPT",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Fresh Eggs"
+          }
+        ]
+      },
+      "stockAfter": {
+        "soap": 188,
+        "eggs": 295,
+        "rice": 120,
+        "export": 48,
+        "oil": 3,
+        "odd": 100,
+        "free": 100,
+        "fifty": 100
+      },
+      "customersAfter": {
+        "rosa": 1500,
+        "ben": 0
+      },
+      "ledger": []
+    },
+    {
+      "name": "store_credit_with_sc_pwd",
+      "products": [
+        {
+          "id": "soap",
+          "name": "Laundry Soap Bar",
+          "barcode": null,
+          "selling_price": 25,
+          "cost_price": 18,
+          "stock_level": 200,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 21,
+          "wholesale_threshold": 12,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "eggs",
+          "name": "Fresh Eggs",
+          "barcode": null,
+          "selling_price": 8.75,
+          "cost_price": 7,
+          "stock_level": 300,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VAT_EXEMPT",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "rice",
+          "name": "Rice (per kg)",
+          "barcode": null,
+          "selling_price": 52.5,
+          "cost_price": 45,
+          "stock_level": 120,
+          "unit_type": "WEIGHT",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "export",
+          "name": "Export Item",
+          "barcode": null,
+          "selling_price": 120,
+          "cost_price": 90,
+          "stock_level": 50,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "ZERO_RATED",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "oil",
+          "name": "Cooking Oil 1L",
+          "barcode": null,
+          "selling_price": 98,
+          "cost_price": 82,
+          "stock_level": 3,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 92,
+          "wholesale_threshold": 6,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "odd",
+          "name": "Odd Price",
+          "barcode": null,
+          "selling_price": 33.33,
+          "cost_price": 20,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "free",
+          "name": "Free Sample",
+          "barcode": null,
+          "selling_price": 0,
+          "cost_price": 0,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "fifty",
+          "name": "Fifty Item",
+          "barcode": null,
+          "selling_price": 50,
+          "cost_price": 30,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        }
+      ],
+      "customers": [
+        {
+          "id": "rosa",
+          "full_name": "Aling Rosa",
+          "credit_limit": 2000,
+          "current_debt_balance": 1500,
+          "credit_status": "ACTIVE"
+        },
+        {
+          "id": "ben",
+          "full_name": "Mang Ben",
+          "credit_limit": 1000,
+          "current_debt_balance": 0,
+          "credit_status": "BLOCKED"
+        }
+      ],
+      "request": {
+        "cart": [
+          {
+            "product": {
+              "id": "fifty",
+              "name": "Fifty Item",
+              "barcode": null,
+              "selling_price": 50,
+              "cost_price": 30,
+              "stock_level": 100,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "VATABLE",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": null,
+              "wholesale_threshold": 0,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 4,
+            "active_price": 50
+          }
+        ],
+        "payment_method": "STORE_CREDIT",
+        "reference_number": "rosa",
+        "paxCount": 2,
+        "seniorCount": 1,
+        "scPwdData": {
+          "idNumber": "SC-6",
+          "name": "Aling Rosa"
+        }
+      },
+      "status": 201,
+      "response": {
+        "id": "881d5eb7-a53f-414a-b3f3-96da4378cf19",
+        "invoice_number": "SI-000001",
+        "status": "PAID",
+        "void_reason": null,
+        "authorized_by": null,
+        "void_authorized_by": null,
+        "voided_at": null,
+        "transaction_type": "SALE",
+        "pos_id": "00000000-0000-0000-0000-000000000000",
+        "is_synced": 0,
+        "created_at": "2026-10-15 08:54:01",
+        "gross_sales": 200,
+        "vatable_sales": 89.29,
+        "vat_amount": 10.71,
+        "vat_exempt_sales": 89.29,
+        "zero_rated_sales": 0,
+        "total_discount": 17.86,
+        "net_sales": 171.43,
+        "pax_count": 2,
+        "senior_count": 1,
+        "sc_pwd_id": "SC-6",
+        "sc_pwd_name": "Aling Rosa",
+        "payment_method": "STORE_CREDIT",
+        "amount_tendered": null,
+        "change_amount": 0,
+        "reference_number": "rosa",
+        "items": [
+          {
+            "id": "bee0c467-9bd2-488b-bd14-72b17f8d6514",
+            "transaction_id": "881d5eb7-a53f-414a-b3f3-96da4378cf19",
+            "product_id": "fifty",
+            "quantity_sold": 4,
+            "price_at_sale": 50,
+            "cost_at_sale": 30,
+            "profit": 80,
+            "tax_category": "VATABLE",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Fifty Item"
+          }
+        ]
+      },
+      "stockAfter": {
+        "soap": 200,
+        "eggs": 300,
+        "rice": 120,
+        "export": 50,
+        "oil": 3,
+        "odd": 100,
+        "free": 100,
+        "fifty": 96
+      },
+      "customersAfter": {
+        "rosa": 1671.43,
+        "ben": 0
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "entry_type": "CHARGE",
+          "amount": 171.43,
+          "running_balance": 1671.43
+        }
+      ]
+    },
+    {
+      "name": "store_credit_exactly_at_limit",
+      "products": [
+        {
+          "id": "soap",
+          "name": "Laundry Soap Bar",
+          "barcode": null,
+          "selling_price": 25,
+          "cost_price": 18,
+          "stock_level": 200,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 21,
+          "wholesale_threshold": 12,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "eggs",
+          "name": "Fresh Eggs",
+          "barcode": null,
+          "selling_price": 8.75,
+          "cost_price": 7,
+          "stock_level": 300,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VAT_EXEMPT",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "rice",
+          "name": "Rice (per kg)",
+          "barcode": null,
+          "selling_price": 52.5,
+          "cost_price": 45,
+          "stock_level": 120,
+          "unit_type": "WEIGHT",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "export",
+          "name": "Export Item",
+          "barcode": null,
+          "selling_price": 120,
+          "cost_price": 90,
+          "stock_level": 50,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "ZERO_RATED",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "oil",
+          "name": "Cooking Oil 1L",
+          "barcode": null,
+          "selling_price": 98,
+          "cost_price": 82,
+          "stock_level": 3,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": 92,
+          "wholesale_threshold": 6,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "odd",
+          "name": "Odd Price",
+          "barcode": null,
+          "selling_price": 33.33,
+          "cost_price": 20,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "free",
+          "name": "Free Sample",
+          "barcode": null,
+          "selling_price": 0,
+          "cost_price": 0,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        },
+        {
+          "id": "fifty",
+          "name": "Fifty Item",
+          "barcode": null,
+          "selling_price": 50,
+          "cost_price": 30,
+          "stock_level": 100,
+          "unit_type": "QUANTITY",
+          "low_stock_threshold": 0,
+          "notify_low_stock": 0,
+          "category_id": null,
+          "tax_category": "VATABLE",
+          "supplier_type": "WHOLESALER",
+          "is_promo": 0,
+          "promo_price": null,
+          "wholesale_price": null,
+          "wholesale_threshold": 0,
+          "pos_id": "pc",
+          "is_synced": 0,
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
+        }
+      ],
+      "customers": [
+        {
+          "id": "rosa",
+          "full_name": "Aling Rosa",
+          "credit_limit": 2000,
+          "current_debt_balance": 1500,
+          "credit_status": "ACTIVE"
+        },
+        {
+          "id": "ben",
+          "full_name": "Mang Ben",
+          "credit_limit": 1000,
+          "current_debt_balance": 0,
+          "credit_status": "BLOCKED"
+        }
+      ],
+      "request": {
+        "cart": [
+          {
+            "product": {
+              "id": "fifty",
+              "name": "Fifty Item",
+              "barcode": null,
+              "selling_price": 50,
+              "cost_price": 30,
+              "stock_level": 100,
+              "unit_type": "QUANTITY",
+              "low_stock_threshold": 0,
+              "notify_low_stock": 0,
+              "category_id": null,
+              "tax_category": "VATABLE",
+              "supplier_type": "WHOLESALER",
+              "is_promo": 0,
+              "promo_price": null,
+              "wholesale_price": null,
+              "wholesale_threshold": 0,
+              "pos_id": "pc",
+              "is_synced": 0,
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
+            },
+            "quantity": 10,
+            "active_price": 50
+          }
+        ],
+        "payment_method": "STORE_CREDIT",
+        "reference_number": "rosa"
+      },
+      "status": 201,
+      "response": {
+        "id": "a0606f7b-be4a-487e-a41b-314496c705ca",
+        "invoice_number": "SI-000001",
+        "status": "PAID",
+        "void_reason": null,
+        "authorized_by": null,
+        "void_authorized_by": null,
+        "voided_at": null,
+        "transaction_type": "SALE",
+        "pos_id": "00000000-0000-0000-0000-000000000000",
+        "is_synced": 0,
+        "created_at": "2026-10-15 08:54:01",
+        "gross_sales": 500,
+        "vatable_sales": 446.43,
+        "vat_amount": 53.57,
+        "vat_exempt_sales": 0,
+        "zero_rated_sales": 0,
+        "total_discount": 0,
+        "net_sales": 500,
+        "pax_count": 1,
+        "senior_count": 0,
+        "sc_pwd_id": null,
+        "sc_pwd_name": null,
+        "payment_method": "STORE_CREDIT",
+        "amount_tendered": null,
+        "change_amount": 0,
+        "reference_number": "rosa",
+        "items": [
+          {
+            "id": "56a49752-4351-4693-80c6-761ebf56b413",
+            "transaction_id": "a0606f7b-be4a-487e-a41b-314496c705ca",
+            "product_id": "fifty",
+            "quantity_sold": 10,
+            "price_at_sale": 50,
+            "cost_at_sale": 30,
+            "profit": 200,
+            "tax_category": "VATABLE",
+            "pos_id": "00000000-0000-0000-0000-000000000000",
+            "is_synced": 0,
+            "created_at": "2026-10-15 08:54:01",
+            "name": "Fifty Item"
+          }
+        ]
+      },
+      "stockAfter": {
+        "soap": 200,
+        "eggs": 300,
+        "rice": 120,
+        "export": 50,
+        "oil": 3,
+        "odd": 100,
+        "free": 100,
+        "fifty": 90
+      },
+      "customersAfter": {
+        "rosa": 2000,
+        "ben": 0
+      },
+      "ledger": [
+        {
+          "customer_id": "rosa",
+          "entry_type": "CHARGE",
+          "amount": 500,
+          "running_balance": 2000
+        }
+      ]
     },
     {
       "name": "zero_price_item",
@@ -3781,8 +5082,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -3803,8 +5104,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -3825,8 +5126,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -3847,8 +5148,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -3869,8 +5170,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -3891,8 +5192,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -3913,8 +5214,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -3935,8 +5236,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -3977,8 +5278,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 2,
             "active_price": 0
@@ -4003,8 +5304,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -4014,7 +5315,7 @@
       },
       "status": 201,
       "response": {
-        "id": "c0ac5e25-7cf6-4bab-9931-0fc4af221443",
+        "id": "2f9cec6b-05c1-42f4-9af4-a368177fcc16",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -4024,7 +5325,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 25,
         "vatable_sales": 22.32,
         "vat_amount": 2.68,
@@ -4042,8 +5343,8 @@
         "reference_number": null,
         "items": [
           {
-            "id": "dfdd3c58-5601-44c4-8f8f-169e4901e5de",
-            "transaction_id": "c0ac5e25-7cf6-4bab-9931-0fc4af221443",
+            "id": "4552b285-0f70-4d77-8956-246e1e5e716a",
+            "transaction_id": "2f9cec6b-05c1-42f4-9af4-a368177fcc16",
             "product_id": "free",
             "quantity_sold": 2,
             "price_at_sale": 0,
@@ -4052,12 +5353,12 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Free Sample"
           },
           {
-            "id": "a974baed-52f2-4f30-94c7-278c75d9cd62",
-            "transaction_id": "c0ac5e25-7cf6-4bab-9931-0fc4af221443",
+            "id": "6dadc124-2b18-49a3-b4d4-a269aa11e01f",
+            "transaction_id": "2f9cec6b-05c1-42f4-9af4-a368177fcc16",
             "product_id": "soap",
             "quantity_sold": 1,
             "price_at_sale": 25,
@@ -4066,7 +5367,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -4109,8 +5410,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -4131,8 +5432,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -4153,8 +5454,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -4175,8 +5476,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -4197,8 +5498,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -4219,8 +5520,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -4241,8 +5542,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -4263,8 +5564,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -4305,8 +5606,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 16,
             "active_price": 21
@@ -4317,7 +5618,7 @@
       },
       "status": 201,
       "response": {
-        "id": "39f92d6c-5526-4f80-8f45-25f09113a1cc",
+        "id": "c0699dcd-6146-4f5f-ba85-208e3f483bd5",
         "invoice_number": "SI-000001",
         "status": "PAID",
         "void_reason": null,
@@ -4327,7 +5628,7 @@
         "transaction_type": "SALE",
         "pos_id": "00000000-0000-0000-0000-000000000000",
         "is_synced": 0,
-        "created_at": "2026-10-15 04:02:56",
+        "created_at": "2026-10-15 08:54:01",
         "gross_sales": 336,
         "vatable_sales": 300,
         "vat_amount": 36,
@@ -4345,8 +5646,8 @@
         "reference_number": "rosa",
         "items": [
           {
-            "id": "360df5d9-d3d9-4ab8-b45e-da3be64dc98f",
-            "transaction_id": "39f92d6c-5526-4f80-8f45-25f09113a1cc",
+            "id": "59e3d619-ad75-4b23-aeee-0b9008b42336",
+            "transaction_id": "c0699dcd-6146-4f5f-ba85-208e3f483bd5",
             "product_id": "soap",
             "quantity_sold": 16,
             "price_at_sale": 21,
@@ -4355,7 +5656,7 @@
             "tax_category": "VATABLE",
             "pos_id": "00000000-0000-0000-0000-000000000000",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
+            "created_at": "2026-10-15 08:54:01",
             "name": "Laundry Soap Bar"
           }
         ]
@@ -4405,8 +5706,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -4427,8 +5728,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -4449,8 +5750,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -4471,8 +5772,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -4493,8 +5794,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -4515,8 +5816,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -4537,8 +5838,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -4559,8 +5860,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -4601,8 +5902,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 25,
             "active_price": 21
@@ -4653,8 +5954,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -4675,8 +5976,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -4697,8 +5998,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -4719,8 +6020,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -4741,8 +6042,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -4763,8 +6064,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -4785,8 +6086,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -4807,8 +6108,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -4849,8 +6150,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -4901,8 +6202,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -4923,8 +6224,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -4945,8 +6246,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -4967,8 +6268,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -4989,8 +6290,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -5011,8 +6312,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -5033,8 +6334,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -5055,8 +6356,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -5097,8 +6398,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -5148,8 +6449,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -5170,8 +6471,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -5192,8 +6493,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -5214,8 +6515,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -5236,8 +6537,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -5258,8 +6559,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -5280,8 +6581,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -5302,8 +6603,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -5344,8 +6645,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -5396,8 +6697,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -5418,8 +6719,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -5440,8 +6741,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -5462,8 +6763,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -5484,8 +6785,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -5506,8 +6807,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -5528,8 +6829,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -5550,8 +6851,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -5592,8 +6893,8 @@
               "wholesale_threshold": 0,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 2,
             "active_price": 50
@@ -5644,8 +6945,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -5666,8 +6967,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -5688,8 +6989,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -5710,8 +7011,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -5732,8 +7033,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -5754,8 +7055,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -5776,8 +7077,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -5798,8 +7099,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -5840,8 +7141,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -5866,8 +7167,8 @@
               "wholesale_threshold": 6,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 4,
             "active_price": 98
@@ -5917,8 +7218,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -5939,8 +7240,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -5961,8 +7262,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -5983,8 +7284,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -6005,8 +7306,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -6027,8 +7328,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -6049,8 +7350,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -6071,8 +7372,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -6113,8 +7414,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1.5,
             "active_price": 25
@@ -6163,8 +7464,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -6185,8 +7486,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -6207,8 +7508,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -6229,8 +7530,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -6251,8 +7552,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -6273,8 +7574,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -6295,8 +7596,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -6317,8 +7618,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -6359,8 +7660,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 2,
             "active_price": 24
@@ -6391,8 +7692,8 @@
             "wholesale_threshold": 12,
             "pos_id": "pc",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
-            "updated_at": "2026-10-15 04:02:56"
+            "created_at": "2026-10-15 08:54:01",
+            "updated_at": "2026-10-15 08:54:01"
           }
         ],
         "net_sales": 50,
@@ -6436,8 +7737,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -6458,8 +7759,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -6480,8 +7781,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -6502,8 +7803,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -6524,8 +7825,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -6546,8 +7847,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -6568,8 +7869,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -6590,8 +7891,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [
@@ -6632,8 +7933,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 25
@@ -6658,8 +7959,8 @@
               "wholesale_threshold": 12,
               "pos_id": "pc",
               "is_synced": 0,
-              "created_at": "2026-10-15 04:02:56",
-              "updated_at": "2026-10-15 04:02:56"
+              "created_at": "2026-10-15 08:54:01",
+              "updated_at": "2026-10-15 08:54:01"
             },
             "quantity": 1,
             "active_price": 1
@@ -6689,8 +7990,8 @@
             "wholesale_threshold": 12,
             "pos_id": "pc",
             "is_synced": 0,
-            "created_at": "2026-10-15 04:02:56",
-            "updated_at": "2026-10-15 04:02:56"
+            "created_at": "2026-10-15 08:54:01",
+            "updated_at": "2026-10-15 08:54:01"
           }
         ]
       },
@@ -6732,8 +8033,8 @@
           "wholesale_threshold": 12,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "eggs",
@@ -6754,8 +8055,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "rice",
@@ -6776,8 +8077,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "export",
@@ -6798,8 +8099,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "oil",
@@ -6820,8 +8121,8 @@
           "wholesale_threshold": 6,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "odd",
@@ -6842,8 +8143,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "free",
@@ -6864,8 +8165,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         },
         {
           "id": "fifty",
@@ -6886,8 +8187,8 @@
           "wholesale_threshold": 0,
           "pos_id": "pc",
           "is_synced": 0,
-          "created_at": "2026-10-15 04:02:56",
-          "updated_at": "2026-10-15 04:02:56"
+          "created_at": "2026-10-15 08:54:01",
+          "updated_at": "2026-10-15 08:54:01"
         }
       ],
       "customers": [

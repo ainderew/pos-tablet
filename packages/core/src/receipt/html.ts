@@ -2,7 +2,7 @@
 // electron/receipt-template.js: every value is escaped, money never wraps, ~72mm wide content
 // that shrinks to fit 58mm rolls, monospace, no backgrounds, and a CSP that blocks scripts and
 // all network access. Pure string building: no DOM.
-import { formatReceiptMoney, formatReceiptQuantity } from "./model"
+import { formatReceiptItemDetail, formatReceiptMoney } from "./model"
 import type { ReceiptDocument, ReceiptItemLine, ReceiptRow } from "./model"
 
 export function escapeHtml(value: unknown): string {
@@ -52,9 +52,7 @@ function table(rows: ReceiptRow[]): string {
 function items(lines: ReceiptItemLine[]): string {
   if (lines.length === 0) return ""
   const rows = lines.map((item) => {
-    const qty = formatReceiptQuantity(item.quantity)
-    const unit = item.unitPrice === null ? "" : formatReceiptMoney(item.unitPrice)
-    const detail = unit ? `${qty} x ${unit}` : qty
+    const detail = formatReceiptItemDetail(item)
     return (
       `<tr><td colspan="2" class="name">${escapeHtml(item.name)}</td></tr>` +
       `<tr><td class="ind">${escapeHtml(detail)}</td>` +

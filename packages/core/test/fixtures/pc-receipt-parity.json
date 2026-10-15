@@ -1,0 +1,885 @@
+{
+  "generatedFrom": "POS-bir@24f0a321c8b5d9d2290558faf3911934bf3be4a9",
+  "template": "electron/receipt-template.js",
+  "templateSha256": "0a366aefbbba1aed7793ffb8004e245eb0cbb715805476aa2d076901601977bb",
+  "timeZone": "Asia/Manila",
+  "scenarios": [
+    {
+      "name": "SC/PWD cash sale with a weighed line",
+      "kind": "sale",
+      "input": {
+        "transaction": {
+          "id": "rec-1",
+          "store_id": "store-1",
+          "terminal_id": "terminal-1",
+          "device_seq": 1,
+          "created_at": "2026-10-15T03:59:18.390Z",
+          "shift_id": "shift-1",
+          "cashier_id": "cashier-1",
+          "pax_count": 2,
+          "senior_count": 1,
+          "sc_pwd_id": "OSCA-12345",
+          "sc_pwd_name": "Lolo Ben",
+          "payment_method": "CASH",
+          "invoice_number": "SI-000042",
+          "transaction_type": "SALE",
+          "status": "PAID",
+          "original_transaction_id": null,
+          "void_reason": null,
+          "authorized_by": null,
+          "gross_sales": 657.5,
+          "vatable_sales": 114.96,
+          "vat_amount": 13.79,
+          "vat_exempt_sales": 284.96,
+          "zero_rated_sales": 230,
+          "total_discount": 62.99,
+          "net_sales": 580.72,
+          "amount_tendered": 1000,
+          "change_amount": 419.28,
+          "reference_number": null
+        },
+        "items": [
+          {
+            "id": "rec-2",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 2,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-1",
+            "product_id": "coke",
+            "product_name": "Coke 1.5L",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 3,
+            "price_at_sale": 65,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          },
+          {
+            "id": "rec-3",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 3,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-1",
+            "product_id": "milk",
+            "product_name": "Bear Brand Milk 300g",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 2,
+            "price_at_sale": 85,
+            "cost_at_sale": 1,
+            "tax_category": "VAT_EXEMPT"
+          },
+          {
+            "id": "rec-4",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 4,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-1",
+            "product_id": "eggs",
+            "product_name": "Fresh Eggs (tray)",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 1,
+            "price_at_sale": 230,
+            "cost_at_sale": 1,
+            "tax_category": "ZERO_RATED"
+          },
+          {
+            "id": "rec-5",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 5,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-1",
+            "product_id": "rice",
+            "product_name": "Dinorado Rice (kg)",
+            "unit_type": "WEIGHT",
+            "quantity_sold": 1.25,
+            "price_at_sale": 50,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          }
+        ],
+        "business": {
+          "businessName": "Aling Nena's Sari-Sari Store",
+          "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+          "tin": "123-456-789-000",
+          "min": "MIN-0001",
+          "serialNumber": "SN-TAB-9",
+          "ptuNumber": "PTU-77",
+          "headerLines": [
+            "Branch 2"
+          ],
+          "footerLines": [
+            "Come again!"
+          ]
+        },
+        "options": {
+          "cashierName": "Maria"
+        }
+      },
+      "posBirPayload": {
+        "type": "sale",
+        "businessName": "Aling Nena's Sari-Sari Store",
+        "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+        "tin": "123-456-789-000",
+        "min": "MIN-0001",
+        "serialNumber": "SN-TAB-9",
+        "ptuNumber": "PTU-77",
+        "headerLines": [
+          "Branch 2"
+        ],
+        "footerLines": [
+          "Come again!"
+        ],
+        "invoiceNumber": "SI-000042",
+        "date": "2026-10-15T03:59:18.390Z",
+        "cashier": "Maria",
+        "customerName": "Lolo Ben",
+        "scPwdId": "OSCA-12345",
+        "items": [
+          {
+            "name": "Coke 1.5L",
+            "quantity": 3,
+            "unitPrice": 65,
+            "lineTotal": 195
+          },
+          {
+            "name": "Bear Brand Milk 300g",
+            "quantity": 2,
+            "unitPrice": 85,
+            "lineTotal": 170
+          },
+          {
+            "name": "Fresh Eggs (tray)",
+            "quantity": 1,
+            "unitPrice": 230,
+            "lineTotal": 230
+          },
+          {
+            "name": "Dinorado Rice (kg)",
+            "quantity": 1.25,
+            "unitPrice": 50,
+            "lineTotal": 62.5
+          }
+        ],
+        "subtotal": 657.5,
+        "lessVat": 13.79,
+        "discount": 62.99,
+        "vatableSales": 114.96,
+        "vatAmount": 13.79,
+        "vatExemptSales": 284.96,
+        "zeroRatedSales": 230,
+        "total": 580.72,
+        "paymentMethod": "CASH",
+        "amountTendered": 1000,
+        "change": 419.28
+      },
+      "posBirNow": null,
+      "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'\"><title>Receipt</title><style>@page{margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;color:#000}body{width:72mm;max-width:100%;font-family:\"Courier New\",Courier,monospace;font-size:12px;line-height:1.25}.c{text-align:center}.l{text-align:left}.r{text-align:right;white-space:nowrap;padding-left:4px}.b{font-weight:bold}.lg{font-size:14px}.w{white-space:normal;word-break:break-word}.name{word-break:break-word}.ind{padding-left:8px}hr{border:0;border-top:1px dashed #000;margin:4px 0}table{width:100%;border-collapse:collapse}td{padding:0;vertical-align:top}</style></head><body><div class=\"c b lg\">Aling Nena&#39;s Sari-Sari Store</div><div class=\"c\">123 Rizal Ave, Brgy. San Jose, Quezon City</div><div class=\"c\">VAT REG TIN: 123-456-789-000</div><div class=\"c\">MIN: MIN-0001</div><div class=\"c\">S/N: SN-TAB-9</div><div class=\"c\">PTU No: PTU-77</div><div class=\"c\">Branch 2</div><hr><div class=\"c b\">SALES INVOICE</div><table><tr><td>Invoice No</td><td class=\"r w\">SI-000042</td></tr><tr><td>Date</td><td class=\"r w\">2026-10-15 11:59:18</td></tr><tr><td>Cashier</td><td class=\"r w\">Maria</td></tr><tr><td>Customer</td><td class=\"r w\">Lolo Ben</td></tr><tr><td>SC/PWD ID</td><td class=\"r w\">OSCA-12345</td></tr></table><hr><table><tr><td colspan=\"2\" class=\"name\">Coke 1.5L</td></tr><tr><td class=\"ind\">3 x 65.00</td><td class=\"r\">195.00</td></tr><tr><td colspan=\"2\" class=\"name\">Bear Brand Milk 300g</td></tr><tr><td class=\"ind\">2 x 85.00</td><td class=\"r\">170.00</td></tr><tr><td colspan=\"2\" class=\"name\">Fresh Eggs (tray)</td></tr><tr><td class=\"ind\">1 x 230.00</td><td class=\"r\">230.00</td></tr><tr><td colspan=\"2\" class=\"name\">Dinorado Rice (kg)</td></tr><tr><td class=\"ind\">1.25 x 50.00</td><td class=\"r\">62.50</td></tr></table><hr><table><tr><td>Subtotal</td><td class=\"r\">657.50</td></tr><tr><td>Less VAT (SC/PWD)</td><td class=\"r\">13.79</td></tr><tr><td>Less Discount</td><td class=\"r\">62.99</td></tr><tr class=\"b lg\"><td>TOTAL</td><td class=\"r\">580.72</td></tr></table><hr><table><tr><td>VATable Sales</td><td class=\"r\">114.96</td></tr><tr><td>VAT Amount</td><td class=\"r\">13.79</td></tr><tr><td>VAT-Exempt Sales</td><td class=\"r\">284.96</td></tr><tr><td>Zero-Rated Sales</td><td class=\"r\">230.00</td></tr></table><hr><table><tr><td>Payment</td><td class=\"r w\">CASH</td></tr><tr><td>Amount Tendered</td><td class=\"r\">1,000.00</td></tr><tr><td>Change</td><td class=\"r\">419.28</td></tr></table><hr><div class=\"c\">Thank you!</div><div class=\"c\">Come again!</div></body></html>",
+      "keyFields": [
+        "Aling Nena's Sari-Sari Store",
+        "VAT REG TIN: 123-456-789-000",
+        "MIN: MIN-0001 S/N: SN-TAB-9 PTU No: PTU-77 Branch 2",
+        "Date 2026-10-15 11:59:18",
+        "Cashier Maria",
+        "VATable Sales",
+        "Thank you! Come again!",
+        "Invoice No SI-000042",
+        "SALES INVOICE",
+        "Customer Lolo Ben",
+        "SC/PWD ID OSCA-12345",
+        "Subtotal 657.50 Less VAT (SC/PWD) 13.79 Less Discount 62.99 TOTAL 580.72",
+        "Dinorado Rice (kg) 1.25 x 50.00 62.50",
+        "Amount Tendered 1,000.00 Change 419.28"
+      ]
+    },
+    {
+      "name": "GCASH sale with a wholesale line and HTML-significant characters",
+      "kind": "sale",
+      "input": {
+        "transaction": {
+          "id": "rec-6",
+          "store_id": "store-1",
+          "terminal_id": "terminal-1",
+          "device_seq": 6,
+          "created_at": "2026-10-15T03:59:18.390Z",
+          "shift_id": "shift-1",
+          "cashier_id": "cashier-1",
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "GCASH",
+          "invoice_number": "SI-000043",
+          "transaction_type": "SALE",
+          "status": "PAID",
+          "original_transaction_id": null,
+          "void_reason": null,
+          "authorized_by": null,
+          "gross_sales": 258.25,
+          "vatable_sales": 230.58,
+          "vat_amount": 27.67,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 258.25,
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": "GC-998877"
+        },
+        "items": [
+          {
+            "id": "rec-7",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 7,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-6",
+            "product_id": "sardines",
+            "product_name": "Ligo Sardines",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 10,
+            "price_at_sale": 22,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          },
+          {
+            "id": "rec-8",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 8,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-6",
+            "product_id": "odd",
+            "product_name": "Tom & Jerry's <Best> \"Snacks\"",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 3,
+            "price_at_sale": 12.75,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          }
+        ],
+        "business": {
+          "businessName": "Aling Nena's Sari-Sari Store",
+          "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+          "tin": "123-456-789-000",
+          "min": "MIN-0001",
+          "serialNumber": "SN-TAB-9",
+          "ptuNumber": "PTU-77",
+          "headerLines": [
+            "Branch 2"
+          ],
+          "footerLines": [
+            "Come again!"
+          ]
+        },
+        "options": {
+          "cashierName": "Maria"
+        }
+      },
+      "posBirPayload": {
+        "type": "sale",
+        "businessName": "Aling Nena's Sari-Sari Store",
+        "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+        "tin": "123-456-789-000",
+        "min": "MIN-0001",
+        "serialNumber": "SN-TAB-9",
+        "ptuNumber": "PTU-77",
+        "headerLines": [
+          "Branch 2"
+        ],
+        "footerLines": [
+          "Come again!"
+        ],
+        "invoiceNumber": "SI-000043",
+        "date": "2026-10-15T03:59:18.390Z",
+        "cashier": "Maria",
+        "items": [
+          {
+            "name": "Ligo Sardines",
+            "quantity": 10,
+            "unitPrice": 22,
+            "lineTotal": 220
+          },
+          {
+            "name": "Tom & Jerry's <Best> \"Snacks\"",
+            "quantity": 3,
+            "unitPrice": 12.75,
+            "lineTotal": 38.25
+          }
+        ],
+        "subtotal": 258.25,
+        "discount": 0,
+        "vatableSales": 230.58,
+        "vatAmount": 27.67,
+        "vatExemptSales": 0,
+        "zeroRatedSales": 0,
+        "total": 258.25,
+        "paymentMethod": "GCASH",
+        "referenceNumber": "GC-998877",
+        "change": 0
+      },
+      "posBirNow": null,
+      "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'\"><title>Receipt</title><style>@page{margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;color:#000}body{width:72mm;max-width:100%;font-family:\"Courier New\",Courier,monospace;font-size:12px;line-height:1.25}.c{text-align:center}.l{text-align:left}.r{text-align:right;white-space:nowrap;padding-left:4px}.b{font-weight:bold}.lg{font-size:14px}.w{white-space:normal;word-break:break-word}.name{word-break:break-word}.ind{padding-left:8px}hr{border:0;border-top:1px dashed #000;margin:4px 0}table{width:100%;border-collapse:collapse}td{padding:0;vertical-align:top}</style></head><body><div class=\"c b lg\">Aling Nena&#39;s Sari-Sari Store</div><div class=\"c\">123 Rizal Ave, Brgy. San Jose, Quezon City</div><div class=\"c\">VAT REG TIN: 123-456-789-000</div><div class=\"c\">MIN: MIN-0001</div><div class=\"c\">S/N: SN-TAB-9</div><div class=\"c\">PTU No: PTU-77</div><div class=\"c\">Branch 2</div><hr><div class=\"c b\">SALES INVOICE</div><table><tr><td>Invoice No</td><td class=\"r w\">SI-000043</td></tr><tr><td>Date</td><td class=\"r w\">2026-10-15 11:59:18</td></tr><tr><td>Cashier</td><td class=\"r w\">Maria</td></tr></table><hr><table><tr><td colspan=\"2\" class=\"name\">Ligo Sardines</td></tr><tr><td class=\"ind\">10 x 22.00</td><td class=\"r\">220.00</td></tr><tr><td colspan=\"2\" class=\"name\">Tom &amp; Jerry&#39;s &lt;Best&gt; &quot;Snacks&quot;</td></tr><tr><td class=\"ind\">3 x 12.75</td><td class=\"r\">38.25</td></tr></table><hr><table><tr><td>Subtotal</td><td class=\"r\">258.25</td></tr><tr><td>Less Discount</td><td class=\"r\">0.00</td></tr><tr class=\"b lg\"><td>TOTAL</td><td class=\"r\">258.25</td></tr></table><hr><table><tr><td>VATable Sales</td><td class=\"r\">230.58</td></tr><tr><td>VAT Amount</td><td class=\"r\">27.67</td></tr><tr><td>VAT-Exempt Sales</td><td class=\"r\">0.00</td></tr><tr><td>Zero-Rated Sales</td><td class=\"r\">0.00</td></tr></table><hr><table><tr><td>Payment</td><td class=\"r w\">GCASH</td></tr><tr><td>Reference No</td><td class=\"r w\">GC-998877</td></tr><tr><td>Change</td><td class=\"r\">0.00</td></tr></table><hr><div class=\"c\">Thank you!</div><div class=\"c\">Come again!</div></body></html>",
+      "keyFields": [
+        "Aling Nena's Sari-Sari Store",
+        "VAT REG TIN: 123-456-789-000",
+        "MIN: MIN-0001 S/N: SN-TAB-9 PTU No: PTU-77 Branch 2",
+        "Date 2026-10-15 11:59:18",
+        "Cashier Maria",
+        "VATable Sales",
+        "Thank you! Come again!",
+        "Invoice No SI-000043",
+        "Ligo Sardines 10 x 22.00 220.00",
+        "Tom & Jerry's <Best> \"Snacks\" 3 x 12.75 38.25",
+        "Reference No GC-998877",
+        "Less Discount 0.00"
+      ]
+    },
+    {
+      "name": "store-credit sale without a customer name (the id prints as the reference)",
+      "kind": "sale",
+      "input": {
+        "transaction": {
+          "id": "rec-9",
+          "store_id": "store-1",
+          "terminal_id": "terminal-1",
+          "device_seq": 9,
+          "created_at": "2026-10-15T03:59:18.390Z",
+          "shift_id": "shift-1",
+          "cashier_id": "cashier-1",
+          "pax_count": 1,
+          "senior_count": 0,
+          "sc_pwd_id": null,
+          "sc_pwd_name": null,
+          "payment_method": "STORE_CREDIT",
+          "invoice_number": "SI-000044",
+          "transaction_type": "SALE",
+          "status": "PAID",
+          "original_transaction_id": null,
+          "void_reason": null,
+          "authorized_by": null,
+          "gross_sales": 130,
+          "vatable_sales": 116.07,
+          "vat_amount": 13.93,
+          "vat_exempt_sales": 0,
+          "zero_rated_sales": 0,
+          "total_discount": 0,
+          "net_sales": 130,
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": "cust-1"
+        },
+        "items": [
+          {
+            "id": "rec-10",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 10,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-9",
+            "product_id": "coke",
+            "product_name": "Coke 1.5L",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 2,
+            "price_at_sale": 65,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          }
+        ],
+        "business": {
+          "businessName": "Aling Nena's Sari-Sari Store",
+          "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+          "tin": "123-456-789-000",
+          "min": "MIN-0001",
+          "serialNumber": "SN-TAB-9",
+          "ptuNumber": "PTU-77",
+          "headerLines": [
+            "Branch 2"
+          ],
+          "footerLines": [
+            "Come again!"
+          ]
+        },
+        "options": {
+          "cashierName": "Maria"
+        }
+      },
+      "posBirPayload": {
+        "type": "sale",
+        "businessName": "Aling Nena's Sari-Sari Store",
+        "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+        "tin": "123-456-789-000",
+        "min": "MIN-0001",
+        "serialNumber": "SN-TAB-9",
+        "ptuNumber": "PTU-77",
+        "headerLines": [
+          "Branch 2"
+        ],
+        "footerLines": [
+          "Come again!"
+        ],
+        "invoiceNumber": "SI-000044",
+        "date": "2026-10-15T03:59:18.390Z",
+        "cashier": "Maria",
+        "items": [
+          {
+            "name": "Coke 1.5L",
+            "quantity": 2,
+            "unitPrice": 65,
+            "lineTotal": 130
+          }
+        ],
+        "subtotal": 130,
+        "discount": 0,
+        "vatableSales": 116.07,
+        "vatAmount": 13.93,
+        "vatExemptSales": 0,
+        "zeroRatedSales": 0,
+        "total": 130,
+        "paymentMethod": "STORE_CREDIT",
+        "referenceNumber": "cust-1",
+        "change": 0
+      },
+      "posBirNow": null,
+      "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'\"><title>Receipt</title><style>@page{margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;color:#000}body{width:72mm;max-width:100%;font-family:\"Courier New\",Courier,monospace;font-size:12px;line-height:1.25}.c{text-align:center}.l{text-align:left}.r{text-align:right;white-space:nowrap;padding-left:4px}.b{font-weight:bold}.lg{font-size:14px}.w{white-space:normal;word-break:break-word}.name{word-break:break-word}.ind{padding-left:8px}hr{border:0;border-top:1px dashed #000;margin:4px 0}table{width:100%;border-collapse:collapse}td{padding:0;vertical-align:top}</style></head><body><div class=\"c b lg\">Aling Nena&#39;s Sari-Sari Store</div><div class=\"c\">123 Rizal Ave, Brgy. San Jose, Quezon City</div><div class=\"c\">VAT REG TIN: 123-456-789-000</div><div class=\"c\">MIN: MIN-0001</div><div class=\"c\">S/N: SN-TAB-9</div><div class=\"c\">PTU No: PTU-77</div><div class=\"c\">Branch 2</div><hr><div class=\"c b\">SALES INVOICE</div><table><tr><td>Invoice No</td><td class=\"r w\">SI-000044</td></tr><tr><td>Date</td><td class=\"r w\">2026-10-15 11:59:18</td></tr><tr><td>Cashier</td><td class=\"r w\">Maria</td></tr></table><hr><table><tr><td colspan=\"2\" class=\"name\">Coke 1.5L</td></tr><tr><td class=\"ind\">2 x 65.00</td><td class=\"r\">130.00</td></tr></table><hr><table><tr><td>Subtotal</td><td class=\"r\">130.00</td></tr><tr><td>Less Discount</td><td class=\"r\">0.00</td></tr><tr class=\"b lg\"><td>TOTAL</td><td class=\"r\">130.00</td></tr></table><hr><table><tr><td>VATable Sales</td><td class=\"r\">116.07</td></tr><tr><td>VAT Amount</td><td class=\"r\">13.93</td></tr><tr><td>VAT-Exempt Sales</td><td class=\"r\">0.00</td></tr><tr><td>Zero-Rated Sales</td><td class=\"r\">0.00</td></tr></table><hr><table><tr><td>Payment</td><td class=\"r w\">STORE_CREDIT</td></tr><tr><td>Reference No</td><td class=\"r w\">cust-1</td></tr><tr><td>Change</td><td class=\"r\">0.00</td></tr></table><hr><div class=\"c\">Thank you!</div><div class=\"c\">Come again!</div></body></html>",
+      "keyFields": [
+        "Aling Nena's Sari-Sari Store",
+        "VAT REG TIN: 123-456-789-000",
+        "MIN: MIN-0001 S/N: SN-TAB-9 PTU No: PTU-77 Branch 2",
+        "Date 2026-10-15 11:59:18",
+        "Cashier Maria",
+        "VATable Sales",
+        "Thank you! Come again!",
+        "Invoice No SI-000044",
+        "Payment STORE_CREDIT Reference No cust-1",
+        "TOTAL 130.00"
+      ]
+    },
+    {
+      "name": "void slip for an SC/PWD MAYA sale (lib/printer.ts payload)",
+      "kind": "void",
+      "input": {
+        "creditNote": {
+          "id": "rec-15",
+          "store_id": "store-1",
+          "terminal_id": "terminal-1",
+          "device_seq": 15,
+          "created_at": "2026-10-15T05:10:00.000Z",
+          "shift_id": "shift-1",
+          "cashier_id": "cashier-1",
+          "pax_count": 1,
+          "senior_count": 1,
+          "sc_pwd_id": "PWD-1",
+          "sc_pwd_name": "Aling Rosa",
+          "payment_method": "MAYA",
+          "invoice_number": "CN-000007",
+          "transaction_type": "VOID_REFUND",
+          "status": "REFUND",
+          "original_transaction_id": "rec-11",
+          "void_reason": "Wrong item <scanned>",
+          "authorized_by": "manager-1",
+          "gross_sales": -252.5,
+          "vatable_sales": 0,
+          "vat_amount": 0,
+          "vat_exempt_sales": -234.55,
+          "zero_rated_sales": 0,
+          "total_discount": -46.91,
+          "net_sales": -187.64,
+          "amount_tendered": 0,
+          "change_amount": 0,
+          "reference_number": "SI-000045"
+        },
+        "originalSale": {
+          "id": "rec-11",
+          "store_id": "store-1",
+          "terminal_id": "terminal-1",
+          "device_seq": 11,
+          "created_at": "2026-10-15T03:59:18.390Z",
+          "shift_id": "shift-1",
+          "cashier_id": "cashier-1",
+          "pax_count": 1,
+          "senior_count": 1,
+          "sc_pwd_id": "PWD-1",
+          "sc_pwd_name": "Aling Rosa",
+          "payment_method": "MAYA",
+          "invoice_number": "SI-000045",
+          "transaction_type": "SALE",
+          "status": "PAID",
+          "original_transaction_id": null,
+          "void_reason": null,
+          "authorized_by": null,
+          "gross_sales": 252.5,
+          "vatable_sales": 0,
+          "vat_amount": 0,
+          "vat_exempt_sales": 234.55,
+          "zero_rated_sales": 0,
+          "total_discount": 46.91,
+          "net_sales": 187.64,
+          "amount_tendered": null,
+          "change_amount": 0,
+          "reference_number": "MY-1"
+        },
+        "items": [
+          {
+            "id": "rec-12",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 12,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-11",
+            "product_id": "coke",
+            "product_name": "Coke 1.5L",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 2,
+            "price_at_sale": 65,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          },
+          {
+            "id": "rec-13",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 13,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-11",
+            "product_id": "milk",
+            "product_name": "Bear Brand Milk 300g",
+            "unit_type": "QUANTITY",
+            "quantity_sold": 1,
+            "price_at_sale": 85,
+            "cost_at_sale": 1,
+            "tax_category": "VAT_EXEMPT"
+          },
+          {
+            "id": "rec-14",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 14,
+            "created_at": "2026-10-15T03:59:18.390Z",
+            "transaction_id": "rec-11",
+            "product_id": "rice",
+            "product_name": "Dinorado Rice (kg)",
+            "unit_type": "WEIGHT",
+            "quantity_sold": 0.75,
+            "price_at_sale": 50,
+            "cost_at_sale": 1,
+            "tax_category": "VATABLE"
+          }
+        ],
+        "business": {
+          "businessName": "Aling Nena's Sari-Sari Store",
+          "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+          "tin": "123-456-789-000",
+          "min": "MIN-0001",
+          "serialNumber": "SN-TAB-9",
+          "ptuNumber": "PTU-77",
+          "headerLines": [
+            "Branch 2"
+          ],
+          "footerLines": [
+            "Come again!"
+          ]
+        },
+        "options": {
+          "cashierName": "Maria",
+          "authorizedByName": "Manager Jose"
+        }
+      },
+      "posBirPayload": {
+        "type": "void",
+        "businessName": "Aling Nena's Sari-Sari Store",
+        "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+        "tin": "123-456-789-000",
+        "min": "MIN-0001",
+        "serialNumber": "SN-TAB-9",
+        "ptuNumber": "PTU-77",
+        "headerLines": [
+          "Branch 2"
+        ],
+        "footerLines": [
+          "Come again!"
+        ],
+        "invoiceNumber": "CN-000007",
+        "originalInvoiceNumber": "SI-000045",
+        "cashier": "Maria",
+        "reason": "Wrong item <scanned>",
+        "authorizedBy": "Manager Jose",
+        "items": [
+          {
+            "name": "Coke 1.5L",
+            "quantity": -2,
+            "unitPrice": 65,
+            "lineTotal": -130
+          },
+          {
+            "name": "Bear Brand Milk 300g",
+            "quantity": -1,
+            "unitPrice": 85,
+            "lineTotal": -85
+          },
+          {
+            "name": "Dinorado Rice (kg)",
+            "quantity": -0.75,
+            "unitPrice": 50,
+            "lineTotal": -37.5
+          }
+        ],
+        "lessVat": -17.95,
+        "discount": -46.91,
+        "vatableSales": 0,
+        "vatAmount": 0,
+        "vatExemptSales": -234.55,
+        "zeroRatedSales": 0,
+        "total": -187.64,
+        "paymentMethod": "MAYA"
+      },
+      "posBirNow": "2026-10-15T05:10:00.000Z",
+      "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'\"><title>Receipt</title><style>@page{margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;color:#000}body{width:72mm;max-width:100%;font-family:\"Courier New\",Courier,monospace;font-size:12px;line-height:1.25}.c{text-align:center}.l{text-align:left}.r{text-align:right;white-space:nowrap;padding-left:4px}.b{font-weight:bold}.lg{font-size:14px}.w{white-space:normal;word-break:break-word}.name{word-break:break-word}.ind{padding-left:8px}hr{border:0;border-top:1px dashed #000;margin:4px 0}table{width:100%;border-collapse:collapse}td{padding:0;vertical-align:top}</style></head><body><div class=\"c b lg\">Aling Nena&#39;s Sari-Sari Store</div><div class=\"c\">123 Rizal Ave, Brgy. San Jose, Quezon City</div><div class=\"c\">VAT REG TIN: 123-456-789-000</div><div class=\"c\">MIN: MIN-0001</div><div class=\"c\">S/N: SN-TAB-9</div><div class=\"c\">PTU No: PTU-77</div><div class=\"c\">Branch 2</div><hr><div class=\"c b lg\">*** VOID ***</div><div class=\"c b\">VOID SLIP</div><table><tr><td>Void Ref No</td><td class=\"r w\">CN-000007</td></tr><tr><td>Orig. Invoice</td><td class=\"r w\">SI-000045</td></tr><tr><td>Date</td><td class=\"r w\">2026-10-15 13:10:00</td></tr><tr><td>Cashier</td><td class=\"r w\">Maria</td></tr><tr><td>Authorized By</td><td class=\"r w\">Manager Jose</td></tr></table><div class=\"l\">Reason: Wrong item &lt;scanned&gt;</div><hr><table><tr><td colspan=\"2\" class=\"name\">Coke 1.5L</td></tr><tr><td class=\"ind\">-2 x 65.00</td><td class=\"r\">-130.00</td></tr><tr><td colspan=\"2\" class=\"name\">Bear Brand Milk 300g</td></tr><tr><td class=\"ind\">-1 x 85.00</td><td class=\"r\">-85.00</td></tr><tr><td colspan=\"2\" class=\"name\">Dinorado Rice (kg)</td></tr><tr><td class=\"ind\">-0.75 x 50.00</td><td class=\"r\">-37.50</td></tr></table><hr><table><tr><td>Less VAT (SC/PWD)</td><td class=\"r\">-17.95</td></tr><tr><td>Less Discount</td><td class=\"r\">-46.91</td></tr><tr class=\"b lg\"><td>TOTAL VOIDED</td><td class=\"r\">-187.64</td></tr></table><hr><table><tr><td>VATable Sales</td><td class=\"r\">0.00</td></tr><tr><td>VAT Amount</td><td class=\"r\">0.00</td></tr><tr><td>VAT-Exempt Sales</td><td class=\"r\">-234.55</td></tr><tr><td>Zero-Rated Sales</td><td class=\"r\">0.00</td></tr></table><hr><table><tr><td>Orig. Payment</td><td class=\"r w\">MAYA</td></tr></table><hr><div class=\"c\">Come again!</div></body></html>",
+      "keyFields": [
+        "*** VOID *** VOID SLIP",
+        "Void Ref No CN-000007",
+        "Orig. Invoice SI-000045",
+        "Date 2026-10-15 13:10:00",
+        "Authorized By Manager Jose",
+        "Reason: Wrong item <scanned>",
+        "Coke 1.5L -2 x 65.00 -130.00",
+        "Dinorado Rice (kg) -0.75 x 50.00 -37.50",
+        "TOTAL VOIDED",
+        "Orig. Payment MAYA",
+        "Come again!"
+      ]
+    },
+    {
+      "name": "statement of account (components/credit/credit-table.tsx payload)",
+      "kind": "statement",
+      "input": {
+        "customer": {
+          "id": "cust-1",
+          "full_name": "Juan Dela Cruz"
+        },
+        "entries": [
+          {
+            "id": "rec-16",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 16,
+            "created_at": "2026-09-30T17:00:00.000Z",
+            "customer_id": "cust-1",
+            "transaction_id": "sale-40",
+            "shift_id": "shift-1",
+            "entry_type": "CHARGE",
+            "amount": 250,
+            "running_balance": 250,
+            "notes": null,
+            "payment_method": null,
+            "reference_number": null,
+            "invoice_number": "SI-000040"
+          },
+          {
+            "id": "rec-17",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 17,
+            "created_at": "2026-10-05T02:00:00.000Z",
+            "customer_id": "cust-1",
+            "transaction_id": null,
+            "shift_id": "shift-1",
+            "entry_type": "PAYMENT",
+            "amount": 100,
+            "running_balance": 150,
+            "notes": null,
+            "payment_method": "CASH",
+            "reference_number": null,
+            "invoice_number": null
+          },
+          {
+            "id": "rec-18",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 18,
+            "created_at": "2026-10-07T03:00:00.000Z",
+            "customer_id": "cust-1",
+            "transaction_id": "sale-51",
+            "shift_id": "shift-1",
+            "entry_type": "CHARGE",
+            "amount": 1075.5,
+            "running_balance": 1225.5,
+            "notes": null,
+            "payment_method": null,
+            "reference_number": null,
+            "invoice_number": "SI-000051"
+          },
+          {
+            "id": "rec-19",
+            "store_id": "store-1",
+            "terminal_id": "terminal-1",
+            "device_seq": 19,
+            "created_at": "2026-10-08T03:00:00.000Z",
+            "customer_id": "cust-1",
+            "transaction_id": "cn-3",
+            "shift_id": "shift-1",
+            "entry_type": "ADJUSTMENT",
+            "amount": 25,
+            "running_balance": 1200.5,
+            "notes": null,
+            "payment_method": null,
+            "reference_number": null,
+            "invoice_number": "CN-000003"
+          }
+        ],
+        "business": {
+          "businessName": "Aling Nena's Sari-Sari Store",
+          "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+          "tin": "123-456-789-000",
+          "min": "MIN-0001",
+          "serialNumber": "SN-TAB-9",
+          "ptuNumber": "PTU-77",
+          "headerLines": [
+            "Branch 2"
+          ],
+          "footerLines": [
+            "Come again!"
+          ]
+        },
+        "options": {
+          "now": "2026-10-15T08:00:00.000Z",
+          "statementNumber": "SOA-000123"
+        }
+      },
+      "posBirPayload": {
+        "type": "statement",
+        "businessName": "Aling Nena's Sari-Sari Store",
+        "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+        "tin": "123-456-789-000",
+        "min": "MIN-0001",
+        "serialNumber": "SN-TAB-9",
+        "ptuNumber": "PTU-77",
+        "headerLines": [
+          "Branch 2"
+        ],
+        "footerLines": [
+          "Come again!"
+        ],
+        "customerName": "Juan Dela Cruz",
+        "invoiceNumber": "SOA-000123",
+        "items": [
+          {
+            "name": "10/1/2026 - Charge SI-000040",
+            "quantity": 1,
+            "lineTotal": 250
+          },
+          {
+            "name": "10/5/2026 - Payment",
+            "quantity": 1,
+            "lineTotal": -100
+          },
+          {
+            "name": "10/7/2026 - Charge SI-000051",
+            "quantity": 1,
+            "lineTotal": 1075.5
+          },
+          {
+            "name": "10/8/2026 - Adjustment CN-000003",
+            "quantity": 1,
+            "lineTotal": -25
+          }
+        ],
+        "total": 1200.5
+      },
+      "posBirNow": "2026-10-15T08:00:00.000Z",
+      "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'\"><title>Receipt</title><style>@page{margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;color:#000}body{width:72mm;max-width:100%;font-family:\"Courier New\",Courier,monospace;font-size:12px;line-height:1.25}.c{text-align:center}.l{text-align:left}.r{text-align:right;white-space:nowrap;padding-left:4px}.b{font-weight:bold}.lg{font-size:14px}.w{white-space:normal;word-break:break-word}.name{word-break:break-word}.ind{padding-left:8px}hr{border:0;border-top:1px dashed #000;margin:4px 0}table{width:100%;border-collapse:collapse}td{padding:0;vertical-align:top}</style></head><body><div class=\"c b lg\">Aling Nena&#39;s Sari-Sari Store</div><div class=\"c\">123 Rizal Ave, Brgy. San Jose, Quezon City</div><div class=\"c\">VAT REG TIN: 123-456-789-000</div><div class=\"c\">MIN: MIN-0001</div><div class=\"c\">S/N: SN-TAB-9</div><div class=\"c\">PTU No: PTU-77</div><div class=\"c\">Branch 2</div><hr><div class=\"c b\">STATEMENT OF ACCOUNT</div><table><tr><td>SOA No</td><td class=\"r w\">SOA-000123</td></tr><tr><td>Date</td><td class=\"r w\">2026-10-15 16:00:00</td></tr><tr><td>Customer</td><td class=\"r w\">Juan Dela Cruz</td></tr></table><hr><table><tr><td colspan=\"2\" class=\"name\">10/1/2026 - Charge SI-000040</td></tr><tr><td class=\"ind\">1 x 250.00</td><td class=\"r\">250.00</td></tr><tr><td colspan=\"2\" class=\"name\">10/5/2026 - Payment</td></tr><tr><td class=\"ind\">1 x 100.00</td><td class=\"r\">-100.00</td></tr><tr><td colspan=\"2\" class=\"name\">10/7/2026 - Charge SI-000051</td></tr><tr><td class=\"ind\">1 x 1,075.50</td><td class=\"r\">1,075.50</td></tr><tr><td colspan=\"2\" class=\"name\">10/8/2026 - Adjustment CN-000003</td></tr><tr><td class=\"ind\">1 x 25.00</td><td class=\"r\">-25.00</td></tr></table><hr><table><tr class=\"b lg\"><td>BALANCE DUE</td><td class=\"r\">1,200.50</td></tr></table><hr><div class=\"c\">THIS DOCUMENT IS NOT VALID FOR CLAIM OF INPUT TAX</div><div class=\"c\">Come again!</div></body></html>",
+      "keyFields": [
+        "STATEMENT OF ACCOUNT",
+        "SOA No SOA-000123",
+        "Date 2026-10-15 16:00:00",
+        "Customer Juan Dela Cruz",
+        "10/1/2026 - Charge SI-000040 1 x 250.00 250.00",
+        "10/5/2026 - Payment 1 x 100.00 -100.00",
+        "BALANCE DUE 1,200.50",
+        "THIS DOCUMENT IS NOT VALID FOR CLAIM OF INPUT TAX Come again!"
+      ]
+    },
+    {
+      "name": "payment receipt (receipt-template payload contract)",
+      "kind": "payment",
+      "input": {
+        "customer": {
+          "id": "cust-1",
+          "full_name": "Juan Dela Cruz"
+        },
+        "entry": {
+          "id": "rec-20",
+          "store_id": "store-1",
+          "terminal_id": "terminal-1",
+          "device_seq": 20,
+          "created_at": "2026-10-15T06:00:00.000Z",
+          "customer_id": "cust-1",
+          "transaction_id": null,
+          "shift_id": "shift-1",
+          "entry_type": "PAYMENT",
+          "amount": 1000,
+          "running_balance": 1234.56,
+          "notes": null,
+          "payment_method": "GCASH",
+          "reference_number": "GC-5566"
+        },
+        "business": {
+          "businessName": "Aling Nena's Sari-Sari Store",
+          "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+          "tin": "123-456-789-000",
+          "min": "MIN-0001",
+          "serialNumber": "SN-TAB-9",
+          "ptuNumber": "PTU-77",
+          "headerLines": [
+            "Branch 2"
+          ],
+          "footerLines": [
+            "Come again!"
+          ]
+        },
+        "options": {
+          "receiptNumber": "PR-000007",
+          "cashierName": "Maria"
+        }
+      },
+      "posBirPayload": {
+        "type": "payment",
+        "businessName": "Aling Nena's Sari-Sari Store",
+        "address": "123 Rizal Ave, Brgy. San Jose, Quezon City",
+        "tin": "123-456-789-000",
+        "min": "MIN-0001",
+        "serialNumber": "SN-TAB-9",
+        "ptuNumber": "PTU-77",
+        "headerLines": [
+          "Branch 2"
+        ],
+        "footerLines": [
+          "Come again!"
+        ],
+        "invoiceNumber": "PR-000007",
+        "date": "2026-10-15T06:00:00.000Z",
+        "cashier": "Maria",
+        "customerName": "Juan Dela Cruz",
+        "previousBalance": 2234.56,
+        "amountPaid": 1000,
+        "newBalance": 1234.56,
+        "paymentMethod": "GCASH",
+        "referenceNumber": "GC-5566"
+      },
+      "posBirNow": null,
+      "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'\"><title>Receipt</title><style>@page{margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;color:#000}body{width:72mm;max-width:100%;font-family:\"Courier New\",Courier,monospace;font-size:12px;line-height:1.25}.c{text-align:center}.l{text-align:left}.r{text-align:right;white-space:nowrap;padding-left:4px}.b{font-weight:bold}.lg{font-size:14px}.w{white-space:normal;word-break:break-word}.name{word-break:break-word}.ind{padding-left:8px}hr{border:0;border-top:1px dashed #000;margin:4px 0}table{width:100%;border-collapse:collapse}td{padding:0;vertical-align:top}</style></head><body><div class=\"c b lg\">Aling Nena&#39;s Sari-Sari Store</div><div class=\"c\">123 Rizal Ave, Brgy. San Jose, Quezon City</div><div class=\"c\">VAT REG TIN: 123-456-789-000</div><div class=\"c\">MIN: MIN-0001</div><div class=\"c\">S/N: SN-TAB-9</div><div class=\"c\">PTU No: PTU-77</div><div class=\"c\">Branch 2</div><hr><div class=\"c b\">PAYMENT RECEIPT</div><table><tr><td>Receipt No</td><td class=\"r w\">PR-000007</td></tr><tr><td>Date</td><td class=\"r w\">2026-10-15 14:00:00</td></tr><tr><td>Cashier</td><td class=\"r w\">Maria</td></tr><tr><td>Customer</td><td class=\"r w\">Juan Dela Cruz</td></tr></table><hr><table><tr><td>Previous Balance</td><td class=\"r\">2,234.56</td></tr><tr class=\"b lg\"><td>AMOUNT PAID</td><td class=\"r\">1,000.00</td></tr><tr><td>Remaining Balance</td><td class=\"r\">1,234.56</td></tr></table><hr><table><tr><td>Payment</td><td class=\"r w\">GCASH</td></tr><tr><td>Reference No</td><td class=\"r w\">GC-5566</td></tr></table><hr><div class=\"c\">THIS DOCUMENT IS NOT VALID FOR CLAIM OF INPUT TAX</div><div class=\"c\">Thank you!</div><div class=\"c\">Come again!</div></body></html>",
+      "keyFields": [
+        "PAYMENT RECEIPT",
+        "Receipt No PR-000007",
+        "Date 2026-10-15 14:00:00",
+        "Previous Balance 2,234.56",
+        "AMOUNT PAID 1,000.00",
+        "Remaining Balance 1,234.56",
+        "Payment GCASH Reference No GC-5566",
+        "THIS DOCUMENT IS NOT VALID FOR CLAIM OF INPUT TAX Thank you! Come again!"
+      ]
+    }
+  ]
+}

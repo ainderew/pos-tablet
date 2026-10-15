@@ -6,7 +6,7 @@
       "name": "void_cash_mixed_categories",
       "sales": [
         {
-          "id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -16,7 +16,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 300,
           "vatable_sales": 66.96,
           "vat_amount": 8.04,
@@ -34,8 +34,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "9af6a2dd-deaa-41e8-94a3-f2568953f0c5",
-              "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "id": "5eb96628-3370-465e-8392-9b7dad562008",
+              "transaction_id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
               "product_id": "soap",
               "quantity_sold": 3,
               "price_at_sale": 25,
@@ -44,12 +44,12 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Laundry Soap Bar"
             },
             {
-              "id": "ddb6c7a6-40ea-4874-a9c7-754471540542",
-              "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "id": "159d005a-b03d-4dd1-83b0-321b70b2b404",
+              "transaction_id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
               "product_id": "eggs",
               "quantity_sold": 12,
               "price_at_sale": 8.75,
@@ -58,12 +58,12 @@
               "tax_category": "VAT_EXEMPT",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Fresh Eggs"
             },
             {
-              "id": "80a1d324-0422-49a3-9606-018ac7a77347",
-              "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "id": "19dc95c9-0925-45c4-a85e-3b2e45e2fafc",
+              "transaction_id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
               "product_id": "export",
               "quantity_sold": 1,
               "price_at_sale": 120,
@@ -72,7 +72,7 @@
               "tax_category": "ZERO_RATED",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Export Item"
             }
           ]
@@ -80,8 +80,8 @@
       ],
       "items": [
         {
-          "id": "9af6a2dd-deaa-41e8-94a3-f2568953f0c5",
-          "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "id": "5eb96628-3370-465e-8392-9b7dad562008",
+          "transaction_id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
           "product_id": "soap",
           "quantity_sold": 3,
           "price_at_sale": 25,
@@ -90,12 +90,13 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Laundry Soap Bar"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Laundry Soap Bar",
+          "unit_type": "QUANTITY"
         },
         {
-          "id": "ddb6c7a6-40ea-4874-a9c7-754471540542",
-          "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "id": "159d005a-b03d-4dd1-83b0-321b70b2b404",
+          "transaction_id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
           "product_id": "eggs",
           "quantity_sold": 12,
           "price_at_sale": 8.75,
@@ -104,12 +105,13 @@
           "tax_category": "VAT_EXEMPT",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Fresh Eggs"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Fresh Eggs",
+          "unit_type": "QUANTITY"
         },
         {
-          "id": "80a1d324-0422-49a3-9606-018ac7a77347",
-          "transaction_id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+          "id": "19dc95c9-0925-45c4-a85e-3b2e45e2fafc",
+          "transaction_id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
           "product_id": "export",
           "quantity_sold": 1,
           "price_at_sale": 120,
@@ -118,8 +120,9 @@
           "tax_category": "ZERO_RATED",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Export Item"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Export Item",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -138,7 +141,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "032760e1-2c43-4062-ba0a-f8b8b1ad821d",
+              "id": "13ed0eeb-69c5-432e-ab58-ed35cc2b6127",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -148,7 +151,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 300,
               "vatable_sales": 66.96,
               "vat_amount": 8.04,
@@ -170,17 +173,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "641785ad-cb05-40d7-96c2-fccf328cfdac",
+              "id": "b86fa830-92a9-48f2-ba46-7439e48ea78b",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "Wrong items",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -300,
               "vatable_sales": -66.96,
               "vat_amount": -8.04,
@@ -221,7 +224,7 @@
       "name": "void_sc_pwd_sale",
       "sales": [
         {
-          "id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+          "id": "dd92e304-f238-450d-8a95-db3316afbec8",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -231,7 +234,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 135,
           "vatable_sales": 59.53,
           "vat_amount": 7.14,
@@ -249,8 +252,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "e92bbad7-717a-40ec-a1b4-7314102e64d4",
-              "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+              "id": "66ef2f3f-464d-4976-9448-e3c251cbdcfe",
+              "transaction_id": "dd92e304-f238-450d-8a95-db3316afbec8",
               "product_id": "fifty",
               "quantity_sold": 2,
               "price_at_sale": 50,
@@ -259,12 +262,12 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Fifty Item"
             },
             {
-              "id": "26d66aca-0779-4364-8f16-d4187ce2e27a",
-              "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+              "id": "047a2c2d-2286-4783-86d7-4f4a902e0886",
+              "transaction_id": "dd92e304-f238-450d-8a95-db3316afbec8",
               "product_id": "eggs",
               "quantity_sold": 4,
               "price_at_sale": 8.75,
@@ -273,7 +276,7 @@
               "tax_category": "VAT_EXEMPT",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Fresh Eggs"
             }
           ]
@@ -281,8 +284,8 @@
       ],
       "items": [
         {
-          "id": "e92bbad7-717a-40ec-a1b4-7314102e64d4",
-          "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+          "id": "66ef2f3f-464d-4976-9448-e3c251cbdcfe",
+          "transaction_id": "dd92e304-f238-450d-8a95-db3316afbec8",
           "product_id": "fifty",
           "quantity_sold": 2,
           "price_at_sale": 50,
@@ -291,12 +294,13 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Fifty Item"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Fifty Item",
+          "unit_type": "QUANTITY"
         },
         {
-          "id": "26d66aca-0779-4364-8f16-d4187ce2e27a",
-          "transaction_id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+          "id": "047a2c2d-2286-4783-86d7-4f4a902e0886",
+          "transaction_id": "dd92e304-f238-450d-8a95-db3316afbec8",
           "product_id": "eggs",
           "quantity_sold": 4,
           "price_at_sale": 8.75,
@@ -305,8 +309,9 @@
           "tax_category": "VAT_EXEMPT",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Fresh Eggs"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Fresh Eggs",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -325,7 +330,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "e62098ac-8bb5-4f5a-9195-8aecf9e08898",
+              "id": "dd92e304-f238-450d-8a95-db3316afbec8",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -335,7 +340,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 135,
               "vatable_sales": 59.53,
               "vat_amount": 7.14,
@@ -357,17 +362,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "e3633e52-5e08-46f8-9c97-eedc2a656485",
+              "id": "3058458b-0c8f-44ab-ab50-d41da3f5dd59",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "Customer changed mind",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -135,
               "vatable_sales": -59.53,
               "vat_amount": -7.14,
@@ -408,7 +413,7 @@
       "name": "void_weight_and_wholesale",
       "sales": [
         {
-          "id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+          "id": "1a09b79f-4a5a-4e2f-a2ef-25cc81e5de8d",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -418,7 +423,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 376.69,
           "vatable_sales": 336.33,
           "vat_amount": 40.36,
@@ -436,8 +441,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "4ebf36ea-0bfa-48c8-b7cb-ac2e182aacfb",
-              "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+              "id": "3fb3333b-de38-4f5d-bbdd-c72834327a42",
+              "transaction_id": "1a09b79f-4a5a-4e2f-a2ef-25cc81e5de8d",
               "product_id": "rice",
               "quantity_sold": 2.375,
               "price_at_sale": 52.5,
@@ -446,12 +451,12 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Rice (per kg)"
             },
             {
-              "id": "160ef7a6-fbca-4bab-86a6-c79df5dbb87a",
-              "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+              "id": "52cf591c-712a-48f5-8bf1-1bc602d463d3",
+              "transaction_id": "1a09b79f-4a5a-4e2f-a2ef-25cc81e5de8d",
               "product_id": "soap",
               "quantity_sold": 12,
               "price_at_sale": 21,
@@ -460,7 +465,7 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Laundry Soap Bar"
             }
           ]
@@ -468,8 +473,8 @@
       ],
       "items": [
         {
-          "id": "4ebf36ea-0bfa-48c8-b7cb-ac2e182aacfb",
-          "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+          "id": "3fb3333b-de38-4f5d-bbdd-c72834327a42",
+          "transaction_id": "1a09b79f-4a5a-4e2f-a2ef-25cc81e5de8d",
           "product_id": "rice",
           "quantity_sold": 2.375,
           "price_at_sale": 52.5,
@@ -478,12 +483,13 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Rice (per kg)"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Rice (per kg)",
+          "unit_type": "WEIGHT"
         },
         {
-          "id": "160ef7a6-fbca-4bab-86a6-c79df5dbb87a",
-          "transaction_id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+          "id": "52cf591c-712a-48f5-8bf1-1bc602d463d3",
+          "transaction_id": "1a09b79f-4a5a-4e2f-a2ef-25cc81e5de8d",
           "product_id": "soap",
           "quantity_sold": 12,
           "price_at_sale": 21,
@@ -492,8 +498,9 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Laundry Soap Bar"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Laundry Soap Bar",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -512,7 +519,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "7b5fcf93-d796-4c3a-8fd2-8dbb62eea56f",
+              "id": "1a09b79f-4a5a-4e2f-a2ef-25cc81e5de8d",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -522,7 +529,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 376.69,
               "vatable_sales": 336.33,
               "vat_amount": 40.36,
@@ -544,17 +551,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "0ed7747e-27d8-4a2e-9a91-ccf7eb60ad63",
+              "id": "57c6e695-4a53-4f5e-96c0-ddec74fd64e6",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": null,
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -376.69,
               "vatable_sales": -336.33,
               "vat_amount": -40.36,
@@ -595,7 +602,7 @@
       "name": "void_gcash_with_reference",
       "sales": [
         {
-          "id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+          "id": "f47da1c8-1bad-4da3-bb5f-b45b5db803fa",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -605,7 +612,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 240,
           "vatable_sales": 0,
           "vat_amount": 0,
@@ -623,8 +630,8 @@
           "reference_number": "GC-777",
           "items": [
             {
-              "id": "16d409bf-f83c-42c9-8cb5-defc268e3dd5",
-              "transaction_id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+              "id": "91693c9f-c20a-42d1-a6cb-7af3cbd2d86d",
+              "transaction_id": "f47da1c8-1bad-4da3-bb5f-b45b5db803fa",
               "product_id": "export",
               "quantity_sold": 2,
               "price_at_sale": 120,
@@ -633,7 +640,7 @@
               "tax_category": "ZERO_RATED",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Export Item"
             }
           ]
@@ -641,8 +648,8 @@
       ],
       "items": [
         {
-          "id": "16d409bf-f83c-42c9-8cb5-defc268e3dd5",
-          "transaction_id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+          "id": "91693c9f-c20a-42d1-a6cb-7af3cbd2d86d",
+          "transaction_id": "f47da1c8-1bad-4da3-bb5f-b45b5db803fa",
           "product_id": "export",
           "quantity_sold": 2,
           "price_at_sale": 120,
@@ -651,8 +658,9 @@
           "tax_category": "ZERO_RATED",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Export Item"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Export Item",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -671,7 +679,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "4b439808-d181-4005-9b65-668b21e9b2d7",
+              "id": "f47da1c8-1bad-4da3-bb5f-b45b5db803fa",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -681,7 +689,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 240,
               "vatable_sales": 0,
               "vat_amount": 0,
@@ -703,17 +711,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "2b345c34-7fe2-4e26-b1cc-7e4b88b829d5",
+              "id": "78f3d92b-5354-474d-bf25-4738963f785b",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "Duplicate",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -240,
               "vatable_sales": 0,
               "vat_amount": 0,
@@ -754,7 +762,7 @@
       "name": "void_store_credit",
       "sales": [
         {
-          "id": "3934f873-a144-46de-aec6-c94db183942c",
+          "id": "9d574070-9bfb-4d30-913a-e59df920e3ee",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -764,7 +772,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 336,
           "vatable_sales": 300,
           "vat_amount": 36,
@@ -782,8 +790,8 @@
           "reference_number": "rosa",
           "items": [
             {
-              "id": "e3587f7d-e184-4fa8-808b-4eb7eecfc5d2",
-              "transaction_id": "3934f873-a144-46de-aec6-c94db183942c",
+              "id": "1244f628-a3c7-452b-9814-448c367f0fa4",
+              "transaction_id": "9d574070-9bfb-4d30-913a-e59df920e3ee",
               "product_id": "soap",
               "quantity_sold": 16,
               "price_at_sale": 21,
@@ -792,7 +800,7 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Laundry Soap Bar"
             }
           ]
@@ -800,8 +808,8 @@
       ],
       "items": [
         {
-          "id": "e3587f7d-e184-4fa8-808b-4eb7eecfc5d2",
-          "transaction_id": "3934f873-a144-46de-aec6-c94db183942c",
+          "id": "1244f628-a3c7-452b-9814-448c367f0fa4",
+          "transaction_id": "9d574070-9bfb-4d30-913a-e59df920e3ee",
           "product_id": "soap",
           "quantity_sold": 16,
           "price_at_sale": 21,
@@ -810,8 +818,9 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Laundry Soap Bar"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Laundry Soap Bar",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -830,7 +839,7 @@
               "rosa": 1836
             },
             "original": {
-              "id": "3934f873-a144-46de-aec6-c94db183942c",
+              "id": "9d574070-9bfb-4d30-913a-e59df920e3ee",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -840,7 +849,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 336,
               "vatable_sales": 300,
               "vat_amount": 36,
@@ -862,17 +871,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "6aacd959-c07f-4b27-a9bc-6e88c26bcdc4",
+              "id": "e2a07f78-eb99-4e4a-892d-e9f91bb9b675",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "Returned goods",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -336,
               "vatable_sales": -300,
               "vat_amount": -36,
@@ -903,7 +912,7 @@
           "ledger": [
             {
               "customer_id": "rosa",
-              "transaction_id": "3934f873-a144-46de-aec6-c94db183942c",
+              "transaction_id": "9d574070-9bfb-4d30-913a-e59df920e3ee",
               "entry_type": "CHARGE",
               "amount": 336,
               "running_balance": 1836,
@@ -911,7 +920,7 @@
             },
             {
               "customer_id": "rosa",
-              "transaction_id": "6aacd959-c07f-4b27-a9bc-6e88c26bcdc4",
+              "transaction_id": "e2a07f78-eb99-4e4a-892d-e9f91bb9b675",
               "entry_type": "ADJUSTMENT",
               "amount": 336,
               "running_balance": 1500,
@@ -930,7 +939,7 @@
       "name": "void_store_credit_after_payment",
       "sales": [
         {
-          "id": "019b9440-abf6-407f-838b-d371f004e36f",
+          "id": "b8630a86-c411-4981-a359-d28bbf3b04c1",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -940,7 +949,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 500,
           "vatable_sales": 446.43,
           "vat_amount": 53.57,
@@ -958,8 +967,8 @@
           "reference_number": "rosa",
           "items": [
             {
-              "id": "2b9136de-f29e-439c-aa8e-3dd543f8e28f",
-              "transaction_id": "019b9440-abf6-407f-838b-d371f004e36f",
+              "id": "dbdf44ee-b217-4b9a-b3af-205fef10f41c",
+              "transaction_id": "b8630a86-c411-4981-a359-d28bbf3b04c1",
               "product_id": "fifty",
               "quantity_sold": 10,
               "price_at_sale": 50,
@@ -968,7 +977,7 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Fifty Item"
             }
           ]
@@ -976,8 +985,8 @@
       ],
       "items": [
         {
-          "id": "2b9136de-f29e-439c-aa8e-3dd543f8e28f",
-          "transaction_id": "019b9440-abf6-407f-838b-d371f004e36f",
+          "id": "dbdf44ee-b217-4b9a-b3af-205fef10f41c",
+          "transaction_id": "b8630a86-c411-4981-a359-d28bbf3b04c1",
           "product_id": "fifty",
           "quantity_sold": 10,
           "price_at_sale": 50,
@@ -986,8 +995,9 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Fifty Item"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Fifty Item",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -1006,7 +1016,7 @@
               "rosa": 0
             },
             "original": {
-              "id": "019b9440-abf6-407f-838b-d371f004e36f",
+              "id": "b8630a86-c411-4981-a359-d28bbf3b04c1",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -1016,7 +1026,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 500,
               "vatable_sales": 446.43,
               "vat_amount": 53.57,
@@ -1038,17 +1048,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "89a2a0d3-ce45-483d-9fd4-9749a0b51c86",
+              "id": "90df6e3f-0206-4569-b5e8-f14205832492",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "Paid then returned",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -500,
               "vatable_sales": -446.43,
               "vat_amount": -53.57,
@@ -1079,7 +1089,7 @@
           "ledger": [
             {
               "customer_id": "rosa",
-              "transaction_id": "019b9440-abf6-407f-838b-d371f004e36f",
+              "transaction_id": "b8630a86-c411-4981-a359-d28bbf3b04c1",
               "entry_type": "CHARGE",
               "amount": 500,
               "running_balance": 2000,
@@ -1087,7 +1097,7 @@
             },
             {
               "customer_id": "rosa",
-              "transaction_id": "89a2a0d3-ce45-483d-9fd4-9749a0b51c86",
+              "transaction_id": "90df6e3f-0206-4569-b5e8-f14205832492",
               "entry_type": "ADJUSTMENT",
               "amount": 500,
               "running_balance": -500,
@@ -1106,7 +1116,7 @@
       "name": "two_voids_number_sequentially",
       "sales": [
         {
-          "id": "7029f2d0-df8d-4f72-8843-359604d39466",
+          "id": "ba656915-965e-4050-8273-24edef4b122b",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -1116,7 +1126,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 25,
           "vatable_sales": 22.32,
           "vat_amount": 2.68,
@@ -1134,8 +1144,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "887f3950-66d1-4f34-8038-8e898c4321d5",
-              "transaction_id": "7029f2d0-df8d-4f72-8843-359604d39466",
+              "id": "406ea3be-7859-4260-9381-828ea28b534d",
+              "transaction_id": "ba656915-965e-4050-8273-24edef4b122b",
               "product_id": "soap",
               "quantity_sold": 1,
               "price_at_sale": 25,
@@ -1144,13 +1154,13 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Laundry Soap Bar"
             }
           ]
         },
         {
-          "id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+          "id": "560951a1-d9b2-4a8f-b024-a717141959f4",
           "invoice_number": "SI-000002",
           "status": "PAID",
           "void_reason": null,
@@ -1160,7 +1170,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 17.5,
           "vatable_sales": 0,
           "vat_amount": 0,
@@ -1178,8 +1188,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "19638ef0-7820-481a-b9de-ff2b12002e87",
-              "transaction_id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+              "id": "e635f5f3-63cf-402a-b494-fc826e302c7e",
+              "transaction_id": "560951a1-d9b2-4a8f-b024-a717141959f4",
               "product_id": "eggs",
               "quantity_sold": 2,
               "price_at_sale": 8.75,
@@ -1188,7 +1198,7 @@
               "tax_category": "VAT_EXEMPT",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Fresh Eggs"
             }
           ]
@@ -1196,8 +1206,8 @@
       ],
       "items": [
         {
-          "id": "887f3950-66d1-4f34-8038-8e898c4321d5",
-          "transaction_id": "7029f2d0-df8d-4f72-8843-359604d39466",
+          "id": "406ea3be-7859-4260-9381-828ea28b534d",
+          "transaction_id": "ba656915-965e-4050-8273-24edef4b122b",
           "product_id": "soap",
           "quantity_sold": 1,
           "price_at_sale": 25,
@@ -1206,12 +1216,13 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Laundry Soap Bar"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Laundry Soap Bar",
+          "unit_type": "QUANTITY"
         },
         {
-          "id": "19638ef0-7820-481a-b9de-ff2b12002e87",
-          "transaction_id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+          "id": "e635f5f3-63cf-402a-b494-fc826e302c7e",
+          "transaction_id": "560951a1-d9b2-4a8f-b024-a717141959f4",
           "product_id": "eggs",
           "quantity_sold": 2,
           "price_at_sale": 8.75,
@@ -1220,8 +1231,9 @@
           "tax_category": "VAT_EXEMPT",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Fresh Eggs"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Fresh Eggs",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -1240,7 +1252,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "7029f2d0-df8d-4f72-8843-359604d39466",
+              "id": "ba656915-965e-4050-8273-24edef4b122b",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -1250,7 +1262,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 25,
               "vatable_sales": 22.32,
               "vat_amount": 2.68,
@@ -1272,17 +1284,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "c1466bf5-289b-4247-9f7f-7b0e5d84b7aa",
+              "id": "6bb24561-343a-4e52-8533-2ef21a906ed9",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "a",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -25,
               "vatable_sales": -22.32,
               "vat_amount": -2.68,
@@ -1332,7 +1344,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "a1b5fabb-39e8-445c-ade4-64a4d4726ab4",
+              "id": "560951a1-d9b2-4a8f-b024-a717141959f4",
               "invoice_number": "SI-000002",
               "status": "PAID",
               "void_reason": null,
@@ -1342,7 +1354,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 17.5,
               "vatable_sales": 0,
               "vat_amount": 0,
@@ -1364,17 +1376,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "f33fabf1-2499-4d36-bb06-b529297f6a3b",
+              "id": "fa168023-6ca6-4260-950d-6d8ff8261946",
               "invoice_number": "CN-000002",
               "status": "REFUND",
               "void_reason": "b",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -17.5,
               "vatable_sales": 0,
               "vat_amount": 0,
@@ -1415,7 +1427,7 @@
       "name": "void_already_voided",
       "sales": [
         {
-          "id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+          "id": "8886a9ca-7982-4d83-9c6f-d37822fa8178",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -1425,7 +1437,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 25,
           "vatable_sales": 22.32,
           "vat_amount": 2.68,
@@ -1443,8 +1455,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "2b80a217-af66-4a5f-9e80-c65384da551c",
-              "transaction_id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+              "id": "88977b8a-d596-4eb3-8ee1-1243bb669efe",
+              "transaction_id": "8886a9ca-7982-4d83-9c6f-d37822fa8178",
               "product_id": "soap",
               "quantity_sold": 1,
               "price_at_sale": 25,
@@ -1453,7 +1465,7 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Laundry Soap Bar"
             }
           ]
@@ -1461,8 +1473,8 @@
       ],
       "items": [
         {
-          "id": "2b80a217-af66-4a5f-9e80-c65384da551c",
-          "transaction_id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+          "id": "88977b8a-d596-4eb3-8ee1-1243bb669efe",
+          "transaction_id": "8886a9ca-7982-4d83-9c6f-d37822fa8178",
           "product_id": "soap",
           "quantity_sold": 1,
           "price_at_sale": 25,
@@ -1471,8 +1483,9 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Laundry Soap Bar"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Laundry Soap Bar",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -1491,7 +1504,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+              "id": "8886a9ca-7982-4d83-9c6f-d37822fa8178",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -1501,7 +1514,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 25,
               "vatable_sales": 22.32,
               "vat_amount": 2.68,
@@ -1523,17 +1536,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "cf11d236-90ab-4613-b0a1-ed66d5507eec",
+              "id": "e7176930-33b0-476c-abbb-d688b552462d",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "first",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -25,
               "vatable_sales": -22.32,
               "vat_amount": -2.68,
@@ -1583,17 +1596,17 @@
               "rosa": 1500
             },
             "original": {
-              "id": "d7fdf84f-680d-47b7-a001-66261cd99681",
+              "id": "8886a9ca-7982-4d83-9c6f-d37822fa8178",
               "invoice_number": "SI-000001",
               "status": "VOIDED",
               "void_reason": "first",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 25,
               "vatable_sales": 22.32,
               "vat_amount": 2.68,
@@ -1638,7 +1651,7 @@
       "name": "void_a_credit_note",
       "sales": [
         {
-          "id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+          "id": "077d2f4c-8e92-451e-8f2c-1c1ae764c948",
           "invoice_number": "SI-000001",
           "status": "PAID",
           "void_reason": null,
@@ -1648,7 +1661,7 @@
           "transaction_type": "SALE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
+          "created_at": "2026-10-15 08:53:13",
           "gross_sales": 25,
           "vatable_sales": 22.32,
           "vat_amount": 2.68,
@@ -1666,8 +1679,8 @@
           "reference_number": null,
           "items": [
             {
-              "id": "e351c432-e81f-4c4b-8c2d-8c5aab946b66",
-              "transaction_id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+              "id": "a18953c3-320d-4798-aae7-ffe028a28653",
+              "transaction_id": "077d2f4c-8e92-451e-8f2c-1c1ae764c948",
               "product_id": "soap",
               "quantity_sold": 1,
               "price_at_sale": 25,
@@ -1676,7 +1689,7 @@
               "tax_category": "VATABLE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "name": "Laundry Soap Bar"
             }
           ]
@@ -1684,8 +1697,8 @@
       ],
       "items": [
         {
-          "id": "e351c432-e81f-4c4b-8c2d-8c5aab946b66",
-          "transaction_id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+          "id": "a18953c3-320d-4798-aae7-ffe028a28653",
+          "transaction_id": "077d2f4c-8e92-451e-8f2c-1c1ae764c948",
           "product_id": "soap",
           "quantity_sold": 1,
           "price_at_sale": 25,
@@ -1694,8 +1707,9 @@
           "tax_category": "VATABLE",
           "pos_id": "00000000-0000-0000-0000-000000000000",
           "is_synced": 0,
-          "created_at": "2026-10-15 08:17:10",
-          "product_name": "Laundry Soap Bar"
+          "created_at": "2026-10-15 08:53:13",
+          "product_name": "Laundry Soap Bar",
+          "unit_type": "QUANTITY"
         }
       ],
       "steps": [
@@ -1714,7 +1728,7 @@
               "rosa": 1500
             },
             "original": {
-              "id": "b65ec4df-0471-44a9-b349-aea14d70aa6c",
+              "id": "077d2f4c-8e92-451e-8f2c-1c1ae764c948",
               "invoice_number": "SI-000001",
               "status": "PAID",
               "void_reason": null,
@@ -1724,7 +1738,7 @@
               "transaction_type": "SALE",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": 25,
               "vatable_sales": 22.32,
               "vat_amount": 2.68,
@@ -1746,17 +1760,17 @@
           "response": {
             "success": true,
             "transaction": {
-              "id": "1c9076bc-810c-4c96-8c01-b5f9896ea1c9",
+              "id": "6afd1879-5b3b-4c72-acc8-4b29bd2d3b5d",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "first",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -25,
               "vatable_sales": -22.32,
               "vat_amount": -2.68,
@@ -1806,17 +1820,17 @@
               "rosa": 1500
             },
             "original": {
-              "id": "1c9076bc-810c-4c96-8c01-b5f9896ea1c9",
+              "id": "6afd1879-5b3b-4c72-acc8-4b29bd2d3b5d",
               "invoice_number": "CN-000001",
               "status": "REFUND",
               "void_reason": "first",
               "authorized_by": null,
               "void_authorized_by": "mgr-1",
-              "voided_at": "2026-10-15 08:17:10",
+              "voided_at": "2026-10-15 08:53:13",
               "transaction_type": "VOID_REFUND",
               "pos_id": "00000000-0000-0000-0000-000000000000",
               "is_synced": 0,
-              "created_at": "2026-10-15 08:17:10",
+              "created_at": "2026-10-15 08:53:13",
               "gross_sales": -25,
               "vatable_sales": -22.32,
               "vat_amount": -2.68,

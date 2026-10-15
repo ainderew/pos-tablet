@@ -16,12 +16,16 @@ export const PaymentMethodSchema = z.enum(PAYMENT_METHODS)
 export type PaymentMethod = z.infer<typeof PaymentMethodSchema>
 
 export const TaxCategorySchema = z.enum(["VATABLE", "VAT_EXEMPT", "ZERO_RATED"])
+export const UnitTypeSchema = z.enum(["QUANTITY", "WEIGHT"])
 
 /** Fields every terminal-created record has */
 export const TerminalRecordSchema = z.object({
   id,
   store_id: id,
   terminal_id: id,
-  created_at: timestamp,
+  // Creation order on the terminal (1, 2, 3, ...), independent of the device clock: sync acks by it,
+  // and a Z-reading covers exactly the records created since the previous Z by this order
+  device_seq: z.number().int().positive(),
+  created_at: timestamp, // device clock; printed on receipts, never used to decide what a Z covers
 })
 

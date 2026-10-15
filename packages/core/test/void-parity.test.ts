@@ -22,7 +22,7 @@ interface Step {
   customersAfter: Record<string, number>
   ledger: Row[]
 }
-interface Scenario { name: string; items: Row[]; steps: Step[] }
+interface Scenario { name: string; sales: Row[]; items: Row[]; steps: Step[] }
 
 const PC_ERRORS: [RegExp, VoidErrorCode][] = [
   [/already voided/, "ALREADY_VOIDED"],
@@ -30,20 +30,24 @@ const PC_ERRORS: [RegExp, VoidErrorCode][] = [
   [/Customer for store credit sale not found/, "CUSTOMER_NOT_FOUND"],
 ]
 
-// A POS-bir transactions row as a pos-tablet record (POS-bir stores VOIDED on the row; here it's derived)
-const toRecord = (row: Row): TransactionRecord => ({
+// A POS-bir transactions row as a pos-tablet record (POS-bir stores VOIDED on the row; here it's derived).
+// A credit note row links back to its sale through the sale's invoice number.
+const toRecord = (row: Row, sales: Row[]): TransactionRecord => {
+  const isCreditNote = row.transaction_type === "VOID_REFUND"
+  const record = {
   id: row.id,
   store_id: "store-1",
   terminal_id: "terminal-1",
+  device_seq: 1,
   created_at: new Date(row.created_at.replace(" ", "T") + "Z").toISOString(),
   shift_id: "shift-1",
   cashier_id: null,
   invoice_number: row.invoice_number,
   transaction_type: row.transaction_type,
-  status: row.status === "REFUND" ? "REFUND" : "PAID",
-  original_transaction_id: null,
-  void_reason: row.status === "REFUND" ? row.void_reason : null,
-  authorized_by: row.status === "REFUND" ? row.void_authorized_by : null,
+  status: isCreditNote ? "REFUND" : "PAID",
+  original_transaction_id: isCreditNote ? sales.find((s) => s.invoice_number === row.reference_number)!.id : null,
+  void_reason: isCreditNote ? row.void_reason : null,
+  authorized_by: isCreditNote ? row.void_authorized_by : null,
   gross_sales: row.gross_sales,
   vatable_sales: row.vatable_sales,
   vat_amount: row.vat_amount,
@@ -59,7 +63,9 @@ const toRecord = (row: Row): TransactionRecord => ({
   amount_tendered: row.amount_tendered,
   change_amount: row.change_amount,
   reference_number: row.reference_number,
-})
+  }
+  return TransactionRecordSchema.parse(record)
+}
 
 const scenarios = (fixtures as unknown as { manager: string; scenarios: Scenario[] }).scenarios
 const manager = (fixtures as unknown as { manager: string }).manager
@@ -68,17 +74,19 @@ describe(`buildVoid matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
   it.each(scenarios.map((s) => [s.name, s] as const))("%s", (_name, s) => {
     let issued = 0
     for (const step of s.steps) {
-      const original = toRecord(step.before.original)
+      const original = toRecord(step.before.original, s.sales)
       const items: TransactionItemRecord[] = s.items
         .filter((i) => i.transaction_id === original.id)
         .map((i) => ({
           id: i.id,
           store_id: "store-1",
           terminal_id: "terminal-1",
+          device_seq: 2,
           created_at: original.created_at,
           transaction_id: i.transaction_id,
           product_id: i.product_id,
           product_name: i.product_name,
+          unit_type: i.unit_type,
           quantity_sold: i.quantity_sold,
           price_at_sale: i.price_at_sale,
           cost_at_sale: i.cost_at_sale,
@@ -86,9 +94,11 @@ describe(`buildVoid matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
         }))
       const customerId = original.payment_method === "STORE_CREDIT" ? original.reference_number : null
       let n = 0
+      let seq = 500
       const result = buildVoid(
         { authorizedBy: manager, reason: step.reason },
         {
+          openShift: { id: "shift-2", store_id: "store-1", terminal_id: "terminal-1" },
           original,
           items,
           alreadyVoided: step.before.original.status === "VOIDED",
@@ -97,10 +107,10 @@ describe(`buildVoid matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
         {
           storeId: "store-1",
           terminalId: "terminal-1",
-          shiftId: "shift-2",
           cashierId: "user-1",
           now: new Date("2026-10-15T02:00:00.000Z"),
           newId: () => `void-id-${++n}`,
+          nextSeq: () => ++seq,
           nextCreditNoteNumber: issued + 1,
         }
       )
@@ -124,7 +134,18 @@ describe(`buildVoid matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
         expect(cn[field], field).toEqual(pc[field])
       }
       expect(cn.authorized_by).toBe(pc.void_authorized_by)
-      expect(cn).toMatchObject({ original_transaction_id: original.id, shift_id: "shift-2" })
+      // Linkage: the credit note belongs to this terminal and the shift it was issued in
+      expect(cn).toMatchObject({
+        original_transaction_id: original.id,
+        shift_id: "shift-2",
+        terminal_id: "terminal-1",
+        store_id: "store-1",
+        cashier_id: "user-1",
+      })
+      for (const m of result.stockMovements) expect(m).toMatchObject({ ref_id: cn.id, reason: "VOID", terminal_id: "terminal-1" })
+      expect(result.auditLog).toMatchObject({ shift_id: "shift-2", user_id: manager, action_type: "TRANSACTION_VOID" })
+      const all = [cn, ...result.stockMovements, ...(result.ledgerEntry ? [result.ledgerEntry] : []), result.auditLog]
+      expect(all.map((r) => r.device_seq)).toEqual(all.map((_, k) => 501 + k))
       TransactionRecordSchema.parse(cn)
       AuditLogRecordSchema.parse(result.auditLog)
       for (const m of result.stockMovements) StockMovementRecordSchema.parse(m)
@@ -142,6 +163,7 @@ describe(`buildVoid matches POS-bir (${(fixtures as any).generatedFrom})`, () =>
           running_balance: pcEntry.running_balance,
           notes: pcEntry.notes,
           transaction_id: cn.id,
+          shift_id: "shift-2",
         })
         CreditLedgerEntryRecordSchema.parse(result.ledgerEntry)
       } else {

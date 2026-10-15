@@ -1,8 +1,14 @@
 // Receipts: the model builders, the HTML renderer and the ESC/POS renderer.
 import { describe, expect, it } from "vitest"
-import { buildSale } from "../src/sale"
-import { buildVoid } from "../src/void"
-import type { SaleRequest } from "../src/sale"
+import { calculateTransactionTotals, getActivePrice, roundMoney } from "../src/ph-tax"
+import {
+  CreditLedgerEntryRecordSchema,
+  CreditNoteRecordSchema,
+  SaleRecordSchema,
+  TransactionItemRecordSchema,
+  TransactionRecordSchema,
+} from "../src/model"
+import type { CreditNoteRecord, PaymentMethod, SaleRecord, TransactionItemRecord } from "../src/model"
 import type { Product, TaxCategory } from "../src/types"
 import {
   buildPaymentReceipt,
@@ -20,7 +26,9 @@ import { renderReceiptEscPos, toPrintableText } from "../src/receipt/escpos"
 import type { EscPosOptions } from "../src/receipt/escpos"
 
 // ---------------------------------------------------------------------------
-// Fixtures: real records from the core builders
+// Fixtures: records priced and totalled with the core tax rules (as buildSale does), checked
+// against the shared record schemas. Built here rather than through buildSale/buildVoid so these
+// tests only depend on the record shapes.
 
 const SOLD_AT = new Date("2026-10-15T03:59:18.390Z") // 11:59:18 in Manila
 const VOIDED_AT = new Date("2026-10-15T05:10:00.000Z") // 13:10:00 in Manila
@@ -45,51 +53,109 @@ const product = (id: string, name: string, price: number, tax: TaxCategory = "VA
   ...extra,
 })
 
-const PRODUCTS = [
-  product("coke", "Coke 1.5L", 65),
-  product("rice", "Dinorado Rice (kg)", 50, "VATABLE", { unit_type: "WEIGHT" }),
-  product("milk", "Bear Brand Milk 300g", 85, "VAT_EXEMPT"),
-  product("sardines", "Ligo Sardines", 24, "VATABLE", { wholesale_price: 22, wholesale_threshold: 10 }),
-  product("eggs", "Fresh Eggs (tray)", 230, "ZERO_RATED"),
-  product("long", "Super Extra Long Product Name For The Wrapping Test 1.5 Liter Family Pack", 1234.5),
-]
+const PRODUCTS = new Map(
+  [
+    product("coke", "Coke 1.5L", 65),
+    product("rice", "Dinorado Rice (kg)", 50, "VATABLE", { unit_type: "WEIGHT" }),
+    product("beef", "Wagyu Beef Striploin", 1234.5, "VATABLE", { unit_type: "WEIGHT" }),
+    product("milk", "Bear Brand Milk 300g", 85, "VAT_EXEMPT"),
+    product("sardines", "Ligo Sardines", 24, "VATABLE", { wholesale_price: 22, wholesale_threshold: 10 }),
+    product("eggs", "Fresh Eggs (tray)", 230, "ZERO_RATED"),
+    product("long", "Super Extra Long Product Name For The Wrapping Test 1.5 Liter Family Pack", 1234.5),
+  ].map((p) => [p.id, p])
+)
 
-let nextId = 0 // unique across calls, so two sales never share an id
-
-function sell(lines: SaleRequest["lines"], request: Omit<SaleRequest, "lines"> = {}) {
-  const result = buildSale(
-    { lines, ...request },
-    { products: new Map(PRODUCTS.map((p) => [p.id, p])) },
-    {
-      storeId: "store-1",
-      terminalId: "terminal-1",
-      shiftId: "shift-1",
-      cashierId: "cashier-1",
-      now: SOLD_AT,
-      newId: () => `sale-${++nextId}`,
-      nextInvoiceNumber: 42,
-    }
-  )
-  if (!result.ok) throw new Error(result.message)
-  return result
+interface SaleSpec {
+  paymentMethod?: PaymentMethod
+  amountTendered?: number
+  referenceNumber?: string
+  paxCount?: number
+  seniorCount?: number
+  scPwd?: { idNumber: string; name: string }
 }
 
-function voidOf(sale: ReturnType<typeof sell>, reason: string | null = "Wrong item scanned") {
-  const result = buildVoid(
-    { authorizedBy: "manager-1", reason },
-    { original: sale.transaction, items: sale.items, alreadyVoided: false },
-    {
-      storeId: "store-1",
-      terminalId: "terminal-1",
-      shiftId: "shift-1",
-      cashierId: "cashier-1",
-      now: VOIDED_AT,
-      newId: () => `void-${++nextId}`,
-      nextCreditNoteNumber: 7,
-    }
+let seq = 0 // ids and device_seq, unique across calls
+const base = (at: Date) => ({ id: `rec-${++seq}`, store_id: "store-1", terminal_id: "terminal-1", device_seq: seq, created_at: at.toISOString() })
+
+function sell(lines: { productId: string; quantity: number }[], spec: SaleSpec = {}): { transaction: SaleRecord; items: TransactionItemRecord[] } {
+  const cart = lines.map(({ productId, quantity }) => {
+    const p = PRODUCTS.get(productId)!
+    return { product: p, quantity, active_price: getActivePrice(p, quantity) }
+  })
+  const paxCount = spec.paxCount ?? 1
+  const seniorCount = spec.seniorCount ?? 0
+  const totals = calculateTransactionTotals(cart, paxCount, seniorCount)
+  const tendered = spec.amountTendered ?? null
+  const transaction = SaleRecordSchema.parse({
+    ...base(SOLD_AT),
+    shift_id: "shift-1",
+    cashier_id: "cashier-1",
+    invoice_number: "SI-000042",
+    transaction_type: "SALE",
+    status: "PAID",
+    original_transaction_id: null,
+    void_reason: null,
+    authorized_by: null,
+    gross_sales: totals.grossSales,
+    vatable_sales: totals.vatableSales,
+    vat_amount: totals.vatAmount,
+    vat_exempt_sales: totals.vatExemptSales,
+    zero_rated_sales: totals.zeroRatedSales,
+    total_discount: totals.totalDiscount,
+    net_sales: totals.netSales,
+    pax_count: paxCount,
+    senior_count: seniorCount,
+    sc_pwd_id: spec.scPwd?.idNumber ?? null,
+    sc_pwd_name: spec.scPwd?.name ?? null,
+    payment_method: spec.paymentMethod ?? "CASH",
+    amount_tendered: tendered,
+    change_amount: tendered === null ? 0 : roundMoney(tendered - totals.netSales),
+    reference_number: spec.referenceNumber ?? null,
+  })
+  TransactionRecordSchema.parse(transaction) // the cross-field rules (SC/PWD ID, seniors <= pax)
+  const items = cart.map((c) =>
+    TransactionItemRecordSchema.parse({
+      ...base(SOLD_AT),
+      transaction_id: transaction.id,
+      product_id: c.product.id,
+      product_name: c.product.name,
+      unit_type: c.product.unit_type,
+      quantity_sold: c.quantity,
+      price_at_sale: c.active_price,
+      cost_at_sale: c.product.cost_price,
+      tax_category: c.product.tax_category,
+    })
   )
-  if (!result.ok) throw new Error(result.message)
-  return result.creditNote
+  return { transaction, items }
+}
+
+const negate = (n: number) => (n === 0 ? 0 : -n)
+
+/** The credit note voiding a sale: every amount negated, as buildVoid issues it */
+function voidOf(sale: { transaction: SaleRecord }, reason: string | null = "Wrong item scanned"): CreditNoteRecord {
+  const t = sale.transaction
+  const creditNote = CreditNoteRecordSchema.parse({
+    ...t,
+    ...base(VOIDED_AT),
+    invoice_number: "CN-000007",
+    transaction_type: "VOID_REFUND",
+    status: "REFUND",
+    original_transaction_id: t.id,
+    void_reason: reason,
+    authorized_by: "manager-1",
+    gross_sales: negate(t.gross_sales),
+    vatable_sales: negate(t.vatable_sales),
+    vat_amount: negate(t.vat_amount),
+    vat_exempt_sales: negate(t.vat_exempt_sales),
+    zero_rated_sales: negate(t.zero_rated_sales),
+    total_discount: negate(t.total_discount),
+    net_sales: negate(t.net_sales),
+    amount_tendered: 0,
+    change_amount: 0,
+    reference_number: t.invoice_number,
+  })
+  TransactionRecordSchema.parse(creditNote)
+  return creditNote
 }
 
 const BUSINESS: ReceiptBusiness = {
@@ -135,13 +201,27 @@ const statement = (business = BUSINESS) =>
     statementNumber: "SOA-123456",
   })
 
+// A PAYMENT entry as buildCreditPayment writes it, checked against the shared schema
+const PAYMENT_ENTRY = CreditLedgerEntryRecordSchema.parse({
+  ...base(new Date("2026-10-15T06:00:00.000Z")),
+  customer_id: "cust-1",
+  transaction_id: null,
+  shift_id: "shift-1",
+  entry_type: "PAYMENT",
+  amount: 1000,
+  running_balance: 500,
+  notes: null,
+  payment_method: "GCASH",
+  reference_number: "GC-998877",
+})
+
 const paymentReceipt = (business = BUSINESS) =>
-  buildPaymentReceipt(
-    { id: "cust-1", full_name: "Juan Dela Cruz" },
-    { customer_id: "cust-1", created_at: "2026-10-15T06:00:00.000Z", entry_type: "PAYMENT", amount: 1000, running_balance: 500 },
-    business,
-    { receiptNumber: "PR-000007", cashierName: "Maria", paymentMethod: "GCASH", referenceNumber: "GC-998877", amountTendered: 1000, change: 0 }
-  )
+  buildPaymentReceipt({ id: "cust-1", full_name: "Juan Dela Cruz" }, PAYMENT_ENTRY, business, {
+    receiptNumber: "PR-000007",
+    cashierName: "Maria",
+    amountTendered: 1000,
+    change: 0,
+  })
 
 // ---------------------------------------------------------------------------
 // Helpers: visible text of the HTML, and a strict ESC/POS decoder
@@ -314,9 +394,9 @@ describe("receipt model builders", () => {
       { label: "Cashier", value: "Maria" },
     ])
     expect(doc.items).toEqual([
-      { name: "Coke 1.5L", quantity: 2, unitPrice: 65, lineTotal: 130 },
-      { name: "Dinorado Rice (kg)", quantity: 1.25, unitPrice: 50, lineTotal: 62.5 },
-      { name: "Ligo Sardines", quantity: 10, unitPrice: 22, lineTotal: 220 },
+      { name: "Coke 1.5L", quantity: 2, unit: null, unitPrice: 65, lineTotal: 130 },
+      { name: "Dinorado Rice (kg)", quantity: 1.25, unit: "kg", unitPrice: 50, lineTotal: 62.5 },
+      { name: "Ligo Sardines", quantity: 10, unit: null, unitPrice: 22, lineTotal: 220 },
     ])
     expect(doc.totals).toEqual([
       { label: "Subtotal", value: 412.5 },
@@ -417,12 +497,19 @@ describe("receipt model builders", () => {
     expect(doc.vatBreakdown).toEqual([])
   })
 
-  it("numbers a statement from the print time by default and refuses another customer's entries", () => {
-    const doc = buildStatementOfAccount({ full_name: "X" }, [], {}, { now: new Date(1760500123456) })
-    expect(doc.meta[0]).toEqual({ label: "SOA No", value: "SOA-123456" })
+  it("is pure: the print time and statement number come from the caller", () => {
+    const opts = { now: new Date("2026-10-15T08:00:00.000Z"), statementNumber: "SOA-000001" }
+    const doc = buildStatementOfAccount({ full_name: "X" }, [], {}, opts)
+    expect(doc.meta.slice(0, 2)).toEqual([
+      { label: "SOA No", value: "SOA-000001" },
+      { label: "Date", value: "2026-10-15 16:00:00" },
+    ])
     expect(doc.totals).toEqual([{ label: "BALANCE DUE", value: 0, emphasis: true }])
+    expect(buildStatementOfAccount({ full_name: "X" }, [], {}, opts)).toEqual(doc)
+    expect(() => buildStatementOfAccount({ full_name: "X" }, [], {}, { ...opts, now: new Date(NaN) })).toThrow(/valid Date/)
+    expect(() => buildStatementOfAccount({ full_name: "X" }, [], {}, { ...opts, statementNumber: " " })).toThrow(/statementNumber/)
     expect(() =>
-      buildStatementOfAccount({ id: "a", full_name: "X" }, [{ ...LEDGER[0], customer_id: "b" }])
+      buildStatementOfAccount({ id: "a", full_name: "X" }, [{ ...LEDGER[0], customer_id: "b" }], {}, opts)
     ).toThrow(/another customer/)
   })
 
@@ -440,11 +527,31 @@ describe("receipt model builders", () => {
       { label: "AMOUNT PAID", value: 1000, emphasis: true },
       { label: "Remaining Balance", value: 500 },
     ])
-    expect(doc.payment.map((r) => r.label)).toEqual(["Payment", "Reference No", "Amount Tendered", "Change"])
+    expect(doc.payment).toEqual([
+      { label: "Payment", value: "GCASH" },
+      { label: "Reference No", value: "GC-998877" },
+      { label: "Amount Tendered", value: 1000 },
+      { label: "Change", value: 0 },
+    ])
     expect(doc.footer).toEqual([NOT_VALID_FOR_INPUT_TAX, "Thank you!"])
     expect(() =>
       buildPaymentReceipt({ full_name: "X" }, { created_at: SOLD_AT.toISOString(), entry_type: "CHARGE", amount: 1, running_balance: 1 })
     ).toThrow(/not a PAYMENT/)
+  })
+
+  it("prints how a payment was made from the ledger entry itself, unless the options override it", () => {
+    const entry = PAYMENT_ENTRY
+    expect(buildPaymentReceipt({ full_name: "Juan" }, entry).payment).toEqual([
+      { label: "Payment", value: "GCASH" },
+      { label: "Reference No", value: "GC-998877" },
+    ])
+    expect(buildPaymentReceipt({ full_name: "Juan" }, entry, {}, { paymentMethod: "GCash", referenceNumber: "X-1" }).payment).toEqual([
+      { label: "Payment", value: "GCash" },
+      { label: "Reference No", value: "X-1" },
+    ])
+    expect(buildPaymentReceipt({ full_name: "Juan" }, { ...entry, payment_method: "CASH", reference_number: null }).payment).toEqual([
+      { label: "Payment", value: "CASH" },
+    ])
   })
 })
 
@@ -494,7 +601,9 @@ describe("renderReceiptHtml", () => {
     expect(slip).not.toContain("<img")
     expect(slip.split(escaped).length - 1).toBe(4) // reason, authorized by, cashier, item name
 
-    const soa = renderReceiptHtml(buildStatementOfAccount({ full_name: evil }, [{ ...LEDGER[1], invoice_number: evil }]))
+    const soa = renderReceiptHtml(
+      buildStatementOfAccount({ full_name: evil }, [{ ...LEDGER[1], invoice_number: evil }], {}, { now: SOLD_AT, statementNumber: "SOA-000001" })
+    )
     expect(soa).not.toContain("<img")
     expect(soa.split(escaped).length - 1).toBe(2)
   })
@@ -511,6 +620,15 @@ describe("renderReceiptHtml", () => {
     expect(total).toBe(Math.round(transaction.net_sales * 100))
     expect(out).toContain("Customer Lolo Ben")
     expect(out).toContain("SC/PWD ID OSCA-12345")
+  })
+
+  it("prints weighed quantities with their unit", () => {
+    const sale = sell([{ productId: "rice", quantity: 1.375 }, { productId: "coke", quantity: 2 }])
+    const out = htmlText(renderReceiptHtml(buildSaleReceipt(sale.transaction, sale.items)))
+    expect(out).toContain("Dinorado Rice (kg) 1.375 kg x 50.00 68.75")
+    expect(out).toContain("Coke 1.5L 2 x 65.00 130.00")
+    const slip = htmlText(renderReceiptHtml(buildVoidSlip(voidOf(sale), sale.transaction, sale.items)))
+    expect(slip).toContain("Dinorado Rice (kg) -1.375 kg x 50.00 -68.75")
   })
 
   it("prints a void slip with negatives and the original invoice", () => {
@@ -625,6 +743,33 @@ describe("renderReceiptEscPos", () => {
     ])
     expect(lines[start + 4].text).toMatch(/^ {2}1 x 1,234\.50 +1,234\.50$/)
     expect(lines[start + 4].text.length).toBe(32)
+  })
+
+  it.each([
+    [58, 32],
+    [80, 48],
+  ] as const)("prints weighed quantities with their unit within %imm (%i columns)", (paperWidth, width) => {
+    const sale = sell([
+      { productId: "rice", quantity: 1.375 },
+      { productId: "beef", quantity: 12.345 }, // 12.345 kg x 1,234.50 = 15,239.90
+      { productId: "rice", quantity: 0.5 },
+    ])
+    const detailLines = (doc: ReceiptDocument) =>
+      escpos(doc, { paperWidth }).lines.filter((l) => /^ {2}-?\d/.test(l.text) || /^ +-?[\d,]+\.\d{2}$/.test(l.text))
+    const sold = detailLines(buildSaleReceipt(sale.transaction, sale.items))
+    const voided = detailLines(buildVoidSlip(voidOf(sale), sale.transaction, sale.items))
+    for (const l of [...sold, ...voided]) expect(l.text.length, l.text).toBeLessThanOrEqual(width)
+
+    expect(sold[0].text).toMatch(/^ {2}1\.375 kg x 50\.00 +68\.75$/)
+    expect(voided[0].text).toMatch(/^ {2}-1\.375 kg x 50\.00 +-68\.75$/)
+    expect(sold.at(-1)!.text).toMatch(/^ {2}0\.5 kg x 50\.00 +25\.00$/)
+    if (width === 32) {
+      // "  -12.345 kg x 1,234.50" and "-15,239.90" don't fit on one 32-column line: the total goes under it
+      expect(voided.slice(1, 3).map((l) => l.text)).toEqual(["  -12.345 kg x 1,234.50", "-15,239.90".padStart(32)])
+    } else {
+      expect(voided[1].text).toMatch(/^ {2}-12\.345 kg x 1,234\.50 +-15,239\.90$/)
+      expect(voided[1].text.length).toBe(48)
+    }
   })
 
   it("wraps long text values beside their label and keeps amounts whole", () => {

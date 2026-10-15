@@ -4,16 +4,12 @@
 // within the limit; the server applies that rule when the PAYMENT entry syncs.
 import { roundMoney } from "./ph-tax"
 import { PAYMENT_METHODS } from "./model"
-import type { CashMovementRecord, CreditLedgerEntryRecord, PaymentMethod } from "./model"
+import type { CashMovementRecord, CreditLedgerEntryRecord, PaymentMethod, ShiftOpenRecord } from "./model"
+import { recordBase } from "./record"
+import type { RecordContext } from "./record"
 
-export interface CreditPaymentContext {
-  storeId: string
-  terminalId: string
-  /** The open shift; a CASH payment adds a CASH_IN to it */
-  shiftId: string | null
+export interface CreditPaymentContext extends RecordContext {
   userId: string | null
-  now: Date
-  newId: () => string
 }
 
 export interface CreditPaymentRequest {
@@ -25,11 +21,21 @@ export interface CreditPaymentRequest {
 }
 
 export interface CreditPaymentData {
+  /**
+   * This terminal's open shift: the payment counts toward its expected cash or e-wallet total.
+   * Stricter than POS-bir, which also took payments outside a shift (cash then went unaccounted).
+   */
+  openShift: Pick<ShiftOpenRecord, "id" | "store_id" | "terminal_id"> | null
   /** The customer as this terminal knows them (balance includes its own unsynced entries) */
   customer: { id: string; full_name: string; current_debt_balance: number } | null
 }
 
-export type CreditPaymentErrorCode = "MISSING_FIELDS" | "INVALID_AMOUNT" | "INVALID_PAYMENT_METHOD" | "CUSTOMER_NOT_FOUND"
+export type CreditPaymentErrorCode =
+  | "NO_OPEN_SHIFT"
+  | "MISSING_FIELDS"
+  | "INVALID_AMOUNT"
+  | "INVALID_PAYMENT_METHOD"
+  | "CUSTOMER_NOT_FOUND"
 
 export interface CreditPaymentError {
   ok: false
@@ -40,7 +46,7 @@ export interface CreditPaymentError {
 export interface CreditPaymentResult {
   ok: true
   ledgerEntry: CreditLedgerEntryRecord
-  /** CASH_IN for a cash payment during a shift, so the drawer count expects it */
+  /** CASH_IN for a cash payment, so the drawer count expects it */
   cashMovement: CashMovementRecord | null
   /** May go below 0 when the customer overpays (the store then owes them) */
   customerBalanceAfter: number
@@ -51,6 +57,10 @@ export function buildCreditPayment(
   data: CreditPaymentData,
   ctx: CreditPaymentContext
 ): CreditPaymentResult | CreditPaymentError {
+  const shift = data.openShift
+  if (!shift || shift.terminal_id !== ctx.terminalId || shift.store_id !== ctx.storeId) {
+    return { ok: false, code: "NO_OPEN_SHIFT", message: "Open a shift on this terminal before taking payments" }
+  }
   if (!request.customerId || !request.amount || !request.paymentMethod) {
     return { ok: false, code: "MISSING_FIELDS", message: "Missing required fields" }
   }
@@ -66,20 +76,14 @@ export function buildCreditPayment(
     return { ok: false, code: "CUSTOMER_NOT_FOUND", message: "Customer not found" }
   }
 
-  const base = () => ({
-    id: ctx.newId(),
-    store_id: ctx.storeId,
-    terminal_id: ctx.terminalId,
-    created_at: ctx.now.toISOString(),
-  })
   const reference = request.reference || null
   const customerBalanceAfter = roundMoney(Number(customer.current_debt_balance) - amount)
 
   const ledgerEntry: CreditLedgerEntryRecord = {
-    ...base(),
+    ...recordBase(ctx),
     customer_id: customer.id,
     transaction_id: null,
-    shift_id: ctx.shiftId,
+    shift_id: shift.id,
     entry_type: "PAYMENT",
     amount,
     running_balance: customerBalanceAfter,
@@ -90,10 +94,10 @@ export function buildCreditPayment(
   }
 
   const cashMovement: CashMovementRecord | null =
-    ctx.shiftId && request.paymentMethod === "CASH"
+    request.paymentMethod === "CASH"
       ? {
-          ...base(),
-          shift_id: ctx.shiftId,
+          ...recordBase(ctx),
+          shift_id: shift.id,
           user_id: ctx.userId,
           type: "CASH_IN",
           amount,

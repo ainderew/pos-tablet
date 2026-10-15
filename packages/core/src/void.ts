@@ -1,24 +1,22 @@
 // Voids a sale by issuing a credit note: POS-bir's POST /api/transactions/void as a pure function.
 // The original sale is never edited (records are append-only); it reads as VOIDED because a credit
 // note references it. Manager PIN verification happens in the caller before this runs.
-import { roundMoney } from "./ph-tax"
+import { roundMoney, toCents } from "./ph-tax"
 import type {
   AuditLogRecord,
   CreditLedgerEntryRecord,
+  CreditNoteRecord,
+  ShiftOpenRecord,
   StockMovementRecord,
   TransactionItemRecord,
   TransactionRecord,
 } from "./model"
+import { recordBase } from "./record"
+import type { RecordContext } from "./record"
 import { formatDocumentNumber } from "./sale"
 
-export interface VoidContext {
-  storeId: string
-  terminalId: string
-  /** The shift the void happens in (can differ from the sale's), so its expected cash goes down */
-  shiftId: string
+export interface VoidContext extends RecordContext {
   cashierId: string | null
-  now: Date
-  newId: () => string
   /** Next CN number to issue on this terminal (1 on a new terminal); separate from SI numbers */
   nextCreditNoteNumber: number
 }
@@ -32,6 +30,11 @@ export interface VoidRequest {
 }
 
 export interface VoidData {
+  /**
+   * The shift the void happens in (can differ from the sale's), so its expected cash goes down.
+   * Stricter than POS-bir, which voided outside any shift.
+   */
+  openShift: Pick<ShiftOpenRecord, "id" | "store_id" | "terminal_id"> | null
   original: TransactionRecord
   /** The original sale's lines */
   items: TransactionItemRecord[]
@@ -41,7 +44,13 @@ export interface VoidData {
   customer?: { id: string; current_debt_balance: number } | null
 }
 
-export type VoidErrorCode = "ALREADY_VOIDED" | "NOT_A_SALE" | "CUSTOMER_NOT_FOUND"
+export type VoidErrorCode =
+  | "NO_OPEN_SHIFT"
+  | "ALREADY_VOIDED"
+  | "NOT_A_SALE"
+  | "WRONG_TERMINAL"
+  | "ITEMS_MISMATCH"
+  | "CUSTOMER_NOT_FOUND"
 
 export interface VoidError {
   ok: false
@@ -51,7 +60,7 @@ export interface VoidError {
 
 export interface VoidResult {
   ok: true
-  creditNote: TransactionRecord
+  creditNote: CreditNoteRecord
   stockMovements: StockMovementRecord[]
   /** ADJUSTMENT entry reversing a STORE_CREDIT charge */
   ledgerEntry: CreditLedgerEntryRecord | null
@@ -63,30 +72,39 @@ export interface VoidResult {
 // Negate without producing -0 (which isn't equal to 0 for Object.is / toEqual)
 const negate = (amount: number) => (amount === 0 ? 0 : -amount)
 
+const fail = (code: VoidErrorCode, message: string): VoidError => ({ ok: false, code, message })
+
 export function buildVoid(request: VoidRequest, data: VoidData, ctx: VoidContext): VoidResult | VoidError {
   const original = data.original
-  if (data.alreadyVoided) return { ok: false, code: "ALREADY_VOIDED", message: "Transaction is already voided" }
-  if (original.status !== "PAID" || original.transaction_type !== "SALE") {
-    return { ok: false, code: "NOT_A_SALE", message: "Only completed sales can be voided" }
+  const shift = data.openShift
+  if (!shift || shift.terminal_id !== ctx.terminalId || shift.store_id !== ctx.storeId) {
+    return fail("NO_OPEN_SHIFT", "Open a shift on this terminal before voiding")
+  }
+  if (data.alreadyVoided) return fail("ALREADY_VOIDED", "Transaction is already voided")
+  if (original.transaction_type !== "SALE") return fail("NOT_A_SALE", "Only completed sales can be voided")
+  // Only the issuing terminal: its Z and grand total hold the sale, and only it knows offline
+  // whether the sale was already voided
+  if (original.terminal_id !== ctx.terminalId || original.store_id !== ctx.storeId) {
+    return fail("WRONG_TERMINAL", "Void this sale on the terminal that issued it")
+  }
+  // The lines must be the sale's, complete: otherwise stock would silently not come back
+  const items = data.items
+  const lineCents = items.reduce((sum, item) => sum + toCents(roundMoney(item.price_at_sale * item.quantity_sold)), 0)
+  if (items.length === 0 || items.some((item) => item.transaction_id !== original.id) || lineCents !== toCents(original.gross_sales)) {
+    return fail("ITEMS_MISMATCH", "The sale's lines don't match its total")
   }
 
   const isStoreCredit = original.payment_method === "STORE_CREDIT" && !!original.reference_number
   if (isStoreCredit && (!data.customer || data.customer.id !== original.reference_number)) {
-    return { ok: false, code: "CUSTOMER_NOT_FOUND", message: "Customer for store credit sale not found" }
+    return fail("CUSTOMER_NOT_FOUND", "Customer for store credit sale not found")
   }
 
-  const base = () => ({
-    id: ctx.newId(),
-    store_id: ctx.storeId,
-    terminal_id: ctx.terminalId,
-    created_at: ctx.now.toISOString(),
-  })
   const reason = request.reason ?? null
   const creditNoteNumber = formatDocumentNumber("CN", ctx.nextCreditNoteNumber)
 
-  const creditNote: TransactionRecord = {
-    ...base(),
-    shift_id: ctx.shiftId,
+  const creditNote: CreditNoteRecord = {
+    ...recordBase(ctx),
+    shift_id: shift.id,
     cashier_id: ctx.cashierId,
     invoice_number: creditNoteNumber,
     transaction_type: "VOID_REFUND",
@@ -112,16 +130,14 @@ export function buildVoid(request: VoidRequest, data: VoidData, ctx: VoidContext
   }
 
   // Every line of the voided sale goes back into stock
-  const stockMovements: StockMovementRecord[] = data.items
-    .filter((item) => item.transaction_id === original.id)
-    .map((item) => ({
-      ...base(),
-      product_id: item.product_id,
-      quantity_delta: item.quantity_sold,
-      reason: "VOID",
-      ref_id: creditNote.id,
-      note: null,
-    }))
+  const stockMovements: StockMovementRecord[] = items.map((item) => ({
+    ...recordBase(ctx),
+    product_id: item.product_id,
+    quantity_delta: item.quantity_sold,
+    reason: "VOID",
+    ref_id: creditNote.id,
+    note: null,
+  }))
 
   // Reverse a store-credit charge; the balance may go negative (the store then owes the customer)
   let ledgerEntry: CreditLedgerEntryRecord | null = null
@@ -130,10 +146,10 @@ export function buildVoid(request: VoidRequest, data: VoidData, ctx: VoidContext
     const amount = Number(original.net_sales)
     customerBalanceAfter = roundMoney(Number(data.customer!.current_debt_balance) - amount)
     ledgerEntry = {
-      ...base(),
+      ...recordBase(ctx),
       customer_id: original.reference_number!,
       transaction_id: creditNote.id,
-      shift_id: ctx.shiftId,
+      shift_id: shift.id,
       entry_type: "ADJUSTMENT",
       amount,
       running_balance: customerBalanceAfter,
@@ -144,10 +160,10 @@ export function buildVoid(request: VoidRequest, data: VoidData, ctx: VoidContext
   }
 
   const auditLog: AuditLogRecord = {
-    ...base(),
+    ...recordBase(ctx),
     action_type: "TRANSACTION_VOID",
     user_id: request.authorizedBy,
-    shift_id: ctx.shiftId,
+    shift_id: shift.id,
     metadata: { original_invoice: original.invoice_number, reversal_invoice: creditNoteNumber, reason },
     audit_image_id: request.auditImageId ?? null,
   }
