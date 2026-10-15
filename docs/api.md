@@ -23,13 +23,13 @@ decimals, quantities a number with up to 3. Timestamps are ISO 8601 strings.
 
 | Method | Path | Who | Body / result |
 |---|---|---|---|
-| POST | `/api/setup` | anyone with `SETUP_TOKEN`, only while no users exist | `{ setup_token, organization_name, store_name, owner_name, email, password (≥10), pin? }` → 201 `{ organization_id, store_id, owner_id }`; 409 `ALREADY_SET_UP` |
+| POST | `/api/setup` | anyone with `SETUP_TOKEN`, only while no users exist | `{ setup_token, organization_name, store_name, owner_name, email, password (≥10), pin? }` → 201 `{ organization_id, store_id, owner_id }`; 404 when the server has no `SETUP_TOKEN`; 403 for a wrong token; 409 `ALREADY_SET_UP` |
 | POST | `/api/auth/login` | — | `{ email, password }` → `{ user }` + cookie; 401 `INVALID_CREDENTIALS`; 429 |
 | POST | `/api/auth/logout` | signed in | → `{ ok: true }` |
 | GET | `/api/auth/me` | signed in | → `{ user: { id, full_name, role, email, org_id, store_ids: "ALL" \| string[] } }` |
 | GET | `/api/stores/:storeId/terminals` | managers | → `{ terminals: [ ...terminal, paired: boolean, last_seen_at ] }` |
 | POST | `/api/stores/:storeId/terminals` | managers | `{ name, kind?: "tablet"\|"desktop", ptu_number?, serial_number?, min? }` → 201 `{ terminal }` |
-| POST | `/api/terminals/:terminalId/pairing-code` | managers | → `{ code: "ABCD-EFGH", expires_at, qr_payload }` (10 minutes, newest code only) |
+| POST | `/api/terminals/:terminalId/pairing-code` | managers | → `{ code: "ABCD-EFGH", expires_at, qr_payload }` (10 minutes, newest code only); 409 `TERMINAL_REVOKED` for a decommissioned terminal |
 | POST | `/api/terminals/:terminalId/unpair` | managers | → `{ revoked: number }` |
 | POST | `/api/devices/pair` | device (public, rate-limited) | `{ code, device_info? }` → 201 `{ token, terminal, store, resume, server_time }` |
 | GET | `/api/devices/me` | device | → `{ terminal, store, server_time }` |
@@ -57,8 +57,8 @@ decimals, quantities a number with up to 3. Timestamps are ISO 8601 strings.
 | POST | `/api/stores/:storeId/stock-movements` | managers | `{ product_id, quantity_delta (≠0, ≤3 decimals; integer for QUANTITY products), reason: "RESTOCK"\|"ADJUSTMENT", note? }` → 201 `{ movement, stock_level }` |
 | GET | `/api/stores/:storeId/stock-movements` | managers | `?product_id=&limit=` (default 100, max 1000) → `{ movements }` newest first |
 
-Product validation: prices ≥ 0 with at most 2 decimals; `wholesale_price` and `wholesale_threshold` set together or not at
-all; `unit_type` is `QUANTITY` or `WEIGHT`; barcodes unique among the organization's active products.
+Product validation: prices ≥ 0 with at most 2 decimals; wholesale is either on (`wholesale_price` > 0 and `wholesale_threshold` ≥ 1) or off (`null`/0
+for both, as POS-bir stored it); `unit_type` is `QUANTITY` or `WEIGHT`; barcodes unique among the organization's active products.
 
 ## Customers and store credit (per store)
 
@@ -76,9 +76,9 @@ all; `unit_type` is `QUANTITY` or `WEIGHT`; barcodes unique among the organizati
 
 | Method | Path | Who | Body / result |
 |---|---|---|---|
-| GET | `/api/users` | managers | → `{ users: [ ...user without hashes, has_password, has_pin, store_ids ] }`; managers see the users of their stores |
+| GET | `/api/users` | managers | → `{ users: [ ...user without hashes, has_password, has_pin, store_ids ("ALL" for owners and admins) ] }`; managers see the users of their stores |
 | POST | `/api/users` | managers | `{ full_name, role, email?, password?, pin?, store_ids? }` → 201 `{ user }`; 409 `DUPLICATE_EMAIL` |
-| PATCH | `/api/users/:id` | managers | any of `full_name, role, email, password, pin, is_active, store_ids` → `{ user }` |
+| PATCH | `/api/users/:id` | managers | any of `full_name, role, email, password, pin, is_active, store_ids` → `{ user }`; `password: null` or `pin: null` removes it (a cashier can't keep a password) |
 | DELETE | `/api/users/:id` | managers | → `{ ok: true }` (soft; signs them out) |
 
 Who may manage whom:
