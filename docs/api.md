@@ -16,7 +16,7 @@ decimals, quantities a number with up to 3. Timestamps are ISO 8601 strings.
   404 `NOT_FOUND`, 409 conflicts with a specific code, 429 `TOO_MANY_ATTEMPTS`.
 - **Deletes are soft** (`deleted_at`), so they sync down to tablets; lists leave deleted rows out
   unless `?include_deleted=1`. Every update bumps the row's `version` (database trigger).
-- **Lists** are returned whole for now (a store has hundreds to a few thousand products); `?search=`
+- **PATCH** with no fields is 400. **Lists** are returned whole for now (a store has hundreds to a few thousand products); `?search=`
   matches case-insensitively on the listed fields.
 
 ## Auth and devices (built)
@@ -51,13 +51,13 @@ decimals, quantities a number with up to 3. Timestamps are ISO 8601 strings.
 | GET | `/api/products/:id` | managers | → `{ product }` |
 | PATCH | `/api/products/:id` | managers | any product field → `{ product }`; 409 `DUPLICATE_BARCODE` |
 | DELETE | `/api/products/:id` | managers | → `{ ok: true }` (soft) |
-| GET | `/api/products/export` | managers | → CSV of the catalog (same columns as the import) |
-| POST | `/api/products/import` | managers | `multipart/form-data` with `file` (CSV) → `{ created, updated, skipped, errors: [{ row, message }] }`; matches by barcode, else by name; only columns present in the header are updated (POS-bir's CSV format) |
-| GET | `/api/stores/:storeId/stock` | managers | `?product_id=` → `{ stock: [{ product_id, stock_level }] }` (sum of movements) |
+| GET | `/api/products/export` | managers | `?store_id=` → CSV of the catalog (same columns as the import); `stock_level` is included only with `store_id` |
+| POST | `/api/products/import` | managers | `multipart/form-data` with `file` (CSV), `?store_id=` (required when the CSV has `stock_level`) → `{ created, updated, skipped, errors: [{ row, message }] }`; matches by barcode, else by name; only columns present in the header are updated (POS-bir's CSV format); a stock cell is the store's target level (written as one ADJUSTMENT for the difference, blank = unchanged); `row` is the file line (header = 1) |
+| GET | `/api/stores/:storeId/stock` | managers | `?product_id=&include_deleted=1` → `{ stock: [{ product_id, stock_level }] }` (sum of movements; every active product, 0 where nothing moved) |
 | POST | `/api/stores/:storeId/stock-movements` | managers | `{ product_id, quantity_delta (≠0, ≤3 decimals; integer for QUANTITY products), reason: "RESTOCK"\|"ADJUSTMENT", note? }` → 201 `{ movement, stock_level }` |
-| GET | `/api/stores/:storeId/stock-movements` | managers | `?product_id=&limit=` → `{ movements }` newest first |
+| GET | `/api/stores/:storeId/stock-movements` | managers | `?product_id=&limit=` (default 100, max 1000) → `{ movements }` newest first |
 
-Product validation: prices ≥ 0; `wholesale_price` and `wholesale_threshold` set together or not at
+Product validation: prices ≥ 0 with at most 2 decimals; `wholesale_price` and `wholesale_threshold` set together or not at
 all; `unit_type` is `QUANTITY` or `WEIGHT`; barcodes unique among the organization's active products.
 
 ## Customers and store credit (per store)
@@ -94,3 +94,9 @@ Field rules:
 - **PINs:** 4–6 digits, used for the tablet and for manager approvals. A user who is deactivated,
   deleted or given a new password is signed out of the back office.
 - **Hashes:** never returned.
+- **Errors:** removing or demoting the last active owner is 409 `LAST_OWNER`.
+
+Customers: every customer response (list, GET, POST, PATCH, payments) includes `balance`. A
+customer can't be deleted while the balance isn't 0 in either direction (409 `HAS_BALANCE`, with
+the balance). Store-credit payments may overpay: the balance goes negative and the store owes the
+customer.
