@@ -4,7 +4,7 @@
 import { and, asc, eq, gt, sql } from "drizzle-orm"
 import type { AnyPgColumn } from "drizzle-orm/pg-core"
 import type { PullResponse, PulledUser } from "@pos/core"
-import { categories, creditLedger, customers, products, stockMovements, stores, terminals, userStores, users } from "@pos/db"
+import { categories, creditLedger, customers, products, stockMovements, stores, terminals, users } from "@pos/db"
 import type { Db } from "@pos/db"
 import type { AuthedDevice } from "../auth/device"
 import { storeForDevice } from "../stores"
@@ -65,7 +65,8 @@ export async function pullChanges(db: Db, device: AuthedDevice, cursor: number, 
         is_active: users.is_active,
         version: users.version,
         deleted_at: users.deleted_at,
-        has_access: sql<boolean>`(${users.role} in ('OWNER', 'ADMIN') or exists (select 1 from ${userStores} where ${userStores.user_id} = ${users.id} and ${userStores.store_id} = ${store.id}))`,
+        // Qualified by hand (single-table selects leave columns unqualified inside subqueries)
+        has_access: sql<boolean>`("users"."role" in ('OWNER', 'ADMIN') or exists (select 1 from user_stores us where us.user_id = "users"."id" and us.store_id = ${store.id}))`,
       })
       .from(users)
       .where(and(eq(users.org_id, store.org_id), after(users.version)))

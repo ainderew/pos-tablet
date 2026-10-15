@@ -161,7 +161,7 @@ async function checkReferences(tx: Tx, device: AuthedDevice, records: PushRecord
 async function applyServerRules(tx: Tx, r: PushRecord) {
   // POS-bir's rule: a payment that brings a BLOCKED customer back within their limit unblocks them
   if (r.type === "credit_ledger_entry" && r.data.entry_type === "PAYMENT") {
-    const balance = sql<number>`coalesce((select sum(case when ${creditLedger.entry_type} = 'CHARGE' then ${creditLedger.amount} else -${creditLedger.amount} end) from ${creditLedger} where ${creditLedger.customer_id} = ${customers.id}), 0)`
+    const balance = sql<number>`coalesce((select sum(case when cl.entry_type = 'CHARGE' then cl.amount else -cl.amount end) from credit_ledger cl where cl.customer_id = "customers"."id"), 0)`
     await tx
       .update(customers)
       .set({ credit_status: "ACTIVE" })

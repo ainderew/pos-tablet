@@ -161,6 +161,18 @@ describe("device pairing", () => {
     expect((await DEVICE_ME(device(replacement.token))).status).toBe(401)
   })
 
+  it("lists each terminal's own pairing status and last-seen time", async () => {
+    const cookie = await sessionOf("manager@example.com")
+    const paired = await newTerminal(cookie)
+    const unpaired = await newTerminal(cookie)
+    const token = (await (await pair((await codeFor(cookie, paired.id)).code)).json()).token
+    await DEVICE_ME(device(token))
+    const res = await LIST_TERMINALS(req("GET", `/api/stores/${s.ids.store}/terminals`, { cookie }), params({ storeId: s.ids.store }))
+    const list = (await res.json()).terminals as { id: string; paired: boolean; last_seen_at: string | null }[]
+    expect(list.find((t) => t.id === paired.id)).toMatchObject({ paired: true, last_seen_at: expect.anything() })
+    expect(list.find((t) => t.id === unpaired.id)).toMatchObject({ paired: false, last_seen_at: null })
+  })
+
   it("rate-limits pairing attempts per address", async () => {
     for (let i = 0; i < 10; i++) expect((await pair("WRONG-CODE")).status).toBe(400)
     expect((await pair("WRONG-CODE")).status).toBe(429)

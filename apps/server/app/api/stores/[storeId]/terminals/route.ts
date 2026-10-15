@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { and, desc, eq, isNull, sql } from "drizzle-orm"
 import { z } from "zod"
-import { deviceTokens, terminals } from "@pos/db"
+import { terminals } from "@pos/db"
 import { MANAGERS, requireUser } from "@/lib/auth/guard"
 import { getDb } from "@/lib/db"
 import { notFound, readJson } from "@/lib/http"
@@ -19,8 +19,10 @@ export async function GET(request: Request, { params }: Params) {
   const rows = await db
     .select({
       terminal: terminals,
-      paired: sql<boolean>`exists (select 1 from ${deviceTokens} where ${deviceTokens.terminal_id} = ${terminals.id} and ${deviceTokens.revoked_at} is null)`,
-      last_seen_at: sql<Date | null>`(select max(${deviceTokens.last_used_at}) from ${deviceTokens} where ${deviceTokens.terminal_id} = ${terminals.id})`,
+      // Qualified by hand: in a single-table select Drizzle leaves columns unqualified, and "id"
+      // would bind to device_tokens.id inside the subquery
+      paired: sql<boolean>`exists (select 1 from device_tokens dt where dt.terminal_id = "terminals"."id" and dt.revoked_at is null)`,
+      last_seen_at: sql<Date | null>`(select max(dt.last_used_at) from device_tokens dt where dt.terminal_id = "terminals"."id")`,
     })
     .from(terminals)
     .where(and(eq(terminals.store_id, store.id), isNull(terminals.deleted_at)))
