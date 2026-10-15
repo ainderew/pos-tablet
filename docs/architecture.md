@@ -213,6 +213,21 @@ when it adds a second terminal.
 - **Remove `SETUP_TOKEN`** from the server's `.env` after setup (the endpoint already refuses once a
   user exists).
 
+## Serving other businesses (noted, not decided)
+
+The owner may offer this POS to other, separate businesses. Two ways, both possible later:
+
+- **A. One deployment per business** (recommended for the first 1–3): its own subdomain, Compose
+  project and database (`shop1.techpal.store`, ...). Full isolation, no new features; `deploy.sh`
+  needs to accept an environment name and port instead of only staging/production. About
+  300–500 MB RAM each, so the current VPS fits roughly 10–15.
+- **B. One shared server with many organizations:** the schema is already organization-scoped
+  everywhere. Needs a platform-admin feature to create organizations and invite their owners, and
+  billing and limits if charged.
+- **Before selling:** the software would likely need its own BIR accreditation as a POS supplier,
+  each client registers its own machines (PTU), and holding their customers' data needs a data
+  processing agreement under the Data Privacy Act.
+
 ## PC app (POS-bir) path
 
 1. Switch POS-bir to `@pos/core` (as a git dependency), so tax and pricing fixes land once.
