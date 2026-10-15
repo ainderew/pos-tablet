@@ -236,8 +236,8 @@ Total: about 7–9 weeks for one developer.
 - [ ] Printer spike on real hardware (code page, Chinese-mode cancel, cut command)
 - [x] `apps/server` (Next.js 16, `/api/health`) and `apps/tablet` (Vite + React 19 + Capacitor 8) scaffolds
 - [x] Staging deploy on the VPS: https://pos-staging.techpal.store (HTTPS, private Postgres)
-- [ ] BIR: PTU per tablet terminal, and the effect on software accreditation
-- [ ] Choose the tablet and printer (Bluetooth/USB; paper width)
+- [ ] BIR: PTU per tablet terminal, and the effect on software accreditation (**deferred**; terminals store PTU/serial/MIN as optional fields until then)
+- [ ] Choose the tablet and printer (Bluetooth/USB; paper width) (**deferred**: software proceeds without hardware; the tablet app is developed in a browser and the Android emulator, and the printer spike waits for the printer)
 - [x] Store credit offline: (A)
 - [x] Domain: `techpal.store` subdomains
 

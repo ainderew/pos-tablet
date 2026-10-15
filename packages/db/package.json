@@ -1,0 +1,28 @@
+{
+  "name": "@pos/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Server database: Postgres schema (Drizzle), migrations and clients. Tests run on PGlite.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.4",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "@types/node": "^22",
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^0.31.11",
+    "typescript": "^5",
+    "vitest": "^5.0.4"
+  }
+}
