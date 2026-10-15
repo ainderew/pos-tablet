@@ -1,4 +1,4 @@
-import type { CartItem, Product, UnitType } from "./types"
+import type { CartItem, Product } from "./types"
 
 export interface TaxBreakdown {
   grossSales: number
