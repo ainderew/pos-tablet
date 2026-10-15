@@ -15,7 +15,9 @@ SITE="pos-$ENV_NAME"
 ACME="/var/www/$SITE-acme"
 
 VPS_IP="$(ssh "$HOST" 'curl -s -4 ifconfig.me')"
-DNS_IP="$(dig +short "$DOMAIN" A @1.1.1.1 | tail -1)"
+# Ask the zone's own nameserver: public resolvers may still cache an earlier "no such name"
+ZONE_NS="$(dig +short NS "${DOMAIN#*.}" @8.8.8.8 | head -1)"
+DNS_IP="$(dig +short "$DOMAIN" A @"${ZONE_NS:-1.1.1.1}" | tail -1)"
 if [ "$DNS_IP" != "$VPS_IP" ]; then
   echo "$DOMAIN resolves to '${DNS_IP:-nothing}', not $VPS_IP: add the A record first" >&2
   exit 1
