@@ -1,4 +1,4 @@
-# pos-cloud
+# pos-tablet
 
 Offline-first tablet POS and the VPS server it syncs to, for General Store POS.
 The existing Windows/macOS app lives in [POS-bir](https://github.com/ainderew/POS-bir); it stays
