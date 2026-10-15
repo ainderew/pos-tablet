@@ -210,7 +210,15 @@ when it adds a second terminal.
 
 1. Switch POS-bir to `@pos/core` (as a git dependency), so tax and pricing fixes land once.
 2. Add a `desktop` terminal type: Electron runs the same sync worker against `better-sqlite3`.
-3. Pair the PC as a terminal, upload its catalog and customers once, then sync like a tablet.
+3. Import the PC's catalog, customers, users, opening stock and opening balances once
+   (`packages/db/src/import`, `deploy/import-pos-bir.sh`), pair the PC as a terminal, then sync like a
+   tablet.
+   - **Its history must not count twice.** The opening stock and balances already include every past
+     sale, so when the PC later pushes its historical records, the server must store them for reports
+     and BIR without applying their stock movements or ledger entries again. Planned: the PC marks
+     pre-import records as history, and the ingest stores those without effects.
+   - **The seeded "Administrator"** gets a new id on import (the PC's `…0001` repeats on every
+     install), so the PC must map its local id when it syncs.
 4. Its existing data model already has UUID keys, `pos_id` and `is_synced`, so the mapping is direct.
 
 ## Phases
@@ -233,6 +241,10 @@ Total: about 7–9 weeks for one developer.
 - [x] `@pos/core`: append-only record model (zod) and `buildSale`, matching POS-bir on 24 golden scenarios
 - [x] `@pos/core`: void/credit-note, store-credit payment, shift open/close, cash movement and Z-reading builders, each matching POS-bir on recorded scenarios (with POS-bir's bugs fixed and listed in the tests)
 - [x] `@pos/core`: receipt model, HTML renderer (same output as POS-bir) and ESC/POS renderer (58/80 mm, CP437/WPC1252)
+- [x] `@pos/db`: Postgres schema and migrations (versioned server rows committed in order; append-only terminal records)
+- [x] Server: back-office auth, device pairing, stores/catalog/stock, customers/users APIs (docs/api.md)
+- [x] Sync protocol v1 on the server: push (validated, idempotent) and pull (cursor, paged)
+- [x] Importer for an existing POS-bir `pos.db` (catalog, customers, users, opening stock and balances)
 - [ ] Printer spike on real hardware (code page, Chinese-mode cancel, cut command)
 - [x] `apps/server` (Next.js 16, `/api/health`) and `apps/tablet` (Vite + React 19 + Capacitor 8) scaffolds
 - [x] Staging deploy on the VPS: https://pos-staging.techpal.store (HTTPS, private Postgres)
