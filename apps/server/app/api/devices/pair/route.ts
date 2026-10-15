@@ -12,7 +12,10 @@ import { storeForDevice, terminalResumePoint } from "@/lib/stores"
 
 const PairSchema = z.object({
   code: z.string().min(1).max(32),
-  device_info: z.record(z.string(), z.unknown()).optional(),
+  device_info: z
+    .record(z.string(), z.unknown())
+    .refine((info) => JSON.stringify(info).length <= 4000, "device_info is too large")
+    .optional(),
 })
 
 
@@ -22,7 +25,7 @@ export async function POST(request: Request) {
   }
   const body = await readJson(request, PairSchema)
   if (!body.ok) return body.response
-  const deviceInfo = JSON.parse(JSON.stringify(body.data.device_info ?? {}).slice(0, 4000) || "{}")
+  const deviceInfo = body.data.device_info ?? {}
 
   const db = getDb()
   const now = new Date()
@@ -43,7 +46,8 @@ export async function POST(request: Request) {
     // One device per terminal: two devices would both number records from the same device_seq
     await tx.update(deviceTokens).set({ revoked_at: now }).where(and(eq(deviceTokens.terminal_id, row.terminal.id), isNull(deviceTokens.revoked_at)))
     await tx.insert(deviceTokens).values({ terminal_id: row.terminal.id, token_hash: sha256(token), device_info: deviceInfo })
-    return row
+    // Inside the transaction: if this fails, the code stays unused and the old device keeps working
+    return { ...row, resume: await terminalResumePoint(tx as unknown as typeof db, row.terminal.id) }
   })
   if (!paired) return errorResponse(400, "INVALID_CODE", "That pairing code is wrong or has expired")
 
@@ -53,7 +57,7 @@ export async function POST(request: Request) {
       terminal: { id: paired.terminal.id, name: paired.terminal.name, kind: paired.terminal.kind, store_id: paired.terminal.store_id, ptu_number: paired.terminal.ptu_number, serial_number: paired.terminal.serial_number, min: paired.terminal.min },
       store: storeForDevice(paired.store),
       // Continue numbering after what the server already has from this terminal
-      resume: await terminalResumePoint(db, paired.terminal.id),
+      resume: paired.resume,
       server_time: now.toISOString(),
     },
     { status: 201 }

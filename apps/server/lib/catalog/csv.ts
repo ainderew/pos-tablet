@@ -23,12 +23,23 @@ export const CSV_HEADERS = [
 
 export const REQUIRED_COLUMNS = ["name", "selling_price", "cost_price", "unit_type"] as const
 
-/** Quote a field when it holds a comma, quote or line break (POS-bir's escaping) */
+// A spreadsheet runs a cell that starts with one of these as a formula (=HYPERLINK(...), DDE)
+const FORMULA_START = /^[=+\-@\t\r]/
+const PLAIN_NUMBER = /^-?\d+(\.\d+)?$/
+
+/**
+ * Quote a field when it holds a comma, quote or line break (POS-bir's escaping). Text that a
+ * spreadsheet would run as a formula gets a leading apostrophe (shown as text; the import strips it).
+ */
 export function csvField(value: unknown): string {
   if (value === null || value === undefined) return ""
-  const str = value instanceof Date ? value.toISOString() : String(value)
+  let str = value instanceof Date ? value.toISOString() : String(value)
+  if (FORMULA_START.test(str) && !PLAIN_NUMBER.test(str)) str = `'${str}`
   return /[",\r\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str
 }
+
+/** Undo csvField's formula guard */
+const unguard = (field: string) => (field.startsWith("'") && FORMULA_START.test(field.slice(1)) ? field.slice(1) : field)
 
 export const csvLine = (values: unknown[]) => values.map(csvField).join(",")
 
@@ -50,7 +61,7 @@ export function parseCsv(text: string): CsvRecord[] {
   let recordLine = 1
 
   const endField = () => {
-    fields.push(current.trim())
+    fields.push(unguard(current.trim()))
     current = ""
   }
   const endRecord = () => {

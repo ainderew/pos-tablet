@@ -206,6 +206,13 @@ when it adds a second terminal.
   - A restore drill every month.
 - **Monitoring:** uptime checks on `/api/health`, Sentry for errors, and alerts from the sync monitor.
 
+### Before production
+- **Separate database roles:** the app's user owns the schema today, so it could drop the
+  append-only triggers. Production should migrate with an owner role and run the app with a role
+  that can only read and write rows.
+- **Remove `SETUP_TOKEN`** from the server's `.env` after setup (the endpoint already refuses once a
+  user exists).
+
 ## PC app (POS-bir) path
 
 1. Switch POS-bir to `@pos/core` (as a git dependency), so tax and pricing fixes land once.

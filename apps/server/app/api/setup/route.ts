@@ -2,9 +2,10 @@
 // SETUP_TOKEN from the server's .env, and only works while there are no users at all.
 import { timingSafeEqual } from "node:crypto"
 import { NextResponse } from "next/server"
-import { count } from "drizzle-orm"
+import { count, sql } from "drizzle-orm"
 import { z } from "zod"
 import { organizations, stores, users } from "@pos/db"
+import { isSameOrigin } from "@/lib/auth/guard"
 import { hashPassword, hashPin, MIN_PASSWORD_LENGTH, PIN_PATTERN } from "@/lib/auth/passwords"
 import { getDb } from "@/lib/db"
 import { errorResponse, readJson } from "@/lib/http"
@@ -28,12 +29,15 @@ const tokenMatches = (given: string, expected: string) => {
 export async function POST(request: Request) {
   const expected = process.env.SETUP_TOKEN
   if (!expected) return errorResponse(404, "NOT_FOUND", "Not found")
+  if (!isSameOrigin(request)) return errorResponse(403, "CROSS_SITE", "Cross-site request refused")
   const body = await readJson(request, SetupSchema)
   if (!body.ok) return body.response
   if (!tokenMatches(body.data.setup_token, expected)) return errorResponse(403, "FORBIDDEN", "Wrong setup token")
 
   const db = getDb()
   const result = await db.transaction(async (tx) => {
+    // Two setups at once (a double submit) must not both create an organization
+    await tx.execute(sql`select pg_advisory_xact_lock(7250421)`)
     const [{ n }] = await tx.select({ n: count() }).from(users)
     if (n > 0) return null
     const [org] = await tx.insert(organizations).values({ name: body.data.organization_name }).returning()

@@ -4,7 +4,8 @@ import { sessions, users } from "@pos/db"
 import type { Db, UserRole } from "@pos/db"
 import { randomToken, sha256 } from "./crypto"
 
-export const SESSION_COOKIE = "pos_session"
+// __Host- (production, HTTPS): the browser only accepts it Secure, on "/", from this exact host
+export const SESSION_COOKIE = process.env.NODE_ENV === "production" ? "__Host-pos_session" : "pos_session"
 const SESSION_DAYS = 7 // slides forward while in use
 const MAX_SESSION_DAYS = 30 // never longer than this from sign-in
 const DAY = 24 * 60 * 60 * 1000
@@ -21,6 +22,9 @@ export interface SessionUser {
 export async function createSession(db: Db, userId: string, meta: { userAgent?: string | null; ip?: string | null } = {}, now = new Date()) {
   const token = randomToken()
   const expiresAt = new Date(now.getTime() + SESSION_DAYS * DAY)
+  // The cookie itself lasts the absolute maximum: the server-side expiry slides within it, and the
+  // cookie is only set at sign-in, so a shorter cookie would sign active users out on day 7
+  const cookieExpiresAt = new Date(now.getTime() + MAX_SESSION_DAYS * DAY)
   await db.insert(sessions).values({
     token_hash: sha256(token),
     user_id: userId,
@@ -30,7 +34,7 @@ export async function createSession(db: Db, userId: string, meta: { userAgent?: 
     user_agent: meta.userAgent ?? null,
     ip: meta.ip ?? null,
   })
-  return { token, expiresAt }
+  return { token, expiresAt: cookieExpiresAt }
 }
 
 /** The signed-in user for a session token, or null (expired, unknown, or the user was deactivated) */
@@ -82,7 +86,12 @@ export function readCookie(request: Request, name: string): string | null {
   if (!header) return null
   for (const part of header.split(";")) {
     const [key, ...rest] = part.trim().split("=")
-    if (key === name) return decodeURIComponent(rest.join("="))
+    if (key !== name) continue
+    try {
+      return decodeURIComponent(rest.join("="))
+    } catch {
+      return null // malformed cookie: treat as signed out, not a 500
+    }
   }
   return null
 }

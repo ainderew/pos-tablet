@@ -62,7 +62,7 @@ export async function terminalResumePoint(db: Db, terminalId: string) {
   const lastDeviceSeq = await terminalHighestSeq(db, terminalId)
   const lastNumber = async (prefix: "SI" | "CN") => {
     const [row] = await db
-      .select({ n: sql<number>`coalesce(max(substring(${transactions.invoice_number} from 4)::int), 0)` })
+      .select({ n: sql<string>`coalesce(max(substring(${transactions.invoice_number} from 4)::bigint), 0)` })
       .from(transactions)
       .where(and(eq(transactions.terminal_id, terminalId), sql`${transactions.invoice_number} like ${prefix + "-%"}`))
     return Number(row?.n ?? 0)

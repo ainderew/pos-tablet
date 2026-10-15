@@ -15,7 +15,7 @@ import { CATEGORY_NAME_MAX, NAME_INDEX } from "./categories"
 import { enumCell, parseCsvBoolean, parseCsvNumber, parseCsvTimestamp, REQUIRED_COLUMNS } from "./csv"
 import type { CsvRecord } from "./csv"
 import { isUniqueViolation } from "./db-errors"
-import { BARCODE_INDEX, mergeProduct, ProductPatchSchema, productValuesOf } from "./products"
+import { activeCategoryLocked, BARCODE_INDEX, mergeProduct, ProductPatchSchema, productValuesOf } from "./products"
 import type { ProductRow } from "./products"
 import { insertBackOfficeMovement, stockLevels } from "./stock"
 import { round3, validQuantity } from "./validation"
@@ -187,7 +187,11 @@ export async function importProducts(
       if (categoryName !== undefined) {
         const id = categoryName === null ? null : categoryIds.get(categoryName.toLowerCase())
         if (id === undefined) newCategory = categoryName
-        else input.category_id = id
+        // Share-lock it like POST/PATCH do, so a concurrent category delete can't slip in between
+        else if (id !== null && !(await activeCategoryLocked(tx, orgId, id))) {
+          fail(`category "${categoryName}" was just deleted`)
+          continue
+        } else input.category_id = id
       }
 
       const merged = mergeProduct(existing ? productValuesOf(existing) : null, input)

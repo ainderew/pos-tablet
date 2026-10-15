@@ -15,12 +15,23 @@ export const MAX_PULL_LIMIT = 2000
 type Change = { table: keyof PullResponse["changes"]; version: number; row: Record<string, unknown> }
 
 export async function pullChanges(db: Db, device: AuthedDevice, cursor: number, limit: number): Promise<PullResponse> {
+  // One snapshot for every read: versions commit in order, but separate connections (separate
+  // snapshots) could see a later version in one table while missing an earlier one in another, and
+  // the cursor would then skip it forever
+  return db.transaction((tx) => readChanges(tx as unknown as Db, device, cursor, limit), {
+    isolationLevel: "repeatable read",
+    accessMode: "read only",
+  })
+}
+
+async function readChanges(db: Db, device: AuthedDevice, cursor: number, limit: number): Promise<PullResponse> {
   const { terminal, store } = device
   const after = (version: AnyPgColumn) => gt(version, cursor)
 
-  const [storeRows, terminalRows, categoryRows, productRows, customerRows, userRows] = await Promise.all([
-    db.select().from(stores).where(and(eq(stores.id, store.id), after(stores.version))).orderBy(asc(stores.version)).limit(limit),
-    db
+  // Awaited one after another (inside the array literal, left to right): a transaction has one connection
+  const [storeRows, terminalRows, categoryRows, productRows, customerRows, userRows] = [
+    await db.select().from(stores).where(and(eq(stores.id, store.id), after(stores.version))).orderBy(asc(stores.version)).limit(limit),
+    await db
       .select({
         id: terminals.id,
         store_id: terminals.store_id,
@@ -37,10 +48,10 @@ export async function pullChanges(db: Db, device: AuthedDevice, cursor: number, 
       .where(and(eq(terminals.id, terminal.id), after(terminals.version)))
       .orderBy(asc(terminals.version))
       .limit(limit),
-    db.select().from(categories).where(and(eq(categories.org_id, store.org_id), after(categories.version))).orderBy(asc(categories.version)).limit(limit),
-    db.select().from(products).where(and(eq(products.org_id, store.org_id), after(products.version))).orderBy(asc(products.version)).limit(limit),
+    await db.select().from(categories).where(and(eq(categories.org_id, store.org_id), after(categories.version))).orderBy(asc(categories.version)).limit(limit),
+    await db.select().from(products).where(and(eq(products.org_id, store.org_id), after(products.version))).orderBy(asc(products.version)).limit(limit),
     // Only what the counter needs for store credit (no email or address on the device)
-    db
+    await db
       .select({
         id: customers.id,
         store_id: customers.store_id,
@@ -56,7 +67,7 @@ export async function pullChanges(db: Db, device: AuthedDevice, cursor: number, 
       .orderBy(asc(customers.version))
       .limit(limit),
     // PIN hashes so cashiers can sign in offline; never emails or password hashes
-    db
+    await db
       .select({
         id: users.id,
         full_name: users.full_name,
@@ -72,7 +83,7 @@ export async function pullChanges(db: Db, device: AuthedDevice, cursor: number, 
       .where(and(eq(users.org_id, store.org_id), after(users.version)))
       .orderBy(asc(users.version))
       .limit(limit),
-  ])
+  ]
 
   const tagged: Change[] = [
     ...storeRows.map((s) => ({ table: "stores" as const, version: s.version, row: { ...storeForDevice(s), deleted_at: s.deleted_at } })),
@@ -90,7 +101,14 @@ export async function pullChanges(db: Db, device: AuthedDevice, cursor: number, 
   const hasMore = tagged.length > limit || fullTables
   const changes: PullResponse["changes"] = { stores: [], terminals: [], categories: [], products: [], customers: [], users: [] }
   for (const c of taken) (changes[c.table] as Record<string, unknown>[]).push(c.row)
-  changes.users = changes.users.map((u) => ({ ...(u as unknown as PulledUser), has_access: Boolean((u as { has_access: unknown }).has_access) }))
+  changes.users = changes.users.map((row) => {
+    const u = row as unknown as PulledUser
+    const hasAccess = Boolean(u.has_access)
+    // A PIN hash only goes to a device where that user can sign in: 4-6 digit PINs crack quickly
+    // offline, so other stores' (and inactive or deleted users') hashes never leave the server
+    const canSignInHere = hasAccess && u.is_active && !u.deleted_at
+    return { ...u, has_access: hasAccess, pin_hash: canSignInHere ? u.pin_hash : null }
+  })
 
   return {
     cursor: taken.length ? taken[taken.length - 1].version : cursor,

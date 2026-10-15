@@ -17,6 +17,44 @@ import {
 export const SYNC_PROTOCOL_VERSION = 1
 export const MAX_PUSH_RECORDS = 200
 
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+const MAX_INT32 = 2_147_483_647
+// Columns that hold whole numbers or weights; every other number in a record is money
+const INTEGER_FIELDS = new Set(["device_seq", "pax_count", "senior_count", "z_counter", "sales_count", "void_count", "snapshot_z_counter"])
+const QUANTITY_FIELDS = new Set(["quantity_sold", "quantity_delta"])
+const MAX_MONEY = 999_999_999_999.99 // numeric(14,2)
+const MAX_TEXT = 2000
+const MAX_METADATA = 8000
+const isCents = (n: number) => Math.abs(n * 100 - Math.round(n * 100)) < 1e-6
+const isThousandths = (n: number) => Math.abs(n * 1000 - Math.round(n * 1000)) < 1e-6
+
+/**
+ * What the server's columns can store exactly, checked before anything is written: ids are UUIDs,
+ * counters fit 32 bits, money is whole centavos, quantities whole grams, text and metadata are
+ * bounded. (The record schemas describe meaning; these are storage limits.)
+ */
+function checkStorable(data: Record<string, unknown>, ctx: z.RefinementCtx) {
+  for (const [key, value] of Object.entries(data)) {
+    const issue = (message: string) => ctx.addIssue({ code: "custom", path: ["data", key], message })
+    if (typeof value === "string") {
+      // sc_pwd_id is a senior citizen / PWD ID card number, not a record id
+      const isRecordId = (key === "id" || key.endsWith("_id") || key === "authorized_by") && key !== "sc_pwd_id"
+      if (isRecordId && !UUID.test(value)) issue("must be a UUID")
+      else if (value.length > MAX_TEXT) issue(`must be at most ${MAX_TEXT} characters`)
+    } else if (typeof value === "number") {
+      if (INTEGER_FIELDS.has(key)) {
+        if (!Number.isInteger(value) || value < 0 || value > MAX_INT32) issue("must be a whole number that fits 32 bits")
+      } else if (QUANTITY_FIELDS.has(key)) {
+        if (!isThousandths(value) || Math.abs(value) >= 1e11) issue("must be in grams (3 decimals) and in range")
+      } else if (!isCents(value) || Math.abs(value) > MAX_MONEY) {
+        issue("must be in centavos (2 decimals) and in range")
+      }
+    } else if (key === "metadata" && JSON.stringify(value).length > MAX_METADATA) {
+      issue(`must be at most ${MAX_METADATA} characters as JSON`)
+    }
+  }
+}
+
 export const PushRecordSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("shift_open"), data: ShiftOpenRecordSchema }),
   z.object({ type: z.literal("shift_close"), data: ShiftCloseRecordSchema }),
@@ -27,7 +65,7 @@ export const PushRecordSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("cash_movement"), data: CashMovementRecordSchema }),
   z.object({ type: z.literal("z_reading"), data: ZReadingRecordSchema }),
   z.object({ type: z.literal("audit_log"), data: AuditLogRecordSchema }),
-])
+]).superRefine((record, ctx) => checkStorable(record.data as Record<string, unknown>, ctx))
 export type PushRecord = z.infer<typeof PushRecordSchema>
 export type PushRecordType = PushRecord["type"]
 

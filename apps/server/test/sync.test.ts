@@ -209,6 +209,9 @@ describe("pull", () => {
     const cashier = body.changes.users.find((u) => u.id === s.ids.cashier)!
     expect(cashier).toMatchObject({ has_access: true, pin_hash: expect.stringMatching(/^\$2b\$/) })
     expect(JSON.stringify(body)).not.toMatch(/password|owner@example\.com/)
+    // Users of other stores (the manager works only in the main store; the branch has none) and
+    // inactive users never carry a PIN hash
+    for (const u of body.changes.users) if (!u.has_access || !u.is_active) expect(u.pin_hash).toBeNull()
     expect(body.cursor).toBeGreaterThan(0)
     expect(body.has_more).toBe(false)
 
@@ -229,7 +232,8 @@ describe("pull", () => {
     const { body } = await pull(device.token, start)
     expect(body.changes.products).toEqual([expect.objectContaining({ id: soap.id, selling_price: 26 })])
     expect(body.changes.customers).toEqual([expect.objectContaining({ id: rosaId, deleted_at: expect.any(String) })])
-    expect(body.changes.users).toEqual([expect.objectContaining({ id: s.ids.cashier, has_access: false })])
+    // Lost access: the user arrives as "no access", and without their PIN hash
+    expect(body.changes.users).toEqual([expect.objectContaining({ id: s.ids.cashier, has_access: false, pin_hash: null })])
 
     await s.db.update(customers).set({ deleted_at: null }).where(eq(customers.id, rosaId))
     await s.db.insert(userStores).values({ user_id: s.ids.cashier, store_id: s.ids.store })

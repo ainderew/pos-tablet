@@ -18,6 +18,7 @@ ssh "$HOST" "mkdir -p $DIR/src"
 rsync -az --delete \
   --exclude node_modules --exclude .git --exclude .next --exclude .turbo --exclude dist \
   --exclude apps/tablet/android --exclude '.env*' \
+  --exclude '*.db' --exclude '*.db-*' --exclude '*.jks' --exclude '*.keystore' --exclude keystore.properties \
   "$ROOT/" "$HOST:$DIR/src/"
 
 echo "-> building and starting pos-$ENV_NAME ($VERSION)"
