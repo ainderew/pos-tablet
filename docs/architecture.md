@@ -220,7 +220,7 @@ Total: about 7–9 weeks for one developer.
 - [x] Repo with pnpm workspaces and Turborepo, TypeScript strict, CI
 - [x] `@pos/core`: PH tax, pricing and money rounding ported, with POS-bir's tests
 - [x] `apps/server` (Next.js 16, `/api/health`) and `apps/tablet` (Vite + React 19 + Capacitor 8) scaffolds
-- [ ] Staging deploy on the VPS (`pos-staging.techpal.store`)
+- [x] Staging deploy on the VPS: https://pos-staging.techpal.store (HTTPS, private Postgres)
 - [ ] BIR: PTU per tablet terminal, and the effect on software accreditation
 - [ ] Choose the tablet and printer (Bluetooth/USB; paper width)
 - [x] Store credit offline: (A)
